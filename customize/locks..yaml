@@ -1,0 +1,6 @@
+# Door Locks
+lock.august_asl_03_smart_lock_locked:
+  friendly_name: 'Garage Door Lock'
+
+lock.schlage_allegion_be469zp_connect_smart_deadbolt_locked:
+  friendly_name: 'Front Door Lock'

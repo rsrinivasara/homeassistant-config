@@ -1,0 +1,46 @@
+- name: Bedroom Night Light
+  entities:
+    group.bedroom_lights:
+      state: on
+      brightness_pct: 20
+      kelvin: 3000
+
+- name: Bedroom Sleeping
+  entities:
+    group.bedroom_lights:
+      state: off
+    light.sengled_z01_a19nae26_6c170303_level_light_color_on_off:
+      state: off
+
+- name: Bedroom Daylight
+  entities:
+    group.bedroom_lights:
+      state: on
+      brightness_pct: 60
+      kelvin: 5000
+
+- name: Bedroom Warm Light
+  entities:
+    group.bedroom_lights:
+      state: on
+      brightness_pct: 60
+      kelvin: 2700
+
+- name: Bedroom Closet Daylight
+  entities:
+    light.sengled_z01_a19nae26_6c170303_level_light_color_on_off:
+      state: on
+      brightness_pct: 100
+      kelvin: 5000
+
+- name: Bedroom Closet Warm Light
+  entities:
+    light.sengled_z01_a19nae26_6c170303_level_light_color_on_off:
+      state: on
+      brightness_pct: 100
+      kelvin: 2700
+
+- name: Bedroom Closet No Light
+  entities:
+    light.sengled_z01_a19nae26_6c170303_level_light_color_on_off:
+      state: off

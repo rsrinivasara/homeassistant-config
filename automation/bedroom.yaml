@@ -1,0 +1,79 @@
+# Bedroom Lights
+- alias: Turn on bedroom lights on motion
+  trigger:
+    platform: state
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_915c5301_ias_zone
+    to: 'on'
+  condition:
+    - condition: time
+      after: '16:00:00'
+      before: '21:00:00'
+    - condition: state
+      entity_id: light.the_home_depot_ecosmart_zbt_a19_cct_bulb_960debfe_level_light_color_on_off
+      state: 'off'
+  action:
+    service: scene.turn_on
+    entity_id: scene.bedroom_night_light
+
+# Bedroom Closet Light
+- alias: Turn on bedroom closet light
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bedroom_closet_door
+    to: 'on'
+  action: 
+    service: scene.turn_on
+    entity_id: scene.bedroom_closet_daylight
+
+- alias: Turn off bedroom closet light
+  trigger:
+    platform: state
+    entity_id: binary_sensor.bedroom_closet_door
+    to: 'off'
+  action: 
+    service: scene.turn_on
+    entity_id: scene.bedroom_closet_no_light
+
+# Master Bath Light
+- alias: Turn on master bath lights
+  trigger:
+    platform: state
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_af5c5301_occupancy
+    to: 'on'
+  action:
+    service: switch.turn_on
+    data:
+      entity_id: switch.jasco_products_14291_in_wall_smart_switch_switch
+
+- alias: Turn off master bath lights
+  trigger:
+    platform: state
+    entity_id: binary_sensor.lumi_lumi_sensor_motion_af5c5301_occupancy
+    to: 'off'
+  action:
+    service: switch.turn_off
+    data:
+      entity_id: switch.jasco_products_14291_in_wall_smart_switch_switch
+
+
+# - alias: Turn on bedroom lights
+#   trigger:
+#   - event_data:
+#       command: 'on'
+#       device_ieee: "cc:cc:cc:ff:fe:e5:19:db"
+#     event_type: zha_event
+#     platform: event
+#   action: 
+#     service: scene.turn_on
+#     entity_id: scene.bedroom_night_light
+
+# - alias: Turn off bedroom lights
+#   trigger:
+#   - event_data:
+#       command: 'off'
+#       device_ieee: "cc:cc:cc:ff:fe:e5:19:db"
+#     event_type: zha_event
+#     platform: event
+#   action: 
+#     service: scene.turn_on
+#     entity_id: scene.bedroom_sleeping

@@ -1,0 +1,40 @@
+homeassistant:
+  latitude: !secret homeassistant_latitude
+  longitude: !secret homeassistant_longitude
+  elevation: !secret homeassistant_elevation
+  unit_system: imperial
+  time_zone: America/New_York 
+  customize: !include_dir_merge_named customize
+
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+    base_url: !secret http_base_url
+
+cover:
+ - platform: myq
+   username: !secret myq_username
+   password: !secret myq_password
+
+# ring:
+#   username: !secret ring_username
+#   password: !secret ring_password
+
+# binary_sensor:
+#   - platform: ring
+
+zwave:
+  usb_path: /dev/ttyUSB0
+  network_key: "0x4D, 0x1B, 0x86, 0xF1, 0x51, 0x5E, 0x35, 0xE6, 0x10, 0x53, 0xF7, 0xDF, 0x07, 0x30, 0x46, 0xEA"
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+group: !include_dir_merge_named group
+automation: !include_dir_merge_list automation
+scene: !include_dir_merge_list scene
+#script: !include scripts.yaml

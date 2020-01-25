@@ -1,0 +1,32 @@
+Upstairs Hallway Lights:
+  entities:
+    - light.sengled_z01_a19nae26_47230303_level_light_color_on_off
+    - light.sengled_z01_a19nae26_461f0303_level_light_color_on_off
+
+Bedroom Lights:
+  entities:
+    - light.the_home_depot_ecosmart_zbt_a19_cct_bulb_960debfe_level_light_color_on_off
+    - light.the_home_depot_ecosmart_zbt_a19_cct_bulb_c832dffe_level_light_color_on_off
+
+Under Cabinet Lights:
+  entities:
+    - light.ikea_of_sweden_tradfri_transformer_30w_1edd16fe_level_on_off
+    - light.ikea_of_sweden_tradfri_transformer_10w_fe9735fe_level_on_off
+    - light.ikea_of_sweden_tradfri_driver_30w_89db6efe_level_on_off
+
+Kitchen Sink Lights:
+  entities:
+    - light.osram_lightify_rt_rgbw_951da500_level_light_color_on_off
+    - light.osram_lightify_rt_rgbw_52eda800_level_light_color_on_off
+    - light.osram_lightify_rt_rgbw_73bea400_level_light_color_on_off
+    - light.osram_lightify_rt_rgbw_1eeca800_level_light_color_on_off
+
+Kitchen Pathway Lights:
+  entities:
+    - light.osram_lightify_rt_rgbw_e7bea400_level_light_color_on_off
+    - light.osram_lightify_rt_rgbw_15bfa400_level_light_color_on_off
+    - light.osram_lightify_rt_rgbw_0aeda800_level_light_color_on_off
+
+Kitchen Pendant Light:
+  entities:
+    - light.the_home_depot_ecosmart_zbt_a19_cct_bulb_c1cbe1fe_level_light_color_on_off

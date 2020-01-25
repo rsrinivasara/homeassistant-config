@@ -1,0 +1,68 @@
+light.the_home_depot_ecosmart_zbt_a19_cct_bulb_960debfe_level_light_color_on_off:
+  friendly_name: 'Bedroom Light - 1'
+
+light.the_home_depot_ecosmart_zbt_a19_cct_bulb_c832dffe_level_light_color_on_off:
+  friendly_name: 'Bedroom Light - 2'
+
+light.sengled_z01_a19nae26_6c170303_level_light_color_on_off:
+  friendly_name: 'Bedroom Closet Light'
+
+light.ikea_of_sweden_tradfri_transformer_30w_1edd16fe_level_on_off:
+  friendly_name: 'Under Cabinet Lights - 1'  
+
+light.ikea_of_sweden_tradfri_transformer_10w_fe9735fe_level_on_off:
+  friendly_name: 'Under Cabinet Lights - 2'  
+
+light.ikea_of_sweden_tradfri_driver_30w_89db6efe_level_on_off:
+  friendly_name: 'Under Cabinet Lights - 3'  
+
+light.sengled_z01_a19nae26_47230303_level_light_color_on_off:
+  friendly_name: 'Hallway Light - 1'  
+
+light.sengled_z01_a19nae26_461f0303_level_light_color_on_off:
+  friendly_name: 'Hallway Light - 2'  
+
+light.linear_nortek_security_control_llc_wd500z_1_wall_dimmer_switch_level:
+  friendly_name: 'Family Room Light'
+
+light.jasco_products_12724_3_way_dimmer_switch_level:
+  friendly_name: 'Living Room Light - 1'
+
+light.jasco_products_12724_3_way_dimmer_switch_level_2:
+  friendly_name: 'Living Room Light - 2'
+
+light.jasco_products_12724_3_way_dimmer_switch_level_3:
+  friendly_name: 'Living Room Light - 3'
+
+switch.jasco_products_12722_on_off_relay_switch_switch:
+  friendly_name: 'Porch Light'
+
+switch.jasco_products_12722_on_off_relay_switch_switch_2:
+  friendly_name: 'Mudroom Light'
+
+switch.jasco_products_14291_in_wall_smart_switch_switch:
+  friendly_name: 'Master Bath Light'
+
+light.osram_lightify_rt_rgbw_951da500_level_light_color_on_off:
+  friendly_name: 'Kitchen Light 1'
+
+light.osram_lightify_rt_rgbw_52eda800_level_light_color_on_off:
+  friendly_name: 'Kitchen Light 2'
+
+light.osram_lightify_rt_rgbw_73bea400_level_light_color_on_off:
+  friendly_name: 'Kitchen Light 3'
+
+light.osram_lightify_rt_rgbw_1eeca800_level_light_color_on_off:
+  friendly_name: 'Kitchen Light 4'
+
+light.osram_lightify_rt_rgbw_e7bea400_level_light_color_on_off:
+  friendly_name: 'Kitchen Light 5'
+
+light.osram_lightify_rt_rgbw_15bfa400_level_light_color_on_off:
+  friendly_name: 'Kitchen Light 6'
+
+light.osram_lightify_rt_rgbw_0aeda800_level_light_color_on_off:
+  friendly_name: 'Kitchen Light 7'
+
+light.the_home_depot_ecosmart_zbt_a19_cct_bulb_c1cbe1fe_level_light_color_on_off:
+  friendly_name: 'Kitchen Pendant Light'
