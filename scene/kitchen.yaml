@@ -1,0 +1,21 @@
+- name: Kitchen Daylight
+  entities:
+    group.kitchen_pathway_lights:
+      state: on
+      brightness_pct: 100
+      kelvin: 5000
+    group.kitchen_sink_lights:
+      state: on
+      brightness_pct: 100
+      kelvin: 5000
+
+- name: Kitchen Warm Light
+  entities:
+    group.kitchen_pathway_lights:
+      state: on
+      brightness_pct: 100 
+      kelvin: 3000
+    group.kitchen_sink_lights:
+      state: on
+      brightness_pct: 100 
+      kelvin: 3000

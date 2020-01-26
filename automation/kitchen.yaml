@@ -1,0 +1,69 @@
+- alias: Turn on Kitchen Lights
+  trigger:
+  - event_data:
+      command: 'on'
+      device_ieee: "cc:cc:cc:ff:fe:e5:19:db"
+    event_type: zha_event
+    platform: event
+  - event_data:
+      command: 'off'
+      device_ieee: "cc:cc:cc:ff:fe:e5:19:db"
+    event_type: zha_event
+    platform: event
+  - event_data:
+      command: 'on'
+      device_ieee: "cc:cc:cc:ff:fe:e5:17:f1"
+    event_type: zha_event
+    platform: event
+  - event_data:
+      command: 'off'
+      device_ieee: "cc:cc:cc:ff:fe:e5:17:f1"
+    event_type: zha_event
+    platform: event
+  action: 
+    service: light.toggle
+    entity_id: 
+      - group.kitchen_sink_lights
+      - group.kitchen_pathway_lights
+
+- alias: Kitchen lights brightness
+  trigger:
+  - event_data:
+      command: 'move_to_level'
+      device_ieee: "cc:cc:cc:ff:fe:e5:19:db"
+    event_type: zha_event
+    platform: event
+  - event_data:
+      command: 'move_to_level'
+      device_ieee: "cc:cc:cc:ff:fe:e5:17:f1"
+    event_type: zha_event
+    platform: event
+  action: 
+    service: light.turn_on
+    entity_id: 
+      - group.kitchen_sink_lights
+      - group.kitchen_pathway_lights
+    data_template:
+      brightness: >
+        {{ trigger.event.data.args[0]|int }}
+
+- alias: Kitchen light temperature
+  trigger:
+  - event_data:
+      command: 'move_to_color_temp'
+      device_ieee: "cc:cc:cc:ff:fe:e5:19:db"
+    event_type: zha_event
+    platform: event
+  - event_data:
+      command: 'move_to_color_temp'
+      device_ieee: "cc:cc:cc:ff:fe:e5:17:f1"
+    event_type: zha_event
+    platform: event
+  action: 
+    service: light.turn_on
+    entity_id: 
+      - group.kitchen_sink_lights
+      - group.kitchen_pathway_lights
+    data_template:
+      color_temp: >
+        {{ trigger.event.data.args[0]|int }}
