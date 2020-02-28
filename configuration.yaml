@@ -38,3 +38,15 @@ group: !include_dir_merge_named group
 automation: !include_dir_merge_list automation
 scene: !include_dir_merge_list scene
 #script: !include scripts.yaml
+
+# logger:
+#   default: error
+#   logs:
+#     hacs: debug
+#     limitlessled: info
+#     asyncio: info
+#     homeassistant.components.zha: debug
+#     zigpy: debug
+#     bellows: info
+#     zigpy_deconz: debug
+#     zigpy_zigate: info

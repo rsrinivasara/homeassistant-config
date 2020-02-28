@@ -8,3 +8,4 @@ options.xml
 zigbee.db
 zw*.xml
 secrets.yaml
+custom_components
