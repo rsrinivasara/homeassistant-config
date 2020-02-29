@@ -9,3 +9,4 @@ zigbee.db
 zw*.xml
 secrets.yaml
 .vscode
+*.pyc
