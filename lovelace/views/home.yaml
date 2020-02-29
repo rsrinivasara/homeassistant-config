@@ -1,0 +1,67 @@
+---
+path: ''
+title: Home
+cards:
+  - cards:
+      - entities:
+          - lock.august_asl_03_smart_lock_locked
+          - lock.schlage_allegion_be469zp_connect_smart_deadbolt_locked
+          - cover.garage_door_opener
+        type: glance
+    type: horizontal-stack
+  - entities:
+      - entity: group.kitchen_sink_lights
+      - entity: group.kitchen_pathway_lights
+      - entity: group.under_cabinet_lights
+      - entity: group.kitchen_pendant_light
+      - entity: scene.kitchen_warm_light
+      - entity: scene.kitchen_daylight
+    title: Kitchen
+    type: entities
+  - entities:
+      - entity: light.jasco_products_12724_3_way_dimmer_switch_level
+      - entity: light.jasco_products_12724_3_way_dimmer_switch_level_2
+      - entity: light.jasco_products_12724_3_way_dimmer_switch_level_3
+    title: Living Room
+    type: entities
+  - entities:
+      - entity: light.sengled_z01_a19nae26_47230303_level_light_color_on_off
+      - entity: light.sengled_z01_a19nae26_461f0303_level_light_color_on_off
+      - entity: binary_sensor.lumi_lumi_sensor_motion_a9fd1901_ias_zone
+    title: 'Upstairs Hallway '
+    type: entities
+  - entities:
+      - entity: group.bedroom_lights
+      - entity: light.sengled_z01_a19nae26_6c170303_level_light_color_on_off
+      - entity: switch.jasco_products_14291_in_wall_smart_switch_switch
+      - entity: binary_sensor.bedroom_closet_door
+      - entity: sensor.visonic_mct_340_e_64323e0b_temperature
+      - entity: binary_sensor.lumi_lumi_sensor_magnet_42a94901_on_off
+      - entity: scene.bedroom_warm_light
+      - entity: scene.bedroom_daylight
+      - entity: scene.bedroom_night_light
+      - entity: scene.bedroom_sleeping
+      - entity: binary_sensor.lumi_lumi_sensor_motion_915c5301_ias_zone
+      - entity: binary_sensor.lumi_lumi_sensor_motion_af5c5301_occupancy
+    title: Bedroom
+    type: entities
+  - entities:
+      - entity: switch.jasco_products_12722_on_off_relay_switch_switch
+      - entity: binary_sensor.lumi_lumi_sensor_magnet_20e21601_on_off
+    title: Foyer
+    type: entities
+  - entities:
+      - entity: binary_sensor.lumi_lumi_sensor_magnet_56465801_on_off
+    title: Play Room
+    type: entities
+  - entities:
+      - entity: switch.jasco_products_12722_on_off_relay_switch_switch_2
+      - entity: binary_sensor.lumi_lumi_sensor_motion_32ad2d01_ias_zone
+    title: Mudroom
+    type: entities
+  - entities:
+      - entity: >-
+          light.linear_nortek_security_control_llc_wd500z_1_wall_dimmer_switch_level
+      - entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
+    title: Family Room
+    type: entities

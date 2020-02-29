@@ -1,0 +1,4 @@
+title: Home Control Panel
+views:
+  - !include lovelace/views/home.yaml
+  - !include lovelace/views/battery.yaml
