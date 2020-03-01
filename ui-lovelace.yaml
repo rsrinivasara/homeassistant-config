@@ -1,4 +1,5 @@
 title: Home Control Panel
+resources: !include_dir_list lovelace/resources
 views:
   - !include lovelace/views/home.yaml
   - !include lovelace/views/battery.yaml
