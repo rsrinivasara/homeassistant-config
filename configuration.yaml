@@ -7,19 +7,12 @@ homeassistant:
   customize: !include_dir_merge_named customize
   packages: !include_dir_named integrations
 
-
-
 # Configure a default setup of Home Assistant (frontend, api, etc)
 default_config:
 
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
     base_url: !secret http_base_url
-
-cover:
- - platform: myq
-   username: !secret myq_username
-   password: !secret myq_password
 
 zwave:
   usb_path: /dev/ttyUSB0
@@ -30,25 +23,6 @@ tts:
   - platform: google_translate
 
 group: !include_dir_merge_named group
-automation: !include_dir_merge_list automation
+# automation: !include_dir_merge_list automation
 scene: !include_dir_merge_list scene
 #script: !include scripts.yaml
-
-influxdb:
-  host: 192.168.1.132
-  port: 8086
-
-lovelace:
-  mode: yaml
-
-# logger:
-#   default: error
-#   logs:
-#     hacs: debug
-#     limitlessled: info
-#     asyncio: info
-#     homeassistant.components.zha: debug
-#     zigpy: debug
-#     bellows: info
-#     zigpy_deconz: debug
-#     zigpy_zigate: info

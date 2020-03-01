@@ -1,0 +1,11 @@
+---
+# The myq cover platform lets you control MyQ-Enabled garage 
+# doors through Home Assistant. Device names in Home Assistant 
+# are generated based on the names defined in your MyQ Device 
+# mobile app.
+
+# https://www.home-assistant.io/integrations/myq/
+cover:
+ - platform: myq
+   username: !secret myq_username
+   password: !secret myq_password
