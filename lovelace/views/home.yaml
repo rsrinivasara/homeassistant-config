@@ -66,5 +66,6 @@ cards:
     title: Family Room
     type: entities
   - type: custom:weather-card
+    title: Weather
     entity: weather.dark_sky
     icons: "/local/community/weather-card/icons/"
