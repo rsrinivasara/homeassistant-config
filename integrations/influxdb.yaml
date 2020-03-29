@@ -7,26 +7,26 @@
 # https://github.com/hassio-addons/addon-grafana
 # https://www.home-assistant.io/integrations/influxdb/
 #
-influxdb:
-  host: 192.168.1.132
-  port: 8086
+# influxdb:
+#   host: 192.168.1.132
+#   port: 8086
 
   # The database name to store all the metrics in.
-  database: home_assistant
+  # database: home_assistant
 
   # Authentication credentials.
   # username: !secret influxdb_username
   # password: !secret influxdb_password
 
   # Max number of retries in case of a failure.
-  max_retries: 3
+  # max_retries: 3
 
   # The list of attribute names which should be reported as tags
   # and not fields to InfluxDB.
   # I've added `device_class` tag and the Z-Wave `node_id`.
-  tags_attributes:
-    - "device_class"
-    - "node_id"
+  # tags_attributes:
+  #   - "device_class"
+  #   - "node_id"
 
   # I like to specify (whitelist) each thing I'd like to put
   # into InfluxDB, to keep the database as clean as possible.
