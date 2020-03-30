@@ -22,6 +22,12 @@ cards:
       - entity: light.jasco_products_12724_3_way_dimmer_switch_level
       - entity: light.jasco_products_12724_3_way_dimmer_switch_level_2
       - entity: light.jasco_products_12724_3_way_dimmer_switch_level_3
+      - entity: switch.plug1_switch1
+      - entity: switch.plug1_switch2
+      - entity: switch.plug1_switch3
+      - entity: sensor.plug1_energy_today
+      - entity: sensor.plug1_energy_total
+      - entity: sensor.plug1_energy_power
     title: Living Room
     type: entities
   - entities:
@@ -56,7 +62,7 @@ cards:
     type: entities
   - entities:
       - entity: switch.jasco_products_12722_on_off_relay_switch_switch_2
-      - entity: binary_sensor.lumi_lumi_sensor_motion_32ad2d01_ias_zone
+      # - entity: binary_sensor.lumi_lumi_sensor_motion_32ad2d01_ias_zone
     title: Mudroom
     type: entities
   - entities:
