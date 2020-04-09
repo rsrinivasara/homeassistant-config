@@ -85,14 +85,14 @@ class RunningState(enum.IntFlag):
 
 
 SEQ_OF_OPERATION = {
-    0x00: [HVAC_MODE_OFF, HVAC_MODE_COOL],  # cooling only
-    0x01: [HVAC_MODE_OFF, HVAC_MODE_COOL],  # cooling with reheat
-    0x02: [HVAC_MODE_OFF, HVAC_MODE_HEAT],  # heating only
-    0x03: [HVAC_MODE_OFF, HVAC_MODE_HEAT],  # heating with reheat
+    0x00: (HVAC_MODE_OFF, HVAC_MODE_COOL),  # cooling only
+    0x01: (HVAC_MODE_OFF, HVAC_MODE_COOL),  # cooling with reheat
+    0x02: (HVAC_MODE_OFF, HVAC_MODE_HEAT),  # heating only
+    0x03: (HVAC_MODE_OFF, HVAC_MODE_HEAT),  # heating with reheat
     # cooling and heating 4-pipes
-    0x04: [HVAC_MODE_OFF, HVAC_MODE_HEAT_COOL, HVAC_MODE_COOL, HVAC_MODE_HEAT],
+    0x04: (HVAC_MODE_OFF, HVAC_MODE_HEAT_COOL, HVAC_MODE_COOL, HVAC_MODE_HEAT),
     # cooling and heating 4-pipes
-    0x05: [HVAC_MODE_OFF, HVAC_MODE_HEAT_COOL, HVAC_MODE_COOL, HVAC_MODE_HEAT],
+    0x05: (HVAC_MODE_OFF, HVAC_MODE_HEAT_COOL, HVAC_MODE_COOL, HVAC_MODE_HEAT),
 }
 
 
@@ -139,7 +139,7 @@ _LOGGER = logging.getLogger(__name__)
 
 async def async_setup_entry(hass, config_entry, async_add_entities):
     """Set up the Zigbee Home Automation sensor from config entry."""
-    entities_to_create = hass.data[DATA_ZHA][DOMAIN] = []
+    entities_to_create = hass.data[DATA_ZHA][DOMAIN]
     unsub = async_dispatcher_connect(
         hass,
         SIGNAL_ADD_ENTITIES,
@@ -229,8 +229,8 @@ class Thermostat(ZhaEntity, ClimateDevice):
             self._thrm.pi_heating_demand is None
             and self._thrm.pi_cooling_demand is None
         ):
-            #self.info("Running mode: %s", self._thrm.running_mode)
-            #self.info("Running state: %s", self._thrm.running_state)
+            self.info("Running mode: %s", self._thrm.running_mode)
+            self.info("Running state: %s", self._thrm.running_state)
             rs = self._thrm.running_state
             if rs is None:
                 return None
@@ -266,9 +266,9 @@ class Thermostat(ZhaEntity, ClimateDevice):
     @property
     def hvac_modes(self) -> List[str]:
         """Return the list of available HVAC operation modes."""
-        modes = SEQ_OF_OPERATION.get(self._thrm.ctrl_seqe_of_oper, [HVAC_MODE_OFF])
+        modes = SEQ_OF_OPERATION.get(self._thrm.ctrl_seqe_of_oper, (HVAC_MODE_OFF))
         if self.fan is not None:
-            modes.append(HVAC_MODE_FAN_ONLY)
+            return (*modes, HVAC_MODE_FAN_ONLY)
         return modes
 
     @property
