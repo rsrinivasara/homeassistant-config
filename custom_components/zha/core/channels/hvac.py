@@ -6,7 +6,7 @@ https://home-assistant.io/integrations/zha/
 """
 from collections import namedtuple
 import logging
-from typing import Optional
+from typing import Any, Optional
 
 import zigpy.exceptions
 import zigpy.zcl.clusters.hvac as hvac
@@ -14,7 +14,7 @@ from zigpy.zcl.foundation import Status
 
 from homeassistant.core import callback
 
-from .. import registries
+from .. import registries, typing as zha_typing
 from ..const import (
     REPORT_CONFIG_MAX_INT,
     REPORT_CONFIG_MIN_INT,
@@ -47,6 +47,18 @@ class FanChannel(ZigbeeChannel):
 
     REPORT_CONFIG = ({"attr": "fan_mode", "config": REPORT_CONFIG_OP},)
 
+    def __init__(
+        self, cluster: zha_typing.ZigpyClusterType, ch_pool: zha_typing.ChannelPoolType
+    ):
+        """Init Thermostat channel instance."""
+        super().__init__(cluster, ch_pool)
+        self._fan_mode = None
+
+    @property
+    def fan_mode(self) -> Optional[int]:
+        """Return current fan mode."""
+        return self._fan_mode
+
     async def async_set_speed(self, value) -> None:
         """Set the speed of the fan."""
 
@@ -56,30 +68,27 @@ class FanChannel(ZigbeeChannel):
             self.error("Could not set speed: %s", ex)
             return
 
-    async def async_update(self):
+    async def async_update(self) -> None:
         """Retrieve latest state."""
         result = await self.get_attribute_value("fan_mode", from_cache=True)
         if result is not None:
+            self._fan_mode = result
             self.async_send_signal(
                 f"{self.unique_id}_{SIGNAL_ATTR_UPDATED}", 0, "fan_mode", result
             )
 
     @callback
-    def attribute_updated(self, attrid, value):
+    def attribute_updated(self, attrid: int, value: Any) -> None:
         """Handle attribute update from fan cluster."""
         attr_name = self.cluster.attributes.get(attrid, [attrid])[0]
         self.debug(
             "Attribute report '%s'[%s] = %s", self.cluster.name, attr_name, value
         )
         if attrid == self._value_attribute:
+            self._fan_mode = value
             self.async_send_signal(
                 f"{self.unique_id}_{SIGNAL_ATTR_UPDATED}", attrid, attr_name, value
             )
-
-    async def async_initialize(self, from_cache):
-        """Initialize channel."""
-        await self.get_attribute_value(self._value_attribute, from_cache=from_cache)
-        await super().async_initialize(from_cache)
 
 
 @registries.ZIGBEE_CHANNEL_REGISTRY.register(hvac.Pump.cluster_id)
@@ -94,9 +103,11 @@ class Pump(ZigbeeChannel):
 class ThermostatChannel(ZigbeeChannel):
     """Thermostat channel."""
 
-    def __init__(self, cluster, device):
+    def __init__(
+        self, cluster: zha_typing.ZigpyClusterType, ch_pool: zha_typing.ChannelPoolType
+    ) -> None:
         """Init Thermostat channel instance."""
-        super().__init__(cluster, device)
+        super().__init__(cluster, ch_pool)
         self._init_attrs = {
             "abs_min_heat_setpoint_limit": True,
             "abs_max_heat_setpoint_limit": True,
@@ -157,7 +168,7 @@ class ThermostatChannel(ZigbeeChannel):
 
     @property
     def abs_max_cool_setpoint_limit(self) -> int:
-        """Absolute maximim cooling setpoint."""
+        """Absolute maximum cooling setpoint."""
         return self._abs_max_cool_setpoint_limit
 
     @property

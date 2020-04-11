@@ -9,7 +9,7 @@ import enum
 import functools
 import logging
 import time
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from homeassistant.components.climate import ClimateDevice
 from homeassistant.components.climate.const import (
@@ -22,7 +22,7 @@ from homeassistant.components.climate.const import (
     CURRENT_HVAC_IDLE,
     CURRENT_HVAC_OFF,
     DOMAIN,
-    FAN_OFF,
+    FAN_AUTO,
     FAN_ON,
     HVAC_MODE_COOL,
     HVAC_MODE_DRY,
@@ -70,6 +70,14 @@ ATTR_UNOCCP_COOL_SETPT = "unoccupied_cooling_setpoint"
 
 STRICT_MATCH = functools.partial(ZHA_ENTITIES.strict_match, DOMAIN)
 RUNNING_MODE = {0x00: HVAC_MODE_OFF, 0x03: HVAC_MODE_COOL, 0x04: HVAC_MODE_HEAT}
+
+
+class ThermostatFanMode(enum.IntEnum):
+    """Fan channel enum for thermostat Fans."""
+
+    OFF = 0x00
+    ON = 0x04
+    AUTO = 0x05
 
 
 class RunningState(enum.IntFlag):
@@ -215,12 +223,18 @@ class Thermostat(ZhaEntity, ClimateDevice):
     @property
     def fan_mode(self) -> Optional[str]:
         """Return current FAN mode."""
-        return None
+        if self._thrm.running_state & (
+            RunningState.FAN | RunningState.FAN_STAGE_2 | RunningState.FAN_STAGE_3
+        ):
+            return FAN_ON
+        return FAN_AUTO
 
     @property
     def fan_modes(self) -> Optional[List[str]]:
         """Return supported FAN modes."""
-        return [FAN_OFF, FAN_ON]
+        if not self._fan:
+            return None
+        return [FAN_AUTO, FAN_ON]
 
     @property
     def hvac_action(self) -> Optional[str]:
@@ -264,12 +278,9 @@ class Thermostat(ZhaEntity, ClimateDevice):
         return mode
 
     @property
-    def hvac_modes(self) -> List[str]:
+    def hvac_modes(self) -> Tuple[str, ...]:
         """Return the list of available HVAC operation modes."""
-        modes = SEQ_OF_OPERATION.get(self._thrm.ctrl_seqe_of_oper, (HVAC_MODE_OFF))
-        if self.fan is not None:
-            return (*modes, HVAC_MODE_FAN_ONLY)
-        return modes
+        return SEQ_OF_OPERATION.get(self._thrm.ctrl_seqe_of_oper, (HVAC_MODE_OFF,))
 
     @property
     def is_aux_heat(self) -> Optional[bool]:
@@ -400,6 +411,23 @@ class Thermostat(ZhaEntity, ClimateDevice):
                 self._preset = None
 
         self.async_schedule_update_ha_state()
+
+    async def async_set_fan_mode(self, fan_mode: str) -> None:
+        """Set fan mode."""
+        if self.fan_modes is None:
+            self.warning("Fan is not supported")
+            return
+
+        if fan_mode not in self.fan_modes:
+            self.warning("Unsupported '%s' fan mode", fan_mode)
+            return
+
+        if fan_mode == FAN_ON:
+            mode = ThermostatFanMode.ON
+        else:
+            mode = ThermostatFanMode.AUTO
+
+        await self._fan.async_set_speed(mode)
 
     async def async_set_hvac_mode(self, hvac_mode: str) -> None:
         """Set new target operation mode."""

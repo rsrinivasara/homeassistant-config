@@ -83,7 +83,17 @@ CLUSTER_COMMANDS_SERVER = "server_commands"
 CLUSTER_TYPE_IN = "in"
 CLUSTER_TYPE_OUT = "out"
 
-COMPONENTS = (BINARY_SENSOR, CLIMATE, COVER, DEVICE_TRACKER, FAN, LIGHT, LOCK, SENSOR, SWITCH)
+COMPONENTS = (
+    BINARY_SENSOR,
+    CLIMATE,
+    COVER,
+    DEVICE_TRACKER,
+    FAN,
+    LIGHT,
+    LOCK,
+    SENSOR,
+    SWITCH,
+)
 
 CONF_BAUDRATE = "baudrate"
 CONF_DATABASE = "database_path"
@@ -208,6 +218,9 @@ SIGNAL_MOVE_LEVEL = "move_level"
 SIGNAL_REMOVE = "remove"
 SIGNAL_SET_LEVEL = "set_level"
 SIGNAL_STATE_ATTR = "update_state_attribute"
+SIGNAL_UPDATE_DEVICE = "{}_zha_update_device"
+SIGNAL_REMOVE_GROUP = "remove_group"
+SIGNAL_GROUP_MEMBERSHIP_CHANGE = "group_membership_change"
 
 UNKNOWN = "unknown"
 UNKNOWN_MANUFACTURER = "unk_manufacturer"
