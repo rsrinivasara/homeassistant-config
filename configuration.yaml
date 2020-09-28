@@ -16,6 +16,7 @@ http:
 
 zha:
   usb_path: /dev/ttyUSB1
+  baudrate: 115200
 
 zwave:
   usb_path: /dev/ttyUSB0

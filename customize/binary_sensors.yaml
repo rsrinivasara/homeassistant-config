@@ -18,6 +18,7 @@ binary_sensor.lumi_lumi_sensor_magnet_56465801_on_off:
 # Motion Sensors
 binary_sensor.lumi_lumi_sensor_motion_af5c5301_occupancy:
   friendly_name: 'Master Bath Motion Sensor'
+  device_class: motion
 binary_sensor.lumi_lumi_sensor_motion_af5c5301_ias_zone:
   friendly_name: 'Master Bath Motion Sensor'
 sensor.lumi_lumi_sensor_motion_af5c5301_power:
@@ -33,6 +34,7 @@ sensor.lumi_lumi_sensor_motion_a9fd1901_power:
 binary_sensor.lumi_lumi_sensor_motion_915c5301_occupancy:
   friendly_name: 'Bedroom Motion Sensor'
 binary_sensor.lumi_lumi_sensor_motion_915c5301_ias_zone:
+  device_class: motion
   friendly_name: 'Bedroom Motion Sensor'
 sensor.lumi_lumi_sensor_motion_915c5301_power:
   friendly_name: 'Bedroom Motion Sensor'
