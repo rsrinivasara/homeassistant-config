@@ -16,8 +16,9 @@ cards:
         type: glance
     type: horizontal-stack
   - entities:
-      - entity: group.kitchen_sink_lights
-      - entity: group.kitchen_pathway_lights
+      # - entity: group.kitchen_sink_lights
+      # - entity: group.kitchen_pathway_lights
+      - entity: group.kitchen_lights
       - entity: group.under_cabinet_lights
       - entity: group.kitchen_pendant_light
       - entity: scene.kitchen_warm_light
@@ -62,6 +63,7 @@ cards:
       - entity: switch.jasco_products_12722_on_off_relay_switch_switch
       - entity: binary_sensor.lumi_lumi_sensor_magnet_20e21601_on_off
       - entity: binary_sensor.first_alert_smoke_alarm 
+      - entity: binary_sensor.first_alert_co_alarm
     title: Foyer
     type: entities
   - entities:

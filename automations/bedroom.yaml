@@ -62,46 +62,46 @@
       entity_id: switch.jasco_products_14291_in_wall_smart_switch_switch
 
 # Bedroom Light Remote Actions
-- alias: Turn on bedroom lights
-  trigger:
-  - event_data:
-      command: 'on'
-      device_ieee: "00:0b:57:ff:fe:e1:c0:6e"
-    event_type: zha_event
-    platform: event
-  - event_data:
-      command: 'off'
-      device_ieee: "00:0b:57:ff:fe:e1:c0:6e"
-    event_type: zha_event
-    platform: event
-  action:
-    service: light.toggle
-    entity_id: group.bedroom_lights
+# - alias: Turn on bedroom lights
+#   trigger:
+#   - event_data:
+#       command: 'on'
+#       device_ieee: "00:0b:57:ff:fe:e1:c0:6e"
+#     event_type: zha_event
+#     platform: event
+#   - event_data:
+#       command: 'off'
+#       device_ieee: "00:0b:57:ff:fe:e1:c0:6e"
+#     event_type: zha_event
+#     platform: event
+#   action:
+#     service: light.toggle
+#     entity_id: group.bedroom_lights
 
-- alias: Bedroom light brightness
-  trigger:
-  - event_data:
-      command: 'move_to_level'
-      device_ieee: "00:0b:57:ff:fe:e1:c0:6e"
-    event_type: zha_event
-    platform: event
-  action:
-    service: light.turn_on
-    entity_id: group.bedroom_lights
-    data_template:
-      brightness: >
-        {{ trigger.event.data.args[0]|int }}
+# - alias: Bedroom light brightness
+#   trigger:
+#   - event_data:
+#       command: 'move_to_level'
+#       device_ieee: "00:0b:57:ff:fe:e1:c0:6e"
+#     event_type: zha_event
+#     platform: event
+#   action:
+#     service: light.turn_on
+#     entity_id: group.bedroom_lights
+#     data_template:
+#       brightness: >
+#         {{ trigger.event.data.args[0]|int }}
 
-- alias: Bedroom light color temperature
-  trigger:
-  - event_data:
-      command: 'move_to_color_temp'
-      device_ieee: "00:0b:57:ff:fe:e1:c0:6e"
-    event_type: zha_event
-    platform: event
-  action:
-    service: light.turn_on
-    entity_id: group.bedroom_lights
-    data_template:
-      color_temp: >
-        {{ trigger.event.data.args[0]|int }}
+# - alias: Bedroom light color temperature
+#   trigger:
+#   - event_data:
+#       command: 'move_to_color_temp'
+#       device_ieee: "00:0b:57:ff:fe:e1:c0:6e"
+#     event_type: zha_event
+#     platform: event
+#   action:
+#     service: light.turn_on
+#     entity_id: group.bedroom_lights
+#     data_template:
+#       color_temp: >
+#         {{ trigger.event.data.args[0]|int }}

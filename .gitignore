@@ -10,3 +10,8 @@ zw*.xml
 secrets.yaml
 .vscode
 *.pyc
+known_devices.yaml
+zigbee.db*
+home-assistant_v2.db-shm
+home-assistant_v2.db-wal
+integrations/router.yaml.bad

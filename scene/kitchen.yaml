@@ -4,7 +4,8 @@
       state: on
       brightness_pct: 100
       kelvin: 5000
-    group.kitchen_sink_lights:
+    #group.kitchen_sink_lights:
+    group.kitchen_lights:
       state: on
       brightness_pct: 100
       kelvin: 5000
@@ -15,7 +16,8 @@
       state: on
       brightness_pct: 100 
       kelvin: 3000
-    group.kitchen_sink_lights:
+    #group.kitchen_sink_lights:
+    group.kitchen_lights:
       state: on
       brightness_pct: 100 
       kelvin: 3000
