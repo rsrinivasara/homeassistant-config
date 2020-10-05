@@ -6,6 +6,7 @@ cards:
       - entities:
           - lock.august_asl_03_smart_lock_locked
           - lock.schlage_allegion_be469zp_connect_smart_deadbolt_locked
+          - alarm_control_panel.ring_alarm 
           - cover.garage_door_opener
         type: glance
     type: horizontal-stack
@@ -23,7 +24,6 @@ cards:
       - entity: group.kitchen_pendant_light
       - entity: scene.kitchen_warm_light
       - entity: scene.kitchen_daylight
-      - entity: alarm_control_panel.ring_alarm 
     title: Kitchen
     type: entities
   - entities:
@@ -33,9 +33,6 @@ cards:
       - entity: switch.plug1_switch1
       - entity: switch.plug1_switch2
       - entity: switch.plug1_switch3
-      - entity: sensor.plug1_energy_today
-      - entity: sensor.plug1_energy_total
-      - entity: sensor.plug1_energy_power
     title: Living Room
     type: entities
   - entities:

@@ -1,0 +1,106 @@
+---
+title: Office
+path: office
+type: horizontal-stack
+cards:
+  - type: vertical-stack
+    cards:
+      - type: markdown
+        content: '## Internet Speeds'
+        style: |
+          ha-card {
+            box-shadow: none;
+            --card-background-color: none
+          }
+      - type: horizontal-stack
+        cards:
+          - type: sensor
+            entity: sensor.speedtest_download
+            graph: line
+            name: Down
+          - type: sensor
+            entity: sensor.speedtest_upload
+            graph: line
+            name: Up
+          - type: sensor
+            entity: sensor.speedtest_ping
+      - type: entities
+        show_header_toggle: false
+        title: Pi-Hole
+        entities:
+          - entity: switch.pi_hole
+          - entity: sensor.pi_hole_ads_blocked_today
+          - entity: sensor.pi_hole_ads_percentage_blocked_today
+          - entity: sensor.pi_hole_domains_blocked
+          - entity: sensor.pi_hole_dns_queries_today
+          - entity: sensor.pi_hole_dns_unique_clients
+  - type: vertical-stack
+    cards:
+      - type: entities
+        title: Printer Ink
+        show_header_toggle: false
+        entities:
+          - entity: sensor.dell_color_mfp_e525w
+          - entity: sensor.dell_color_mfp_e525w_black_toner_cartridge
+          - entity: sensor.dell_color_mfp_e525w_cyan_toner_cartridge
+          - entity: sensor.dell_color_mfp_e525w_magenta_toner_cartridge
+          - entity: sensor.dell_color_mfp_e525w_yellow_toner_cartridge
+      - type: entities
+        title: Energy Monitor
+        show_header_toggle: false
+        entities: 
+          - entity: sensor.plug3_status
+          - entity: sensor.plug3_energy_current
+          - entity: sensor.plug3_energy_voltage
+          - entity: sensor.plug3_energy_today
+          - entity: sensor.plug3_energy_total
+
+
+# cards:
+#   - cards:
+#     type: vertical-stack
+#       - type: markdown
+#         content: '## Internet Speeds'
+#         style: |
+#           ha-card {
+#             box-shadow: none;
+#             --card-background-color: none
+#           }
+#       - type: horizontal-stack
+#         cards:
+#           - type: sensor
+#             entity: sensor.speedtest_download
+#             graph: line
+#             name: Down
+#           - type: sensor
+#             entity: sensor.speedtest_upload
+#             graph: line
+#             name: Up
+#           - type: sensor
+#             entity: sensor.speedtest_ping
+#   #   - type: markdown
+  #     content: '## PiHole'
+  #     style: |
+  #       ha-card {
+  #         box-shadow: none;
+  #         --card-background-color: none
+  #       }
+  #   - type: entities
+  #     entities:
+  #       - entity: switch.pi_hole
+  #       - entity: sensor.pi_hole_ads_percentage_blocked_today
+  # - type: markdown
+  #   content: '## Printer Ink'
+  #   style: |
+  #     ha-card {
+  #       box-shadow: none;
+  #       --card-background-color: none
+  #     }
+  # - type: entities
+  #   entities:
+  #     - entity: sensor.dell_color_mfp_e525w
+  #     - entity: sensor.dell_color_mfp_e525w_black_toner_cartridge
+  #     - entity: sensor.dell_color_mfp_e525w_cyan_toner_cartridge
+  #     - entity: sensor.dell_color_mfp_e525w_magenta_toner_cartridge
+  #     - entity: sensor.dell_color_mfp_e525w_yellow_toner_cartridge
+  #   show_header_toggle: false
