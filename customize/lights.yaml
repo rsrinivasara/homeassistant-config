@@ -69,3 +69,6 @@ light.the_home_depot_ecosmart_zbt_a19_cct_bulb_c1cbe1fe_level_light_color_on_off
 
 switch.plug2_switch3:
   friendly_name: 'Star Light'
+
+switch.plug2_switch1:
+  friendly_name: 'Night Light'

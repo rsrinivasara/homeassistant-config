@@ -1,0 +1,32 @@
+---
+path: ''
+title: Upstairs
+cards:
+  - entities:
+      - entity: group.bedroom_lights
+      - entity: light.sengled_z01_a19nae26_6c170303_level_light_color_on_off
+      - entity: switch.jasco_products_14291_in_wall_smart_switch_switch
+      - entity: binary_sensor.bedroom_closet_door
+      - entity: sensor.visonic_mct_340_e_64323e0b_temperature
+      - entity: binary_sensor.lumi_lumi_sensor_magnet_42a94901_on_off
+      - entity: scene.bedroom_warm_light
+      - entity: scene.bedroom_daylight
+      - entity: scene.bedroom_night_light
+      - entity: scene.bedroom_sleeping
+      - entity: binary_sensor.lumi_lumi_sensor_motion_915c5301_ias_zone
+      - entity: binary_sensor.lumi_lumi_sensor_motion_af5c5301_occupancy
+    title: Master Bedroom
+    type: entities
+  - entities:
+      - entity: light.sengled_z01_a19nae26_47230303_level_light_color_on_off
+      - entity: light.sengled_z01_a19nae26_461f0303_level_light_color_on_off
+      - entity: binary_sensor.lumi_lumi_sensor_motion_a9fd1901_ias_zone
+    title: 'Upstairs Hallway '
+    type: entities
+  - entities:
+      - entity: switch.plug2_switch1
+      - entity: switch.plug2_switch2
+      - entity: switch.plug2_switch3
+      - entity: binary_sensor.lumi_lumi_sensor_magnet_56465801_on_off
+    title: Play Room
+    type: entities

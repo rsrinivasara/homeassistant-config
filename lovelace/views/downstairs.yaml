@@ -1,0 +1,64 @@
+---
+path: ''
+title: Downstairs
+cards:
+  - cards:
+      - entities:
+          - lock.august_asl_03_smart_lock_locked
+          - lock.schlage_allegion_be469zp_connect_smart_deadbolt_locked
+          - alarm_control_panel.ring_alarm 
+          - cover.garage_door_opener
+        type: glance
+    type: horizontal-stack
+  - cards:
+      - entities:
+          - person.ramachandren 
+          - person.swathi_sudarshan 
+        type: glance
+    type: horizontal-stack
+  - entities:
+      - entity: group.kitchen_lights
+      - entity: group.under_cabinet_lights
+      - entity: group.kitchen_pendant_light
+      - entity: scene.kitchen_warm_light
+      - entity: scene.kitchen_daylight
+    title: Kitchen
+    type: entities
+  - entities:
+      - entity: light.jasco_products_12724_3_way_dimmer_switch_level
+      - entity: light.jasco_products_12724_3_way_dimmer_switch_level_2
+      - entity: light.jasco_products_12724_3_way_dimmer_switch_level_3
+      - entity: switch.plug1_switch1
+      - entity: switch.plug1_switch2
+      - entity: switch.plug1_switch3
+    title: Living Room
+    type: entities
+  - entities:
+      - entity: switch.jasco_products_12722_on_off_relay_switch_switch
+      - entity: binary_sensor.lumi_lumi_sensor_magnet_20e21601_on_off
+      - entity: binary_sensor.first_alert_smoke_alarm 
+      - entity: binary_sensor.first_alert_co_alarm
+    title: Foyer
+    type: entities
+  - entities:
+      - entity: switch.jasco_products_12722_on_off_relay_switch_switch_2
+      - entity: binary_sensor.sideyard_door_sensor
+      - entity: binary_sensor.garage_door_sensor 
+      # - entity: binary_sensor.lumi_lumi_sensor_motion_32ad2d01_ias_zone
+    title: Mudroom
+    type: entities
+  - type: picture-entity
+    entity: camera.doorbell
+    camera_image: camera.doorbell
+    camera_view: "auto"
+  - entities:
+      - entity: >-
+          light.linear_nortek_security_control_llc_wd500z_1_wall_dimmer_switch_level
+      - entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
+      - entity: binary_sensor.family_room_motion_sensor 
+      - entity: binary_sensor.backyard_door
+    title: Family Room
+    type: entities
+  - type: custom:weather-card
+    title: Weather
+    entity: weather.dark_sky
