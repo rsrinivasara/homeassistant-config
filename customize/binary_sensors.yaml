@@ -48,3 +48,6 @@ sensor.lumi_lumi_sensor_motion_32ad2d01_power:
   
 sensor.visonic_mct_340_e_64323e0b_temperature:
   friendly_name: 'Bedroom Temperature'
+
+climate.centralite_3157100_e_947e5b05_fan_thermostat:
+  friendly_name: 'Centralite Thermostat'

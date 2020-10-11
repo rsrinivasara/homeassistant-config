@@ -8,7 +8,7 @@
     data:
       entity_id: group.upstairs_hallway_lights
       brightness_pct: 80
-      kelvin: 2700
+      kelvin: 3000
 
 - alias: Turn off hallway lights 2 minutes after last movement
   trigger:

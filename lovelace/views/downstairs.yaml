@@ -16,6 +16,10 @@ cards:
           - person.swathi_sudarshan 
         type: glance
     type: horizontal-stack
+  - type: 'custom:simple-thermostat'
+    entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
+    step_size: 1
+    step_layout: row
   - entities:
       - entity: group.kitchen_lights
       - entity: group.under_cabinet_lights
@@ -54,7 +58,6 @@ cards:
   - entities:
       - entity: >-
           light.linear_nortek_security_control_llc_wd500z_1_wall_dimmer_switch_level
-      - entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
       - entity: binary_sensor.family_room_motion_sensor 
       - entity: binary_sensor.backyard_door
     title: Family Room
@@ -62,3 +65,12 @@ cards:
   - type: custom:weather-card
     title: Weather
     entity: weather.dark_sky
+  - cards:
+    - entity: media_player.living_room
+      type: media-control
+    - entity: media_player.sound_bar
+      type: media-control
+    type: vertical-stack
+
+
+
