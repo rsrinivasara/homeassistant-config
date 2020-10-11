@@ -29,4 +29,4 @@ tts:
 group: !include_dir_merge_named group
 # automation: !include_dir_merge_list automation
 scene: !include_dir_merge_list scene
-#script: !include scripts.yaml
+# script: !include scripts.yaml

@@ -40,3 +40,9 @@ Kitchen Lights:
 Kitchen Pendant Light:
   entities:
     - light.the_home_depot_ecosmart_zbt_a19_cct_bulb_c1cbe1fe_level_light_color_on_off
+
+Bathroom Lights:
+  entities:
+    - switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch_3
+    - switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch_2
+    - switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch

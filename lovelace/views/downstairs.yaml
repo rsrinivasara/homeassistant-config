@@ -71,6 +71,3 @@ cards:
     - entity: media_player.sound_bar
       type: media-control
     type: vertical-stack
-
-
-

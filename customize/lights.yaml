@@ -40,6 +40,9 @@ switch.jasco_products_12722_on_off_relay_switch_switch:
 switch.jasco_products_12722_on_off_relay_switch_switch_2:
   friendly_name: 'Mudroom Light'
 
+switch.jasco_products_14291_in_wall_smart_switch_switch_2:
+  friendly_name: 'Master Bath Light'
+
 switch.jasco_products_14291_in_wall_smart_switch_switch:
   friendly_name: 'Master Bath Light'
 
@@ -72,3 +75,12 @@ switch.plug2_switch3:
 
 switch.plug2_switch1:
   friendly_name: 'Night Light'
+
+switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch:
+  friendly_name: 'Bath Recessed Light'
+
+switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch_2:
+  friendly_name: 'Bath Fan'
+
+switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch_3:
+  friendly_name: 'Bath Vanity Light'
