@@ -49,7 +49,7 @@
   action:
     service: switch.turn_on
     data:
-      entity_id: switch.jasco_products_14291_in_wall_smart_switch_switch
+      entity_id: switch.jasco_products_14291_in_wall_smart_switch_switch_2
 
 - alias: Turn off master bath lights
   trigger:

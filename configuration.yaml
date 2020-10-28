@@ -26,6 +26,17 @@ zwave:
 tts:
   - platform: google_translate
 
+stream:
+
+ffmpeg:
+
+wake_on_lan:
+
+camera:
+  - platform: ffmpeg
+    name: driveway
+    input: !secret driveway_cam_url
+
 group: !include_dir_merge_named group
 # automation: !include_dir_merge_list automation
 scene: !include_dir_merge_list scene

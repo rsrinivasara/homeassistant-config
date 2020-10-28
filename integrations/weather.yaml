@@ -8,3 +8,23 @@ weather:
   - platform: darksky
     api_key: !secret darksky_api_key
     mode: daily
+
+sensor:
+  - platform: template
+    sensors:
+      outside_temperature:
+        friendly_name: "Outside Temperature"
+        unit_of_measurement: '°F'
+        value_template: "{{ state_attr('weather.dark_sky', 'temperature') }}"
+      outside_humidity:
+        friendly_name: "Outside Humidity"
+        unit_of_measurement: '%'
+        value_template: "{{ state_attr('weather.dark_sky', 'humidity') }}"
+      familyroom_temperature:
+        friendly_name: "Familyroom Temperature"
+        unit_of_measurement: '°F'
+        value_template: "{{ state_attr('climate.centralite_3157100_e_947e5b05_fan_thermostat', 'current_temperature') }}"
+      thermostat_setpoint_temperature:
+        friendly_name: "Thermostat Setpoint Temperature"
+        unit_of_measurement: '°F'
+        value_template: "{{ state_attr('climate.centralite_3157100_e_947e5b05_fan_thermostat', 'temperature') }}"
