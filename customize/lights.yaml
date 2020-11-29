@@ -107,7 +107,7 @@ switch.powder_room_fan:
   friendly_name: 'Powder Room Fan'
 
 switch.plug5:
-  friendly_name: 'Dining Room String Light'
+  friendly_name: 'TV'
 
 switch.porch_outdoor_outlet:
   friendly_name: "Porch Outdoor Outlet"

@@ -12,7 +12,7 @@ cards:
   - cards:
       - entities:
           - cover.garage_door_opener
-          - cover.garage_door_volvo 
+          - cover.garage_door_vw 
         type: glance
     type: horizontal-stack
   - cards:
@@ -72,8 +72,8 @@ cards:
   - entities:
       - entity: light.family_room_light
       - entity: light.family_room_track_light
-      - entity: switch.plug4
       - entity: switch.plug5
+      - entity: switch.plug4
       - entity: binary_sensor.family_room_motion_sensor 
       - entity: binary_sensor.backyard_door
       - entity: climate.centralite_3157100_e_947e5b05_fan_thermostat

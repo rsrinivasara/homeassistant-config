@@ -65,3 +65,6 @@ sensor.visonic_mct_340_e_64323e0b_temperature:
 
 climate.centralite_3157100_e_947e5b05_fan_thermostat:
   friendly_name: 'Centralite Thermostat'
+
+cover.garage_door_opener:
+  friendly_name: 'Garage Door - Volvo'
