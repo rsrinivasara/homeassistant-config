@@ -13,7 +13,6 @@ cards:
       - entities:
           - cover.garage_door_opener
           - cover.garage_door_volvo 
-          - cover.garage_door_vw 
         type: glance
     type: horizontal-stack
   - cards:
@@ -38,25 +37,26 @@ cards:
       - entity: light.jasco_products_12724_3_way_dimmer_switch_level
       - entity: light.jasco_products_12724_3_way_dimmer_switch_level_2
       - entity: light.jasco_products_12724_3_way_dimmer_switch_level_3
-      - entity: switch.plug1_switch1
-      - entity: switch.plug1_switch2
-      - entity: switch.plug1_switch3
     title: Living Room
     type: entities
   - entities:
-      - entity: switch.jasco_products_12722_on_off_relay_switch_switch
+      # - entity: switch.jasco_products_12722_on_off_relay_switch_switch
+      - entity: switch.porch_light
+      - entity: light.wled
+      - entity: switch.porch_outdoor_outlet
       - entity: binary_sensor.lumi_lumi_sensor_magnet_20e21601_on_off
       - entity: binary_sensor.first_alert_smoke_alarm 
       - entity: binary_sensor.first_alert_co_alarm
     title: Foyer
     type: entities
   - entities:
-      - entity: switch.jasco_products_12722_on_off_relay_switch_switch_2
+      - entity: switch.mudroom_light
       - entity: binary_sensor.sideyard_door_sensor
       - entity: binary_sensor.garage_door_sensor 
       - entity: sensor.lumi_lumi_weather_8efdaa04_temperature
       - entity: sensor.lumi_lumi_weather_8efdaa04_humidity
       - entity: sensor.lumi_lumi_weather_8efdaa04_pressure
+      - entity: binary_sensor.mudroom_motion_sensor_ias_zone
       # - entity: binary_sensor.lumi_lumi_sensor_motion_32ad2d01_ias_zone
     title: Mudroom
     type: entities
@@ -70,16 +70,20 @@ cards:
       - camera.driveway
     camera_image: camera.driveway
   - entities:
-      - entity: >-
-          light.linear_nortek_security_control_llc_wd500z_1_wall_dimmer_switch_level
+      - entity: light.family_room_light
+      - entity: light.family_room_track_light
+      - entity: switch.plug4
+      - entity: switch.plug5
       - entity: binary_sensor.family_room_motion_sensor 
       - entity: binary_sensor.backyard_door
+      - entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
     title: Family Room
     type: entities
   - entities:
-      - entity: switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch_5
-      - entity: switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch_4
+      - entity: switch.powder_room_light
+      - entity: switch.powder_room_fan
         icon: mdi:fan
+      - entity: binary_sensor.powder_room_motion_sensor_occupancy
     title: Powder Room
     type: entities
   - type: custom:weather-card

@@ -30,10 +30,15 @@ Kitchen Pendant Light:
 
 Bathroom Lights:
   entities:
-    - switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch_3
-    - switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch_2
-    - switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch
+    - switch.bath_vanity_light
+    - switch.bath_recessed_light
+    - switch.bath_fan
 
 Familyroom Lights:
   entities:
     - light.linear_nortek_security_control_llc_wd500z_1_wall_dimmer_switch_level
+
+Powder Room Switches:
+  entities:
+    - switch.powder_room_light
+    - switch.powder_room_fan

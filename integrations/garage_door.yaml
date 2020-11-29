@@ -67,8 +67,8 @@ binary_sensor:
 
 
 # TimeZone 99
-# TimeDST -1,2,3,1,2,-240
-# TimeSTD -1,1,11,1,2,-300
+# TimeDST 0,2,3,1,2,-240
+# TimeSTD 0,1,11,1,2,-300
 # IPAddress1 <Static IP>
 # switchmode1 2
 # poweronstate 0
@@ -76,3 +76,4 @@ binary_sensor:
 # pulsetime1 10
 # Rule1 on switch1#state=0 do publish2 stat/%topic%/STATUS closed endon on switch1#state=1 do publish2 stat/%topic%/STATUS open endon
 # Rule1 1
+# setoption19 1 (to enable autodiscovery in homeassistant)

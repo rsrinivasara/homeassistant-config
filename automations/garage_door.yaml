@@ -2,23 +2,23 @@
 # current state of the garage door's reed switch. This automation is neeeded to
 # reflect the current state of the door to cover cases where either HA or
 # shelly was down when garage door was previously operated.
--  alias: 'MQTT Garage Volvo Door Status'
-   trigger:
-    platform: state
-    entity_id: binary_sensor.garage_volvo_sensor
-   action:
-   - service: mqtt.publish
-     data_template:
-        topic: "stat/tasmota_garage1/STATUS"
-        payload_template: "{{ 'open' if states.binary_sensor.garage.state =='ON' else 'closed' }}"
-        retain: true
--  alias: 'MQTT Garage VW Door Status'
-   trigger:
-    platform: state
-    entity_id: binary_sensor.garage_vw_sensor
-   action:
-   - service: mqtt.publish
-     data_template:
-        topic: "stat/tasmota_garage2/STATUS"
-        payload_template: "{{ 'open' if states.binary_sensor.garage.state =='ON' else 'closed' }}"
-        retain: true
+# -  alias: 'MQTT Garage Volvo Door Status'
+#    trigger:
+#     platform: state
+#     entity_id: binary_sensor.garage_volvo_sensor
+#    action:
+#    - service: mqtt.publish
+#      data_template:
+#         topic: "stat/tasmota_garage1/STATUS"
+#         payload_template: "{{ 'open' if states.binary_sensor.garage.state =='ON' else 'closed' }}"
+#         retain: true
+# -  alias: 'MQTT Garage VW Door Status'
+#    trigger:
+#     platform: state
+#     entity_id: binary_sensor.garage_vw_sensor
+#    action:
+#    - service: mqtt.publish
+#      data_template:
+#         topic: "stat/tasmota_garage2/STATUS"
+#         payload_template: "{{ 'open' if states.binary_sensor.garage.state =='ON' else 'closed' }}"
+#         retain: true

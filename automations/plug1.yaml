@@ -1,24 +1,24 @@
-- alias: Turn off Plug1
-  trigger:
-    platform: sun
-    event: sunset
-    offset: '+00:30:00'
-  action:
-    service: switch.turn_off
-    data:
-      entity_id:
-        - switch.plug1_switch1
-        - switch.plug1_switch2
+# - alias: Turn off Plug1
+#   trigger:
+#     platform: sun
+#     event: sunset
+#     offset: '+00:30:00'
+#   action:
+#     service: switch.turn_off
+#     data:
+#       entity_id:
+#         - switch.plug1_switch1
+#         - switch.plug1_switch2
 
-- alias: Turn on Plug1
-  trigger:
-    platform: sun
-    event: sunrise
-    offset: '-00:30:00'
-  action:
-    service: switch.turn_on
-    data:
-      entity_id:
-        - switch.plug1_switch1
-        - switch.plug1_switch2
+# - alias: Turn on Plug1
+#   trigger:
+#     platform: sun
+#     event: sunrise
+#     offset: '-00:30:00'
+#   action:
+#     service: switch.turn_on
+#     data:
+#       entity_id:
+#         - switch.plug1_switch1
+#         - switch.plug1_switch2
 
