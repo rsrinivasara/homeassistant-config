@@ -8,9 +8,14 @@
 # https://www.home-assistant.io/integrations/influxdb/
 #
 influxdb:
+  api_version: 2
   host: !secret influxdb_url
   port: 8086
-  database: homeassistant
+  ssl: false
+  # database: homeassistant
+  token: !secret influxdb_token
+  bucket: !secret influxdb_bucket
+  organization: !secret influxdb_org
   include: 
     domains:
       - sensor

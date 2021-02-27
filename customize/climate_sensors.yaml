@@ -1,53 +1,71 @@
-sensor.lumi_lumi_weather_8efdaa04_temperature:
+# sensor.lumi_lumi_weather_8efdaa04_temperature:
+sensor.mudroom_temperature:
   friendly_name: Mudroom Temperature
 
-sensor.lumi_lumi_weather_8efdaa04_pressure:
+# sensor.lumi_lumi_weather_8efdaa04_pressure:
+sensor.mudroom_pressure:
   friendly_name: Mudroom Pressure
 
-sensor.lumi_lumi_weather_8efdaa04_humidity:
+# sensor.lumi_lumi_weather_8efdaa04_humidity:
+sensor.mudroom_humidity:
   friendly_name: Mudroom Humidity
 
-sensor.lumi_lumi_weather_d4bf3305_temperature:
+# sensor.lumi_lumi_weather_d4bf3305_temperature:
+sensor.office_room_temperature:
   friendly_name: Office Temperature
 
-sensor.lumi_lumi_weather_d4bf3305_pressure:
+# sensor.lumi_lumi_weather_d4bf3305_pressure:
+sensor.office_room_pressure:
   friendly_name: Office Pressure
 
-sensor.lumi_lumi_weather_d4bf3305_humidity:
+# sensor.lumi_lumi_weather_d4bf3305_humidity:
+sensor.office_room_humidity:
   friendly_name: Office Humidity
 
-sensor.lumi_lumi_weather_0dc03305_temperature:
+# sensor.lumi_lumi_weather_0dc03305_temperature:
+sensor.play_room_temperature:
   friendly_name: Play Room Temperature
 
-sensor.lumi_lumi_weather_0dc03305_pressure:
+# sensor.lumi_lumi_weather_0dc03305_pressure:
+sensor.play_room_pressure:
   friendly_name: Play Room Pressure
 
-sensor.lumi_lumi_weather_0dc03305_humidity:
+# sensor.lumi_lumi_weather_0dc03305_humidity:
+sensor.play_room_humidity:
   friendly_name: Play Room Humidity
 
-sensor.lumi_lumi_weather_temperature:
+# sensor.lumi_lumi_weather_temperature:
+sensor.master_bath_temperature:
   friendly_name: Master Bath Temperature
 
-sensor.lumi_lumi_weather_pressure:
+# sensor.lumi_lumi_weather_pressure:
+sensor.master_bath_pressure:
   friendly_name: Master Bath Pressure
 
-sensor.lumi_lumi_weather_humidity:
+# sensor.lumi_lumi_weather_humidity:
+sensor.master_bath_humidity:
   friendly_name: Master Bath Humidity
 
-sensor.lumi_lumi_weather_67404b05_temperature:
+# sensor.lumi_lumi_weather_67404b05_temperature:
+sensor.bathroom_temperature:
   friendly_name: Bathroom Temperature
 
-sensor.lumi_lumi_weather_67404b05_pressure:
+# sensor.lumi_lumi_weather_67404b05_pressure:
+sensor.bathroom_pressure:
   friendly_name: Bathroom Pressure
 
-sensor.lumi_lumi_weather_67404b05_humidity:
+# sensor.lumi_lumi_weather_67404b05_humidity:
+sensor.bathroom_humidity:
   friendly_name: Bathroom Humidity
 
-sensor.lumi_lumi_weather_acd13305_temperature:
+# sensor.lumi_lumi_weather_acd13305_temperature:
+sensor.corner_room_temperature:
   friendly_name: Corner Room Temperature
 
-sensor.lumi_lumi_weather_acd13305_pressure:
+# sensor.lumi_lumi_weather_acd13305_pressure:
+sensor.corner_room_pressure:
   friendly_name: Corner Room Pressure
 
-sensor.lumi_lumi_weather_acd13305_humidity:
+# sensor.lumi_lumi_weather_acd13305_humidity:
+sensor.corner_room_humidity:
   friendly_name: Corner Room Humidity

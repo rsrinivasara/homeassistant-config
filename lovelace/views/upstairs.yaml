@@ -1,10 +1,11 @@
 ---
 path: ''
 title: Upstairs
+icon: mdi:home-floor-1
 cards:
   - entities:
       - entity: group.bedroom_lights
-      - entity: light.sengled_z01_a19nae26_6c170303_level_light_color_on_off
+      - entity: light.bedroom_closet_light
       - entity: switch.plug1_switch1
       - entity: switch.plug1_switch2
       - entity: switch.plug1_switch3
@@ -19,18 +20,18 @@ cards:
     title: Master Bedroom
     type: entities
   - entities:
-      - entity: sensor.lumi_lumi_weather_acd13305_temperature
-      - entity: sensor.lumi_lumi_weather_acd13305_humidity
-      - entity: sensor.lumi_lumi_weather_acd13305_pressure
+      - entity: sensor.corner_room_temperature
+      - entity: sensor.corner_room_humidity
+      - entity: sensor.corner_room_pressure
     title: Corner Room
     type: entities
   - entities:
       - entity: switch.jasco_products_14291_in_wall_smart_switch_switch_2
-      - entity: switch.wenzhou_mtlc_electric_appliances_enerwave_unknown_type_0101_id_0101_switch_6
+      - entity: switch.master_bath_fan
         icon: mdi:fan
-      - entity: sensor.lumi_lumi_weather_temperature
-      - entity: sensor.lumi_lumi_weather_humidity
-      - entity: sensor.lumi_lumi_weather_pressure
+      - entity: sensor.master_bath_temperature
+      - entity: sensor.master_bath_humidity
+      - entity: sensor.master_bath_pressure
       - entity: binary_sensor.lumi_lumi_sensor_motion_af5c5301_occupancy
     title: Master Bathroom
     type: entities
@@ -44,9 +45,9 @@ cards:
       - entity: switch.plug2_switch1
       - entity: switch.plug2_switch2
       - entity: switch.plug2_switch3
-      - entity: sensor.lumi_lumi_weather_0dc03305_temperature
-      - entity: sensor.lumi_lumi_weather_0dc03305_humidity
-      - entity: sensor.lumi_lumi_weather_0dc03305_pressure
+      - entity: sensor.play_room_temperature
+      - entity: sensor.play_room_humidity
+      - entity: sensor.play_room_pressure
       - entity: binary_sensor.lumi_lumi_sensor_magnet_56465801_on_off
     title: Play Room
     type: entities
@@ -54,9 +55,9 @@ cards:
     - entity: switch.bath_vanity_light
     - entity: switch.bath_recessed_light
     - entity: switch.bath_fan
-    - entity: sensor.lumi_lumi_weather_67404b05_temperature
-    - entity: sensor.lumi_lumi_weather_67404b05_humidity
-    - entity: sensor.lumi_lumi_weather_67404b05_pressure
+    - entity: sensor.bathroom_temperature
+    - entity: sensor.bathroom_humidity
+    - entity: sensor.bathroom_pressure
     - entity: binary_sensor.bathroom_motion_sensor_occupancy
     type: entities
     title: Bathroom

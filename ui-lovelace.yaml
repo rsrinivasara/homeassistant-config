@@ -8,6 +8,7 @@ resources:
 views:
   - !include lovelace/views/downstairs.yaml
   - !include lovelace/views/upstairs.yaml
+  - !include lovelace/views/cameras.yaml
   - !include lovelace/views/office.yaml
   - !include lovelace/views/battery.yaml
-  - !include lovelace/views/home_old.yaml
+  # - !include lovelace/views/home_old.yaml

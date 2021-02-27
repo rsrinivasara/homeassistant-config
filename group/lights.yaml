@@ -32,7 +32,7 @@ Bathroom Lights:
   entities:
     - switch.bath_vanity_light
     - switch.bath_recessed_light
-    - switch.bath_fan
+    # - switch.bath_fan
 
 Familyroom Lights:
   entities:

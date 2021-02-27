@@ -16,7 +16,7 @@ http:
 
 zha:
   usb_path: /dev/ttyUSB1
-  baudrate: 115200
+  # baudrate: 115200
 
 zwave:
   usb_path: /dev/ttyUSB0
@@ -26,16 +26,21 @@ zwave:
 tts:
   - platform: google_translate
 
-stream:
+# stream:
 
-ffmpeg:
+# ffmpeg:
 
 wake_on_lan:
 
-camera:
-  - platform: ffmpeg
-    name: driveway
-    input: !secret driveway_cam_url
+# camera:
+#   - platform: ffmpeg
+#     name: driveway
+#     input: !secret driveway_cam_url
+
+# camera:
+#   - name: Driveway
+#     platform: mqtt
+#     topic: 
 
 group: !include_dir_merge_named group
 # automation: !include_dir_merge_list automation

@@ -22,23 +22,23 @@
     entity_id: scene.bedroom_warm_light
 
 # Bedroom Closet Light
-- alias: Turn on bedroom closet light
-  trigger:
-    platform: state
-    entity_id: binary_sensor.bedroom_closet_door
-    to: 'on'
-  action:
-    service: scene.turn_on
-    entity_id: scene.bedroom_closet_daylight
+# - alias: Turn on bedroom closet light
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.bedroom_closet_door
+#     to: 'on'
+#   action:
+#     service: scene.turn_on
+#     entity_id: scene.bedroom_closet_daylight
 
-- alias: Turn off bedroom closet light
-  trigger:
-    platform: state
-    entity_id: binary_sensor.bedroom_closet_door
-    to: 'off'
-  action:
-    service: scene.turn_on
-    entity_id: scene.bedroom_closet_no_light
+# - alias: Turn off bedroom closet light
+#   trigger:
+#     platform: state
+#     entity_id: binary_sensor.bedroom_closet_door
+#     to: 'off'
+#   action:
+#     service: scene.turn_on
+#     entity_id: scene.bedroom_closet_no_light
 
 # Master Bath Light
 - alias: Turn on master bath lights

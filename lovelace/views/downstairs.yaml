@@ -1,6 +1,7 @@
 ---
 path: ''
 title: Downstairs
+icon: mdi:home-floor-0
 cards:
   - cards:
       - entities:
@@ -42,7 +43,7 @@ cards:
   - entities:
       # - entity: switch.jasco_products_12722_on_off_relay_switch_switch
       - entity: switch.porch_light
-      - entity: light.wled
+      # - entity: light.wled
       - entity: switch.porch_outdoor_outlet
       - entity: binary_sensor.lumi_lumi_sensor_magnet_20e21601_on_off
       - entity: binary_sensor.first_alert_smoke_alarm 
@@ -53,22 +54,22 @@ cards:
       - entity: switch.mudroom_light
       - entity: binary_sensor.sideyard_door_sensor
       - entity: binary_sensor.garage_door_sensor 
-      - entity: sensor.lumi_lumi_weather_8efdaa04_temperature
-      - entity: sensor.lumi_lumi_weather_8efdaa04_humidity
-      - entity: sensor.lumi_lumi_weather_8efdaa04_pressure
+      - entity: sensor.mudroom_temperature
+      - entity: sensor.mudroom_humidity
+      - entity: sensor.mudroom_pressure
       - entity: binary_sensor.mudroom_motion_sensor_ias_zone
       # - entity: binary_sensor.lumi_lumi_sensor_motion_32ad2d01_ias_zone
     title: Mudroom
     type: entities
-  - type: picture-entity
-    entity: camera.doorbell
-    camera_image: camera.doorbell
-    camera_view: "auto"
-  - type: picture-glance
-    title: Driveway
-    entities:
-      - camera.driveway
-    camera_image: camera.driveway
+  # - type: picture-entity
+  #   entity: camera.doorbell
+  #   camera_image: camera.doorbell
+  #   camera_view: "auto"
+  # - type: picture-glance
+  #   title: Driveway
+  #   entities:
+  #     - camera.driveway
+  #   camera_image: camera.driveway
   - entities:
       - entity: light.family_room_light
       - entity: light.family_room_track_light

@@ -1,0 +1,11 @@
+
+---
+path: ''
+title: Cameras
+icon: mdi:cctv
+cards:
+  - type: picture-entity
+    entity: camera.driveway
+  - type: picture-entity
+    entity: camera.doorbell
+    # camera_view: live

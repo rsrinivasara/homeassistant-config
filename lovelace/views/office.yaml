@@ -1,6 +1,7 @@
 ---
 title: Office
 path: office
+icon: mdi:server-network
 # type: horizontal-stack
 cards:
   - type: vertical-stack
@@ -31,9 +32,9 @@ cards:
         show_header_toggle: false
         entities: 
           - entity: switch.desktop_pc
-          - entity: sensor.lumi_lumi_weather_d4bf3305_temperature
-          - entity: sensor.lumi_lumi_weather_d4bf3305_humidity
-          - entity: sensor.lumi_lumi_weather_d4bf3305_pressure
+          - entity: sensor.office_room_temperature
+          - entity: sensor.office_room_humidity
+          - entity: sensor.office_room_pressure
       - type: markdown
         content: '## Internet Speeds'
         style: |

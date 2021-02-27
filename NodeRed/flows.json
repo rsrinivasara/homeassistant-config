@@ -1,0 +1,203 @@
+[
+    {
+        "id": "3a56d695.847fea",
+        "type": "tab",
+        "label": "Home Security",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "ba273594.69ddf8",
+        "type": "inject",
+        "z": "3a56d695.847fea",
+        "name": "10 PM",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 22 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 160,
+        "y": 360,
+        "wires": [
+            [
+                "3bdea49b.d6e6f4"
+            ]
+        ]
+    },
+    {
+        "id": "46eb24ab.c6394c",
+        "type": "api-call-service",
+        "z": "3a56d695.847fea",
+        "name": "Set Alarm to Disarmed",
+        "server": "bf3cc2c7.49fe98",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "alarm_control_panel",
+        "service": "alarm_disarm",
+        "entityId": "alarm_control_panel.ring_alarm",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 600,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f43be97.78882a",
+        "type": "api-call-service",
+        "z": "3a56d695.847fea",
+        "name": "Set Alarm to Home",
+        "server": "bf3cc2c7.49fe98",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "alarm_control_panel",
+        "service": "alarm_arm_home",
+        "entityId": "alarm_control_panel.ring_alarm",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 590,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "42c9354e.f84844",
+        "type": "api-call-service",
+        "z": "3a56d695.847fea",
+        "name": "Set Alarm to Away",
+        "server": "bf3cc2c7.49fe98",
+        "version": 1,
+        "debugenabled": false,
+        "service_domain": "alarm_control_panel",
+        "service": "alarm_arm_away",
+        "entityId": "alarm_control_panel.ring_alarm",
+        "data": "",
+        "dataType": "json",
+        "mergecontext": "",
+        "output_location": "",
+        "output_location_type": "none",
+        "mustacheAltTags": false,
+        "x": 590,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "991de02.d38c1a",
+        "type": "inject",
+        "z": "3a56d695.847fea",
+        "name": "6 AM",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "00 06 * * *",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 150,
+        "y": 280,
+        "wires": [
+            [
+                "919866be.f18d3"
+            ]
+        ]
+    },
+    {
+        "id": "919866be.f18d3",
+        "type": "api-current-state",
+        "z": "3a56d695.847fea",
+        "name": "Family Home",
+        "server": "bf3cc2c7.49fe98",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "group.family",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 350,
+        "y": 280,
+        "wires": [
+            [
+                "46eb24ab.c6394c"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "3bdea49b.d6e6f4",
+        "type": "api-current-state",
+        "z": "3a56d695.847fea",
+        "name": "Family Home",
+        "server": "bf3cc2c7.49fe98",
+        "version": 1,
+        "outputs": 2,
+        "halt_if": "home",
+        "halt_if_type": "str",
+        "halt_if_compare": "is",
+        "override_topic": false,
+        "entity_id": "group.family",
+        "state_type": "str",
+        "state_location": "payload",
+        "override_payload": "msg",
+        "entity_location": "data",
+        "override_data": "msg",
+        "blockInputOverrides": false,
+        "x": 350,
+        "y": 360,
+        "wires": [
+            [
+                "3f43be97.78882a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "bf3cc2c7.49fe98",
+        "type": "server",
+        "name": "Home Assistant",
+        "legacy": false,
+        "addon": false,
+        "rejectUnauthorizedCerts": true,
+        "ha_boolean": "y|yes|true|on|home|open",
+        "connectionDelay": true,
+        "cacheJson": true
+    }
+]
