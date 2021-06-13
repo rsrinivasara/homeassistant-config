@@ -1,7 +1,7 @@
 ---
-eufy_security:
-  username: !secret eufy_username
-  password: !secret eufy_password
+# eufy_security:
+#   username: !secret eufy_username
+#   password: !secret eufy_password
 
 # media_player:
 #   - platform: lg_soundbar
