@@ -1,0 +1,802 @@
+Fatal Python error: Segmentation fault
+
+Thread 0x000015412faffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/scapy/supersocket.py", line 259 in select
+  File "/usr/local/lib/python3.9/site-packages/scapy/sendrecv.py", line 1175 in _run
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000154136dffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 558 in run_once
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 527 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001541373ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 558 in run_once
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 527 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000154137fffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/selectors.py", line 469 in select
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1854 in _run_once
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 596 in run_forever
+  File "/usr/local/lib/python3.9/site-packages/bellows/thread.py", line 28 in _thread_main
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52 in run
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 77 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000154138bffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/socket.py", line 832 in create_connection
+  File "/usr/local/lib/python3.9/http/client.py", line 945 in connect
+  File "/usr/local/lib/python3.9/http/client.py", line 1441 in connect
+  File "/usr/local/lib/python3.9/http/client.py", line 974 in send
+  File "/usr/local/lib/python3.9/http/client.py", line 1034 in _send_output
+  File "/usr/local/lib/python3.9/http/client.py", line 1274 in endheaders
+  File "/usr/local/lib/python3.9/http/client.py", line 1325 in _send_request
+  File "/usr/local/lib/python3.9/http/client.py", line 1279 in request
+  File "/usr/local/lib/python3.9/urllib/request.py", line 1346 in do_open
+  File "/usr/local/lib/python3.9/urllib/request.py", line 1389 in https_open
+  File "/usr/local/lib/python3.9/urllib/request.py", line 494 in _call_chain
+  File "/usr/local/lib/python3.9/urllib/request.py", line 534 in _open
+  File "/usr/local/lib/python3.9/urllib/request.py", line 517 in open
+  File "/usr/local/lib/python3.9/urllib/request.py", line 214 in urlopen
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/dial.py", line 88 in _get_status
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/dial.py", line 109 in get_device_status
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/discovery.py", line 268 in _poll_hosts
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/discovery.py", line 252 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015413951cb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/zeroconf/_services/browser.py", line 535 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001541396e1b38 (most recent call first):
+  File "/usr/local/lib/python3.9/threading.py", line 316 in wait
+  File "/usr/local/lib/python3.9/queue.py", line 180 in get
+  File "/usr/local/lib/python3.9/site-packages/aiosqlite/core.py", line 95 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000154141906b38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 1167 in loop
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 1779 in loop_forever
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 3452 in _thread_main
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015414423bb38 (most recent call first):
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1462 in dequeue
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1513 in _monitor
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015414433fb38 (most recent call first):
+  File "/usr/src/homeassistant/homeassistant/components/recorder/__init__.py", line 672 in _run_event_loop
+  File "/usr/src/homeassistant/homeassistant/components/recorder/__init__.py", line 665 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015414a1ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015414a7ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015414adffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/socket.py", line 954 in getaddrinfo
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52 in run
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 77 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015414b3ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015414b9ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015414bfffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/socket.py", line 954 in getaddrinfo
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52 in run
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 77 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015414c5ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015414cb4eb38 (most recent call first):
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1462 in dequeue
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1513 in _monitor
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Current thread 0x000015414ffde8b0 (most recent call first):
+  File "/usr/local/lib/python3.9/enum.py", line 384 in __call__
+  File "/usr/local/lib/python3.9/inspect.py", line 2498 in __init__
+  File "/usr/local/lib/python3.9/site-packages/bellows/types/struct.py", line 73 in <listcomp>
+  File "/usr/local/lib/python3.9/site-packages/bellows/types/struct.py", line 72 in _new
+  File "/usr/local/lib/python3.9/site-packages/bellows/types/struct.py", line 203 in deserialize
+  File "/usr/local/lib/python3.9/site-packages/bellows/types/__init__.py", line 9 in deserialize
+  File "/usr/local/lib/python3.9/site-packages/bellows/ezsp/protocol.py", line 146 in __call__
+  File "/usr/local/lib/python3.9/site-packages/bellows/ezsp/__init__.py", line 258 in frame_received
+  File "/usr/local/lib/python3.9/site-packages/bellows/thread.py", line 98 in check_result_wrapper
+  File "/usr/local/lib/python3.9/asyncio/events.py", line 80 in _run
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1890 in _run_once
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 596 in run_forever
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 629 in run_until_complete
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 115 in run
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 318 in main
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 331 in <module>
+  File "/usr/local/lib/python3.9/runpy.py", line 87 in _run_code
+  File "/usr/local/lib/python3.9/runpy.py", line 197 in _run_module_as_main
+Fatal Python error: Segmentation fault
+
+Thread 0x000014f668bb8b38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/scapy/supersocket.py", line 259 in select
+  File "/usr/local/lib/python3.9/site-packages/scapy/sendrecv.py", line 1175 in _run
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66b1ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 576 in _handle_results
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66b7ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 528 in _handle_tasks
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66bdffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/selectors.py", line 416 in select
+  File "/usr/local/lib/python3.9/multiprocessing/connection.py", line 936 in wait
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 499 in _wait_for_updates
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 519 in _handle_workers
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66c3ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66c9ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66cfffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66d5ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66dbffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66e1ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66e7ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66edffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66f3ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66f9ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f66ffffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f6705ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f670bffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 558 in run_once
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 527 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f67117fb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 558 in run_once
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 527 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f67197fb38 (most recent call first):
+  File "/usr/local/lib/python3.9/selectors.py", line 469 in select
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1854 in _run_once
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 596 in run_forever
+  File "/usr/local/lib/python3.9/site-packages/bellows/thread.py", line 28 in _thread_main
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52 in run
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 77 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Current thread 0x000014f6725ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/dial.py", line 137 in get_device_status
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/discovery.py", line 268 in _poll_hosts
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/discovery.py", line 252 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f672bffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/zeroconf/_services/browser.py", line 535 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f67326cb38 (most recent call first):
+  File "/usr/local/lib/python3.9/threading.py", line 316 in wait
+  File "/usr/local/lib/python3.9/queue.py", line 180 in get
+  File "/usr/local/lib/python3.9/site-packages/aiosqlite/core.py", line 95 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f67b3ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 1167 in loop
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 1779 in loop_forever
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 3452 in _thread_main
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f67b99bb38 (most recent call first):
+  File "/config/custom_components/webrtc/utils.py", line 180 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f67c52ab38 (most recent call first):
+  File "/usr/local/lib/python3.9/threading.py", line 312 in wait
+  File "/usr/local/lib/python3.9/queue.py", line 171 in get
+  File "/usr/src/homeassistant/homeassistant/components/influxdb/__init__.py", line 534 in get_events_json
+  File "/usr/src/homeassistant/homeassistant/components/influxdb/__init__.py", line 581 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f67e77bb38 (most recent call first):
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1462 in dequeue
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1513 in _monitor
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f67e8bfb38 (most recent call first):
+  File "/usr/src/homeassistant/homeassistant/components/recorder/__init__.py", line 672 in _run_event_loop
+  File "/usr/src/homeassistant/homeassistant/components/recorder/__init__.py", line 665 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f684bffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f6851ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f6857ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f685dffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f6863ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f6869ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f686fffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f6875ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f687baeb38 (most recent call first):
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1462 in dequeue
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1513 in _monitor
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014f68b03e8b0 (most recent call first):
+  File "/usr/local/lib/python3.9/selectors.py", line 469 in select
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1854 in _run_once
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 596 in run_forever
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 629 in run_until_complete
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 115 in run
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 318 in main
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 331 in <module>
+Fatal Python error: Segmentation fault
+
+Thread 0x000014983e757b38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 1167 in loop
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 1779 in loop_forever
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 3452 in _thread_main
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014983e89bb38 (most recent call first):
+  File "/config/custom_components/webrtc/utils.py", line 180 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014983f4bfb38 (most recent call first):
+  File "/usr/local/lib/python3.9/threading.py", line 316 in wait
+  File "/usr/local/lib/python3.9/queue.py", line 180 in get
+  File "/usr/src/homeassistant/homeassistant/components/influxdb/__init__.py", line 534 in get_events_json
+  File "/usr/src/homeassistant/homeassistant/components/influxdb/__init__.py", line 581 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000149841d3bb38 (most recent call first):
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1462 in dequeue
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1513 in _monitor
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000149841e7fb38 (most recent call first):
+  File "/usr/local/lib/python3.9/threading.py", line 312 in wait
+  File "/usr/local/lib/python3.9/concurrent/futures/_base.py", line 440 in result
+  File "/usr/src/homeassistant/homeassistant/components/recorder/__init__.py", line 636 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000149847dffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001498483ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/genericpath.py", line 19 in exists
+  File "/config/custom_components/hacs/hacsbase/data.py", line 150 in _load_from_storage
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52 in run
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 77 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001498489ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000149848fffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001498495ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000149849bffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014984a556b38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000014984a65ab38 (most recent call first):
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1462 in dequeue
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1513 in _monitor
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Current thread 0x000014984daea8b0 (most recent call first):
+  File "<frozen importlib._bootstrap_external>", line 647 in _compile_bytecode
+  File "<frozen importlib._bootstrap_external>", line 978 in get_code
+  File "<frozen importlib._bootstrap_external>", line 846 in exec_module
+  File "<frozen importlib._bootstrap>", line 680 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 986 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1007 in _find_and_load
+  File "/usr/src/homeassistant/homeassistant/components/zha/device_tracker.py", line 20 in <module>
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 850 in exec_module
+  File "<frozen importlib._bootstrap>", line 680 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 986 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1007 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1058 in _handle_fromlist
+  File "/usr/src/homeassistant/homeassistant/components/zha/core/discovery.py", line 17 in <module>
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 850 in exec_module
+  File "<frozen importlib._bootstrap>", line 680 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 986 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1007 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1058 in _handle_fromlist
+  File "/usr/src/homeassistant/homeassistant/components/zha/core/channels/__init__.py", line 27 in <module>
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 850 in exec_module
+  File "<frozen importlib._bootstrap>", line 680 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 986 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1007 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1058 in _handle_fromlist
+  File "/usr/src/homeassistant/homeassistant/components/zha/core/device.py", line 27 in <module>
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 850 in exec_module
+  File "<frozen importlib._bootstrap>", line 680 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 986 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1007 in _find_and_load
+  File "/usr/src/homeassistant/homeassistant/components/zha/core/__init__.py", line 4 in <module>
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 850 in exec_module
+  File "<frozen importlib._bootstrap>", line 680 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 986 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1007 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 972 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1007 in _find_and_load
+  File "/usr/src/homeassistant/homeassistant/components/zha/api.py", line 21 in <module>
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 850 in exec_module
+  File "<frozen importlib._bootstrap>", line 680 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 986 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1007 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1058 in _handle_fromlist
+  File "/usr/src/homeassistant/homeassistant/components/zha/__init__.py", line 16 in <module>
+  File "<frozen importlib._bootstrap>", line 228 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 850 in exec_module
+  File "<frozen importlib._bootstrap>", line 680 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 986 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1007 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1030 in _gcd_import
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127 in import_module
+  File "/usr/src/homeassistant/homeassistant/loader.py", line 524 in get_component
+  File "/usr/src/homeassistant/homeassistant/setup.py", line 206 in _async_setup_component
+  File "/usr/local/lib/python3.9/asyncio/events.py", line 80 in _run
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1890 in _run_once
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 596 in run_forever
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 629 in run_until_complete
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 115 in run
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 318 in main
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 331 in <module>
+  File "/usr/local/lib/python3.9/runpy.py", line 87 in _run_code
+  File "/usr/local/lib/python3.9/runpy.py", line 197 in _run_module_as_main
+Fatal Python error: Segmentation fault
+
+Thread 0x000015155d1ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 576 in _handle_results
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015155d7ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 528 in _handle_tasks
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015155ddffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/selectors.py", line 416 in select
+  File "/usr/local/lib/python3.9/multiprocessing/connection.py", line 936 in wait
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 499 in _wait_for_updates
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 519 in _handle_workers
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015155e3ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015155e9ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015155efffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015155f5ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015155fbffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001515601ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001515607ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000151560dffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001515613ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001515619ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000151561fffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001515625ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/multiprocessing/pool.py", line 114 in worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000151566d2fb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/scapy/supersocket.py", line 259 in select
+  File "/usr/local/lib/python3.9/site-packages/scapy/sendrecv.py", line 1175 in _run
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001515699ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 558 in run_once
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 527 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000151569fffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/selectors.py", line 469 in select
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1854 in _run_once
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 596 in run_forever
+  File "/usr/local/lib/python3.9/site-packages/bellows/thread.py", line 28 in _thread_main
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 52 in run
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 77 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015156a67fb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 558 in run_once
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/socket_client.py", line 527 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015156b1ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/threading.py", line 316 in wait
+  File "/usr/local/lib/python3.9/threading.py", line 574 in wait
+  File "/usr/local/lib/python3.9/site-packages/pychromecast/discovery.py", line 254 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015156b7ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/zeroconf/_services/browser.py", line 535 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015156be15b38 (most recent call first):
+  File "/usr/local/lib/python3.9/threading.py", line 316 in wait
+  File "/usr/local/lib/python3.9/queue.py", line 180 in get
+  File "/usr/local/lib/python3.9/site-packages/aiosqlite/core.py", line 95 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001515742dbb38 (most recent call first):
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 1167 in loop
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 1779 in loop_forever
+  File "/usr/local/lib/python3.9/site-packages/paho/mqtt/client.py", line 3452 in _thread_main
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000151574dffb38 (most recent call first):
+  File "/config/custom_components/webrtc/utils.py", line 180 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015157542ab38 (most recent call first):
+  File "/usr/local/lib/python3.9/threading.py", line 312 in wait
+  File "/usr/local/lib/python3.9/queue.py", line 171 in get
+  File "/usr/src/homeassistant/homeassistant/components/influxdb/__init__.py", line 534 in get_events_json
+  File "/usr/src/homeassistant/homeassistant/components/influxdb/__init__.py", line 581 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015157767bb38 (most recent call first):
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1462 in dequeue
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1513 in _monitor
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x00001515777bfb38 (most recent call first):
+  File "/usr/src/homeassistant/homeassistant/components/recorder/__init__.py", line 672 in _run_event_loop
+  File "/usr/src/homeassistant/homeassistant/components/recorder/__init__.py", line 665 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015157d5ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015157dbffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015157e1ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015157e7ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015157edffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015157f3ffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x000015157ffffb38 (most recent call first):
+  File "/usr/local/lib/python3.9/concurrent/futures/thread.py", line 75 in _worker
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Thread 0x0000151580593b38 (most recent call first):
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1462 in dequeue
+  File "/usr/local/lib/python3.9/logging/handlers.py", line 1513 in _monitor
+  File "/usr/local/lib/python3.9/threading.py", line 910 in run
+  File "/usr/local/lib/python3.9/threading.py", line 973 in _bootstrap_inner
+  File "/usr/local/lib/python3.9/threading.py", line 930 in _bootstrap
+
+Current thread 0x0000151583a238b0 (most recent call first):
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_registry.py", line 423 in _async_update_entity
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_registry.py", line 268 in async_get_or_create
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_platform.py", line 489 in _async_add_entity
+  File "/usr/local/lib/python3.9/asyncio/events.py", line 80 in _run
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 1890 in _run_once
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 596 in run_forever
+  File "/usr/local/lib/python3.9/asyncio/base_events.py", line 629 in run_until_complete
+  File "/usr/src/homeassistant/homeassistant/runner.py", line 115 in run
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 318 in main
+  File "/usr/src/homeassistant/homeassistant/__main__.py", line 331 in <module>
+  File "/usr/local/lib/python3.9/runpy.py", line 87 in _run_code
+  File "/usr/local/lib/python3.9/runpy.py", line 197 in _run_module_as_main

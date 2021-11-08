@@ -1,11 +1,26 @@
-
 ---
 path: ''
 title: Cameras
 icon: mdi:cctv
 cards:
-  - type: picture-entity
-    entity: camera.driveway
-  - type: picture-entity
-    entity: camera.doorbell
-    # camera_view: live
+  - type: 'custom:frigate-card'
+    camera_entity: camera.driveway
+    frigate_url: http://192.168.1.132:5000
+    live_provider: webrtc
+    webrtc:
+      url: 'rtsp://192.168.1.115:8554/unicast'
+  - type: 'custom:frigate-card'
+    camera_entity: camera.porch
+    frigate_url: http://192.168.1.132:5000
+    live_provider: webrtc
+    webrtc:
+      url: 'rtsp://192.168.1.114:8554/unicast'
+  - type: 'custom:frigate-card'
+    camera_entity: camera.mudroom
+    frigate_url: http://192.168.1.132:5000
+    live_provider: webrtc
+    webrtc:
+      url: 'rtsp://192.168.1.113:8554/unicast'
+
+  # - type: picture-entity
+  #   entity: camera.driveway

@@ -12,7 +12,6 @@ cards:
       - entity: switch.plug4
       - entity: binary_sensor.bedroom_closet_door
       - entity: sensor.visonic_mct_340_e_64323e0b_temperature
-      - entity: binary_sensor.lumi_lumi_sensor_magnet_42a94901_on_off
       - entity: scene.bedroom_warm_light
       - entity: scene.bedroom_daylight
       - entity: scene.bedroom_night_light
@@ -27,13 +26,13 @@ cards:
     title: Corner Room
     type: entities
   - entities:
-      - entity: switch.jasco_products_14291_in_wall_smart_switch_switch_2
+      - entity: switch.master_bath_light
       - entity: switch.master_bath_fan
         icon: mdi:fan
       - entity: sensor.master_bath_temperature
       - entity: sensor.master_bath_humidity
       - entity: sensor.master_bath_pressure
-      - entity: binary_sensor.lumi_lumi_sensor_motion_af5c5301_occupancy
+      - entity: binary_sensor.master_bath_motion_sensor_occupancy
     title: Master Bathroom
     type: entities
   - entities:

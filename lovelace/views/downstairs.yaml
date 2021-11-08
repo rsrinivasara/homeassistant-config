@@ -5,8 +5,8 @@ icon: mdi:home-floor-0
 cards:
   - cards:
       - entities:
-          - lock.august_asl_03_smart_lock_locked
-          - lock.schlage_allegion_be469zp_connect_smart_deadbolt_locked
+          - lock.garage_door_lock
+          - lock.front_door_lock
           - alarm_control_panel.ring_alarm 
         type: glance
     type: horizontal-stack
@@ -35,9 +35,9 @@ cards:
     title: Kitchen
     type: entities
   - entities:
-      - entity: light.jasco_products_12724_3_way_dimmer_switch_level
-      - entity: light.jasco_products_12724_3_way_dimmer_switch_level_2
-      - entity: light.jasco_products_12724_3_way_dimmer_switch_level_3
+      - entity: light.living_room_light_1
+      - entity: light.living_room_light_2
+      - entity: light.living_room_light_3
     title: Living Room
     type: entities
   - entities:
@@ -45,7 +45,9 @@ cards:
       - entity: switch.porch_light
       # - entity: light.wled
       - entity: switch.porch_outdoor_outlet
-      - entity: binary_sensor.lumi_lumi_sensor_magnet_20e21601_on_off
+      - entity: light.foyer_light
+      - entity: binary_sensor.front_door_sensor
+      # - entity: binary_sensor.lumi_lumi_sensor_magnet_20e21601_on_off
       - entity: binary_sensor.first_alert_smoke_alarm 
       - entity: binary_sensor.first_alert_co_alarm
     title: Foyer
@@ -58,7 +60,6 @@ cards:
       - entity: sensor.mudroom_humidity
       - entity: sensor.mudroom_pressure
       - entity: binary_sensor.mudroom_motion_sensor_ias_zone
-      # - entity: binary_sensor.lumi_lumi_sensor_motion_32ad2d01_ias_zone
     title: Mudroom
     type: entities
   # - type: picture-entity
@@ -93,6 +94,5 @@ cards:
     - entity: media_player.living_room
       type: media-control
     - entity: media_player.sound_bar
-    #- entity: media_player.lg_soundbar_4ce51d14_e111_4004_96f8_8eb96f4a3a81
       type: media-control
     type: vertical-stack
