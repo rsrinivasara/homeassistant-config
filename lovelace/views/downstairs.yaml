@@ -5,8 +5,9 @@ icon: mdi:home-floor-0
 cards:
   - cards:
       - entities:
-          - lock.garage_door_lock
           - lock.front_door_lock
+          - lock.garage_door_lock
+          - lock.side_door_lock
           - alarm_control_panel.ring_alarm 
         type: glance
     type: horizontal-stack
@@ -14,6 +15,7 @@ cards:
       - entities:
           - cover.garage_door_opener
           - cover.garage_door_vw 
+          - cover.garage_door_volvo_tasmota
         type: glance
     type: horizontal-stack
   - cards:
@@ -30,9 +32,20 @@ cards:
       - entity: group.kitchen_lights
       - entity: group.under_cabinet_lights
       - entity: group.kitchen_pendant_light
+      - entity: switch.dining_room_light
       - entity: scene.kitchen_warm_light
       - entity: scene.kitchen_daylight
     title: Kitchen
+    type: entities
+  - entities:
+      - entity: light.family_room_light
+      - entity: light.family_room_track_light
+      - entity: switch.plug5
+      - entity: light.patio_light
+      - entity: binary_sensor.family_room_motion_sensor 
+      - entity: binary_sensor.backyard_door
+      - entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
+    title: Family Room
     type: entities
   - entities:
       - entity: light.living_room_light_1
@@ -54,6 +67,7 @@ cards:
     type: entities
   - entities:
       - entity: switch.mudroom_light
+      - entity: switch.side_yard_light
       - entity: binary_sensor.sideyard_door_sensor
       - entity: binary_sensor.garage_door_sensor 
       - entity: sensor.mudroom_temperature
@@ -61,24 +75,6 @@ cards:
       - entity: sensor.mudroom_pressure
       - entity: binary_sensor.mudroom_motion_sensor_ias_zone
     title: Mudroom
-    type: entities
-  # - type: picture-entity
-  #   entity: camera.doorbell
-  #   camera_image: camera.doorbell
-  #   camera_view: "auto"
-  # - type: picture-glance
-  #   title: Driveway
-  #   entities:
-  #     - camera.driveway
-  #   camera_image: camera.driveway
-  - entities:
-      - entity: light.family_room_light
-      - entity: light.family_room_track_light
-      - entity: switch.plug5
-      - entity: binary_sensor.family_room_motion_sensor 
-      - entity: binary_sensor.backyard_door
-      - entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
-    title: Family Room
     type: entities
   - entities:
       - entity: switch.powder_room_light
@@ -93,6 +89,6 @@ cards:
   - cards:
     - entity: media_player.living_room
       type: media-control
-    - entity: media_player.sound_bar
+    - entity: media_player.onkyo
       type: media-control
     type: vertical-stack

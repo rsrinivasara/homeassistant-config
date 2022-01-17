@@ -1,0 +1,739 @@
+---
+title: 'garagedoor Codes and Configuration'
+path: keypad-garagedoor
+icon: 'mdi:lock-smart'
+panel: false
+badges:
+  - input_text.garagedoor_lockname
+  - input_boolean.garagedoor_lock_notifications
+  - input_boolean.garagedoor_dooraccess_notifications
+  - input_boolean.garagedoor_garageacess_notifications
+  - entity: >-
+      lock.garage_door_lock
+  - entity: >-
+      binary_sensor.garage_door_sensor
+  - entity: input_text.keymaster_garagedoor_autolock_door_time_day
+  - entity: input_text.keymaster_garagedoor_autolock_door_time_night
+  - entity: input_boolean.keymaster_garagedoor_autolock
+  - entity: timer.keymaster_garagedoor_autolock
+cards:
+  - type: vertical-stack
+    cards:
+      - content: |
+          ## Code 1
+        type: markdown
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_text.garagedoor_name_1
+          - entity: input_text.garagedoor_pin_1
+          - entity: input_boolean.enabled_garagedoor_1
+          - entity: input_boolean.notify_garagedoor_1
+          - type: divider
+          - entity: sensor.connected_garagedoor_1
+            state_color: true
+          - entity: binary_sensor.active_garagedoor_1
+            state_color: true
+          - type: 'custom:fold-entity-row'
+            head:
+              type: section
+              label: Advanced Options
+            entities:
+              - entity: input_boolean.reset_codeslot_garagedoor_1
+              - type: divider
+              - entity: input_boolean.accesslimit_garagedoor_1
+              - entity: input_number.accesscount_garagedoor_1
+                type: 'custom:numberbox-card'
+                icon: 'mdi:key-variant'
+                speed: 250
+              - type: divider
+              - entity: input_boolean.daterange_garagedoor_1
+              - entity: input_datetime.start_date_garagedoor_1
+              - entity: input_datetime.end_date_garagedoor_1
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Custom Weekdays
+                entities:
+                  - input_boolean.sun_garagedoor_1
+                  - input_boolean.sun_inc_garagedoor_1
+                  - input_datetime.sun_start_date_garagedoor_1
+                  - input_datetime.sun_end_date_garagedoor_1
+                  - type: divider
+                  - input_boolean.mon_garagedoor_1
+                  - input_boolean.mon_inc_garagedoor_1
+                  - input_datetime.mon_start_date_garagedoor_1
+                  - input_datetime.mon_end_date_garagedoor_1
+                  - type: divider
+                  - input_boolean.tue_garagedoor_1
+                  - input_boolean.tue_inc_garagedoor_1
+                  - input_datetime.tue_start_date_garagedoor_1
+                  - input_datetime.tue_end_date_garagedoor_1
+                  - type: divider
+                  - input_boolean.wed_garagedoor_1
+                  - input_boolean.wed_inc_garagedoor_1
+                  - input_datetime.wed_start_date_garagedoor_1
+                  - input_datetime.wed_end_date_garagedoor_1
+                  - type: divider
+                  - input_boolean.thu_garagedoor_1
+                  - input_boolean.thu_inc_garagedoor_1
+                  - input_datetime.thu_start_date_garagedoor_1
+                  - input_datetime.thu_end_date_garagedoor_1
+                  - type: divider
+                  - input_boolean.fri_garagedoor_1
+                  - input_boolean.fri_inc_garagedoor_1
+                  - input_datetime.fri_start_date_garagedoor_1
+                  - input_datetime.fri_end_date_garagedoor_1
+                  - type: divider
+                  - input_boolean.sat_garagedoor_1
+                  - input_boolean.sat_inc_garagedoor_1
+                  - input_datetime.sat_start_date_garagedoor_1
+                  - input_datetime.sat_end_date_garagedoor_1
+  - type: vertical-stack
+    cards:
+      - content: |
+          ## Code 2
+        type: markdown
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_text.garagedoor_name_2
+          - entity: input_text.garagedoor_pin_2
+          - entity: input_boolean.enabled_garagedoor_2
+          - entity: input_boolean.notify_garagedoor_2
+          - type: divider
+          - entity: sensor.connected_garagedoor_2
+            state_color: true
+          - entity: binary_sensor.active_garagedoor_2
+            state_color: true
+          - type: 'custom:fold-entity-row'
+            head:
+              type: section
+              label: Advanced Options
+            entities:
+              - entity: input_boolean.reset_codeslot_garagedoor_2
+              - type: divider
+              - entity: input_boolean.accesslimit_garagedoor_2
+              - entity: input_number.accesscount_garagedoor_2
+                type: 'custom:numberbox-card'
+                icon: 'mdi:key-variant'
+                speed: 250
+              - type: divider
+              - entity: input_boolean.daterange_garagedoor_2
+              - entity: input_datetime.start_date_garagedoor_2
+              - entity: input_datetime.end_date_garagedoor_2
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Custom Weekdays
+                entities:
+                  - input_boolean.sun_garagedoor_2
+                  - input_boolean.sun_inc_garagedoor_2
+                  - input_datetime.sun_start_date_garagedoor_2
+                  - input_datetime.sun_end_date_garagedoor_2
+                  - type: divider
+                  - input_boolean.mon_garagedoor_2
+                  - input_boolean.mon_inc_garagedoor_2
+                  - input_datetime.mon_start_date_garagedoor_2
+                  - input_datetime.mon_end_date_garagedoor_2
+                  - type: divider
+                  - input_boolean.tue_garagedoor_2
+                  - input_boolean.tue_inc_garagedoor_2
+                  - input_datetime.tue_start_date_garagedoor_2
+                  - input_datetime.tue_end_date_garagedoor_2
+                  - type: divider
+                  - input_boolean.wed_garagedoor_2
+                  - input_boolean.wed_inc_garagedoor_2
+                  - input_datetime.wed_start_date_garagedoor_2
+                  - input_datetime.wed_end_date_garagedoor_2
+                  - type: divider
+                  - input_boolean.thu_garagedoor_2
+                  - input_boolean.thu_inc_garagedoor_2
+                  - input_datetime.thu_start_date_garagedoor_2
+                  - input_datetime.thu_end_date_garagedoor_2
+                  - type: divider
+                  - input_boolean.fri_garagedoor_2
+                  - input_boolean.fri_inc_garagedoor_2
+                  - input_datetime.fri_start_date_garagedoor_2
+                  - input_datetime.fri_end_date_garagedoor_2
+                  - type: divider
+                  - input_boolean.sat_garagedoor_2
+                  - input_boolean.sat_inc_garagedoor_2
+                  - input_datetime.sat_start_date_garagedoor_2
+                  - input_datetime.sat_end_date_garagedoor_2
+  - type: vertical-stack
+    cards:
+      - content: |
+          ## Code 3
+        type: markdown
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_text.garagedoor_name_3
+          - entity: input_text.garagedoor_pin_3
+          - entity: input_boolean.enabled_garagedoor_3
+          - entity: input_boolean.notify_garagedoor_3
+          - type: divider
+          - entity: sensor.connected_garagedoor_3
+            state_color: true
+          - entity: binary_sensor.active_garagedoor_3
+            state_color: true
+          - type: 'custom:fold-entity-row'
+            head:
+              type: section
+              label: Advanced Options
+            entities:
+              - entity: input_boolean.reset_codeslot_garagedoor_3
+              - type: divider
+              - entity: input_boolean.accesslimit_garagedoor_3
+              - entity: input_number.accesscount_garagedoor_3
+                type: 'custom:numberbox-card'
+                icon: 'mdi:key-variant'
+                speed: 250
+              - type: divider
+              - entity: input_boolean.daterange_garagedoor_3
+              - entity: input_datetime.start_date_garagedoor_3
+              - entity: input_datetime.end_date_garagedoor_3
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Custom Weekdays
+                entities:
+                  - input_boolean.sun_garagedoor_3
+                  - input_boolean.sun_inc_garagedoor_3
+                  - input_datetime.sun_start_date_garagedoor_3
+                  - input_datetime.sun_end_date_garagedoor_3
+                  - type: divider
+                  - input_boolean.mon_garagedoor_3
+                  - input_boolean.mon_inc_garagedoor_3
+                  - input_datetime.mon_start_date_garagedoor_3
+                  - input_datetime.mon_end_date_garagedoor_3
+                  - type: divider
+                  - input_boolean.tue_garagedoor_3
+                  - input_boolean.tue_inc_garagedoor_3
+                  - input_datetime.tue_start_date_garagedoor_3
+                  - input_datetime.tue_end_date_garagedoor_3
+                  - type: divider
+                  - input_boolean.wed_garagedoor_3
+                  - input_boolean.wed_inc_garagedoor_3
+                  - input_datetime.wed_start_date_garagedoor_3
+                  - input_datetime.wed_end_date_garagedoor_3
+                  - type: divider
+                  - input_boolean.thu_garagedoor_3
+                  - input_boolean.thu_inc_garagedoor_3
+                  - input_datetime.thu_start_date_garagedoor_3
+                  - input_datetime.thu_end_date_garagedoor_3
+                  - type: divider
+                  - input_boolean.fri_garagedoor_3
+                  - input_boolean.fri_inc_garagedoor_3
+                  - input_datetime.fri_start_date_garagedoor_3
+                  - input_datetime.fri_end_date_garagedoor_3
+                  - type: divider
+                  - input_boolean.sat_garagedoor_3
+                  - input_boolean.sat_inc_garagedoor_3
+                  - input_datetime.sat_start_date_garagedoor_3
+                  - input_datetime.sat_end_date_garagedoor_3
+  - type: vertical-stack
+    cards:
+      - content: |
+          ## Code 4
+        type: markdown
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_text.garagedoor_name_4
+          - entity: input_text.garagedoor_pin_4
+          - entity: input_boolean.enabled_garagedoor_4
+          - entity: input_boolean.notify_garagedoor_4
+          - type: divider
+          - entity: sensor.connected_garagedoor_4
+            state_color: true
+          - entity: binary_sensor.active_garagedoor_4
+            state_color: true
+          - type: 'custom:fold-entity-row'
+            head:
+              type: section
+              label: Advanced Options
+            entities:
+              - entity: input_boolean.reset_codeslot_garagedoor_4
+              - type: divider
+              - entity: input_boolean.accesslimit_garagedoor_4
+              - entity: input_number.accesscount_garagedoor_4
+                type: 'custom:numberbox-card'
+                icon: 'mdi:key-variant'
+                speed: 250
+              - type: divider
+              - entity: input_boolean.daterange_garagedoor_4
+              - entity: input_datetime.start_date_garagedoor_4
+              - entity: input_datetime.end_date_garagedoor_4
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Custom Weekdays
+                entities:
+                  - input_boolean.sun_garagedoor_4
+                  - input_boolean.sun_inc_garagedoor_4
+                  - input_datetime.sun_start_date_garagedoor_4
+                  - input_datetime.sun_end_date_garagedoor_4
+                  - type: divider
+                  - input_boolean.mon_garagedoor_4
+                  - input_boolean.mon_inc_garagedoor_4
+                  - input_datetime.mon_start_date_garagedoor_4
+                  - input_datetime.mon_end_date_garagedoor_4
+                  - type: divider
+                  - input_boolean.tue_garagedoor_4
+                  - input_boolean.tue_inc_garagedoor_4
+                  - input_datetime.tue_start_date_garagedoor_4
+                  - input_datetime.tue_end_date_garagedoor_4
+                  - type: divider
+                  - input_boolean.wed_garagedoor_4
+                  - input_boolean.wed_inc_garagedoor_4
+                  - input_datetime.wed_start_date_garagedoor_4
+                  - input_datetime.wed_end_date_garagedoor_4
+                  - type: divider
+                  - input_boolean.thu_garagedoor_4
+                  - input_boolean.thu_inc_garagedoor_4
+                  - input_datetime.thu_start_date_garagedoor_4
+                  - input_datetime.thu_end_date_garagedoor_4
+                  - type: divider
+                  - input_boolean.fri_garagedoor_4
+                  - input_boolean.fri_inc_garagedoor_4
+                  - input_datetime.fri_start_date_garagedoor_4
+                  - input_datetime.fri_end_date_garagedoor_4
+                  - type: divider
+                  - input_boolean.sat_garagedoor_4
+                  - input_boolean.sat_inc_garagedoor_4
+                  - input_datetime.sat_start_date_garagedoor_4
+                  - input_datetime.sat_end_date_garagedoor_4
+  - type: vertical-stack
+    cards:
+      - content: |
+          ## Code 5
+        type: markdown
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_text.garagedoor_name_5
+          - entity: input_text.garagedoor_pin_5
+          - entity: input_boolean.enabled_garagedoor_5
+          - entity: input_boolean.notify_garagedoor_5
+          - type: divider
+          - entity: sensor.connected_garagedoor_5
+            state_color: true
+          - entity: binary_sensor.active_garagedoor_5
+            state_color: true
+          - type: 'custom:fold-entity-row'
+            head:
+              type: section
+              label: Advanced Options
+            entities:
+              - entity: input_boolean.reset_codeslot_garagedoor_5
+              - type: divider
+              - entity: input_boolean.accesslimit_garagedoor_5
+              - entity: input_number.accesscount_garagedoor_5
+                type: 'custom:numberbox-card'
+                icon: 'mdi:key-variant'
+                speed: 250
+              - type: divider
+              - entity: input_boolean.daterange_garagedoor_5
+              - entity: input_datetime.start_date_garagedoor_5
+              - entity: input_datetime.end_date_garagedoor_5
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Custom Weekdays
+                entities:
+                  - input_boolean.sun_garagedoor_5
+                  - input_boolean.sun_inc_garagedoor_5
+                  - input_datetime.sun_start_date_garagedoor_5
+                  - input_datetime.sun_end_date_garagedoor_5
+                  - type: divider
+                  - input_boolean.mon_garagedoor_5
+                  - input_boolean.mon_inc_garagedoor_5
+                  - input_datetime.mon_start_date_garagedoor_5
+                  - input_datetime.mon_end_date_garagedoor_5
+                  - type: divider
+                  - input_boolean.tue_garagedoor_5
+                  - input_boolean.tue_inc_garagedoor_5
+                  - input_datetime.tue_start_date_garagedoor_5
+                  - input_datetime.tue_end_date_garagedoor_5
+                  - type: divider
+                  - input_boolean.wed_garagedoor_5
+                  - input_boolean.wed_inc_garagedoor_5
+                  - input_datetime.wed_start_date_garagedoor_5
+                  - input_datetime.wed_end_date_garagedoor_5
+                  - type: divider
+                  - input_boolean.thu_garagedoor_5
+                  - input_boolean.thu_inc_garagedoor_5
+                  - input_datetime.thu_start_date_garagedoor_5
+                  - input_datetime.thu_end_date_garagedoor_5
+                  - type: divider
+                  - input_boolean.fri_garagedoor_5
+                  - input_boolean.fri_inc_garagedoor_5
+                  - input_datetime.fri_start_date_garagedoor_5
+                  - input_datetime.fri_end_date_garagedoor_5
+                  - type: divider
+                  - input_boolean.sat_garagedoor_5
+                  - input_boolean.sat_inc_garagedoor_5
+                  - input_datetime.sat_start_date_garagedoor_5
+                  - input_datetime.sat_end_date_garagedoor_5
+  - type: vertical-stack
+    cards:
+      - content: |
+          ## Code 6
+        type: markdown
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_text.garagedoor_name_6
+          - entity: input_text.garagedoor_pin_6
+          - entity: input_boolean.enabled_garagedoor_6
+          - entity: input_boolean.notify_garagedoor_6
+          - type: divider
+          - entity: sensor.connected_garagedoor_6
+            state_color: true
+          - entity: binary_sensor.active_garagedoor_6
+            state_color: true
+          - type: 'custom:fold-entity-row'
+            head:
+              type: section
+              label: Advanced Options
+            entities:
+              - entity: input_boolean.reset_codeslot_garagedoor_6
+              - type: divider
+              - entity: input_boolean.accesslimit_garagedoor_6
+              - entity: input_number.accesscount_garagedoor_6
+                type: 'custom:numberbox-card'
+                icon: 'mdi:key-variant'
+                speed: 250
+              - type: divider
+              - entity: input_boolean.daterange_garagedoor_6
+              - entity: input_datetime.start_date_garagedoor_6
+              - entity: input_datetime.end_date_garagedoor_6
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Custom Weekdays
+                entities:
+                  - input_boolean.sun_garagedoor_6
+                  - input_boolean.sun_inc_garagedoor_6
+                  - input_datetime.sun_start_date_garagedoor_6
+                  - input_datetime.sun_end_date_garagedoor_6
+                  - type: divider
+                  - input_boolean.mon_garagedoor_6
+                  - input_boolean.mon_inc_garagedoor_6
+                  - input_datetime.mon_start_date_garagedoor_6
+                  - input_datetime.mon_end_date_garagedoor_6
+                  - type: divider
+                  - input_boolean.tue_garagedoor_6
+                  - input_boolean.tue_inc_garagedoor_6
+                  - input_datetime.tue_start_date_garagedoor_6
+                  - input_datetime.tue_end_date_garagedoor_6
+                  - type: divider
+                  - input_boolean.wed_garagedoor_6
+                  - input_boolean.wed_inc_garagedoor_6
+                  - input_datetime.wed_start_date_garagedoor_6
+                  - input_datetime.wed_end_date_garagedoor_6
+                  - type: divider
+                  - input_boolean.thu_garagedoor_6
+                  - input_boolean.thu_inc_garagedoor_6
+                  - input_datetime.thu_start_date_garagedoor_6
+                  - input_datetime.thu_end_date_garagedoor_6
+                  - type: divider
+                  - input_boolean.fri_garagedoor_6
+                  - input_boolean.fri_inc_garagedoor_6
+                  - input_datetime.fri_start_date_garagedoor_6
+                  - input_datetime.fri_end_date_garagedoor_6
+                  - type: divider
+                  - input_boolean.sat_garagedoor_6
+                  - input_boolean.sat_inc_garagedoor_6
+                  - input_datetime.sat_start_date_garagedoor_6
+                  - input_datetime.sat_end_date_garagedoor_6
+  - type: vertical-stack
+    cards:
+      - content: |
+          ## Code 7
+        type: markdown
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_text.garagedoor_name_7
+          - entity: input_text.garagedoor_pin_7
+          - entity: input_boolean.enabled_garagedoor_7
+          - entity: input_boolean.notify_garagedoor_7
+          - type: divider
+          - entity: sensor.connected_garagedoor_7
+            state_color: true
+          - entity: binary_sensor.active_garagedoor_7
+            state_color: true
+          - type: 'custom:fold-entity-row'
+            head:
+              type: section
+              label: Advanced Options
+            entities:
+              - entity: input_boolean.reset_codeslot_garagedoor_7
+              - type: divider
+              - entity: input_boolean.accesslimit_garagedoor_7
+              - entity: input_number.accesscount_garagedoor_7
+                type: 'custom:numberbox-card'
+                icon: 'mdi:key-variant'
+                speed: 250
+              - type: divider
+              - entity: input_boolean.daterange_garagedoor_7
+              - entity: input_datetime.start_date_garagedoor_7
+              - entity: input_datetime.end_date_garagedoor_7
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Custom Weekdays
+                entities:
+                  - input_boolean.sun_garagedoor_7
+                  - input_boolean.sun_inc_garagedoor_7
+                  - input_datetime.sun_start_date_garagedoor_7
+                  - input_datetime.sun_end_date_garagedoor_7
+                  - type: divider
+                  - input_boolean.mon_garagedoor_7
+                  - input_boolean.mon_inc_garagedoor_7
+                  - input_datetime.mon_start_date_garagedoor_7
+                  - input_datetime.mon_end_date_garagedoor_7
+                  - type: divider
+                  - input_boolean.tue_garagedoor_7
+                  - input_boolean.tue_inc_garagedoor_7
+                  - input_datetime.tue_start_date_garagedoor_7
+                  - input_datetime.tue_end_date_garagedoor_7
+                  - type: divider
+                  - input_boolean.wed_garagedoor_7
+                  - input_boolean.wed_inc_garagedoor_7
+                  - input_datetime.wed_start_date_garagedoor_7
+                  - input_datetime.wed_end_date_garagedoor_7
+                  - type: divider
+                  - input_boolean.thu_garagedoor_7
+                  - input_boolean.thu_inc_garagedoor_7
+                  - input_datetime.thu_start_date_garagedoor_7
+                  - input_datetime.thu_end_date_garagedoor_7
+                  - type: divider
+                  - input_boolean.fri_garagedoor_7
+                  - input_boolean.fri_inc_garagedoor_7
+                  - input_datetime.fri_start_date_garagedoor_7
+                  - input_datetime.fri_end_date_garagedoor_7
+                  - type: divider
+                  - input_boolean.sat_garagedoor_7
+                  - input_boolean.sat_inc_garagedoor_7
+                  - input_datetime.sat_start_date_garagedoor_7
+                  - input_datetime.sat_end_date_garagedoor_7
+  - type: vertical-stack
+    cards:
+      - content: |
+          ## Code 8
+        type: markdown
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_text.garagedoor_name_8
+          - entity: input_text.garagedoor_pin_8
+          - entity: input_boolean.enabled_garagedoor_8
+          - entity: input_boolean.notify_garagedoor_8
+          - type: divider
+          - entity: sensor.connected_garagedoor_8
+            state_color: true
+          - entity: binary_sensor.active_garagedoor_8
+            state_color: true
+          - type: 'custom:fold-entity-row'
+            head:
+              type: section
+              label: Advanced Options
+            entities:
+              - entity: input_boolean.reset_codeslot_garagedoor_8
+              - type: divider
+              - entity: input_boolean.accesslimit_garagedoor_8
+              - entity: input_number.accesscount_garagedoor_8
+                type: 'custom:numberbox-card'
+                icon: 'mdi:key-variant'
+                speed: 250
+              - type: divider
+              - entity: input_boolean.daterange_garagedoor_8
+              - entity: input_datetime.start_date_garagedoor_8
+              - entity: input_datetime.end_date_garagedoor_8
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Custom Weekdays
+                entities:
+                  - input_boolean.sun_garagedoor_8
+                  - input_boolean.sun_inc_garagedoor_8
+                  - input_datetime.sun_start_date_garagedoor_8
+                  - input_datetime.sun_end_date_garagedoor_8
+                  - type: divider
+                  - input_boolean.mon_garagedoor_8
+                  - input_boolean.mon_inc_garagedoor_8
+                  - input_datetime.mon_start_date_garagedoor_8
+                  - input_datetime.mon_end_date_garagedoor_8
+                  - type: divider
+                  - input_boolean.tue_garagedoor_8
+                  - input_boolean.tue_inc_garagedoor_8
+                  - input_datetime.tue_start_date_garagedoor_8
+                  - input_datetime.tue_end_date_garagedoor_8
+                  - type: divider
+                  - input_boolean.wed_garagedoor_8
+                  - input_boolean.wed_inc_garagedoor_8
+                  - input_datetime.wed_start_date_garagedoor_8
+                  - input_datetime.wed_end_date_garagedoor_8
+                  - type: divider
+                  - input_boolean.thu_garagedoor_8
+                  - input_boolean.thu_inc_garagedoor_8
+                  - input_datetime.thu_start_date_garagedoor_8
+                  - input_datetime.thu_end_date_garagedoor_8
+                  - type: divider
+                  - input_boolean.fri_garagedoor_8
+                  - input_boolean.fri_inc_garagedoor_8
+                  - input_datetime.fri_start_date_garagedoor_8
+                  - input_datetime.fri_end_date_garagedoor_8
+                  - type: divider
+                  - input_boolean.sat_garagedoor_8
+                  - input_boolean.sat_inc_garagedoor_8
+                  - input_datetime.sat_start_date_garagedoor_8
+                  - input_datetime.sat_end_date_garagedoor_8
+  - type: vertical-stack
+    cards:
+      - content: |
+          ## Code 9
+        type: markdown
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_text.garagedoor_name_9
+          - entity: input_text.garagedoor_pin_9
+          - entity: input_boolean.enabled_garagedoor_9
+          - entity: input_boolean.notify_garagedoor_9
+          - type: divider
+          - entity: sensor.connected_garagedoor_9
+            state_color: true
+          - entity: binary_sensor.active_garagedoor_9
+            state_color: true
+          - type: 'custom:fold-entity-row'
+            head:
+              type: section
+              label: Advanced Options
+            entities:
+              - entity: input_boolean.reset_codeslot_garagedoor_9
+              - type: divider
+              - entity: input_boolean.accesslimit_garagedoor_9
+              - entity: input_number.accesscount_garagedoor_9
+                type: 'custom:numberbox-card'
+                icon: 'mdi:key-variant'
+                speed: 250
+              - type: divider
+              - entity: input_boolean.daterange_garagedoor_9
+              - entity: input_datetime.start_date_garagedoor_9
+              - entity: input_datetime.end_date_garagedoor_9
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Custom Weekdays
+                entities:
+                  - input_boolean.sun_garagedoor_9
+                  - input_boolean.sun_inc_garagedoor_9
+                  - input_datetime.sun_start_date_garagedoor_9
+                  - input_datetime.sun_end_date_garagedoor_9
+                  - type: divider
+                  - input_boolean.mon_garagedoor_9
+                  - input_boolean.mon_inc_garagedoor_9
+                  - input_datetime.mon_start_date_garagedoor_9
+                  - input_datetime.mon_end_date_garagedoor_9
+                  - type: divider
+                  - input_boolean.tue_garagedoor_9
+                  - input_boolean.tue_inc_garagedoor_9
+                  - input_datetime.tue_start_date_garagedoor_9
+                  - input_datetime.tue_end_date_garagedoor_9
+                  - type: divider
+                  - input_boolean.wed_garagedoor_9
+                  - input_boolean.wed_inc_garagedoor_9
+                  - input_datetime.wed_start_date_garagedoor_9
+                  - input_datetime.wed_end_date_garagedoor_9
+                  - type: divider
+                  - input_boolean.thu_garagedoor_9
+                  - input_boolean.thu_inc_garagedoor_9
+                  - input_datetime.thu_start_date_garagedoor_9
+                  - input_datetime.thu_end_date_garagedoor_9
+                  - type: divider
+                  - input_boolean.fri_garagedoor_9
+                  - input_boolean.fri_inc_garagedoor_9
+                  - input_datetime.fri_start_date_garagedoor_9
+                  - input_datetime.fri_end_date_garagedoor_9
+                  - type: divider
+                  - input_boolean.sat_garagedoor_9
+                  - input_boolean.sat_inc_garagedoor_9
+                  - input_datetime.sat_start_date_garagedoor_9
+                  - input_datetime.sat_end_date_garagedoor_9
+  - type: vertical-stack
+    cards:
+      - content: |
+          ## Code 10
+        type: markdown
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - entity: input_text.garagedoor_name_10
+          - entity: input_text.garagedoor_pin_10
+          - entity: input_boolean.enabled_garagedoor_10
+          - entity: input_boolean.notify_garagedoor_10
+          - type: divider
+          - entity: sensor.connected_garagedoor_10
+            state_color: true
+          - entity: binary_sensor.active_garagedoor_10
+            state_color: true
+          - type: 'custom:fold-entity-row'
+            head:
+              type: section
+              label: Advanced Options
+            entities:
+              - entity: input_boolean.reset_codeslot_garagedoor_10
+              - type: divider
+              - entity: input_boolean.accesslimit_garagedoor_10
+              - entity: input_number.accesscount_garagedoor_10
+                type: 'custom:numberbox-card'
+                icon: 'mdi:key-variant'
+                speed: 250
+              - type: divider
+              - entity: input_boolean.daterange_garagedoor_10
+              - entity: input_datetime.start_date_garagedoor_10
+              - entity: input_datetime.end_date_garagedoor_10
+              - type: 'custom:fold-entity-row'
+                head:
+                  type: section
+                  label: Custom Weekdays
+                entities:
+                  - input_boolean.sun_garagedoor_10
+                  - input_boolean.sun_inc_garagedoor_10
+                  - input_datetime.sun_start_date_garagedoor_10
+                  - input_datetime.sun_end_date_garagedoor_10
+                  - type: divider
+                  - input_boolean.mon_garagedoor_10
+                  - input_boolean.mon_inc_garagedoor_10
+                  - input_datetime.mon_start_date_garagedoor_10
+                  - input_datetime.mon_end_date_garagedoor_10
+                  - type: divider
+                  - input_boolean.tue_garagedoor_10
+                  - input_boolean.tue_inc_garagedoor_10
+                  - input_datetime.tue_start_date_garagedoor_10
+                  - input_datetime.tue_end_date_garagedoor_10
+                  - type: divider
+                  - input_boolean.wed_garagedoor_10
+                  - input_boolean.wed_inc_garagedoor_10
+                  - input_datetime.wed_start_date_garagedoor_10
+                  - input_datetime.wed_end_date_garagedoor_10
+                  - type: divider
+                  - input_boolean.thu_garagedoor_10
+                  - input_boolean.thu_inc_garagedoor_10
+                  - input_datetime.thu_start_date_garagedoor_10
+                  - input_datetime.thu_end_date_garagedoor_10
+                  - type: divider
+                  - input_boolean.fri_garagedoor_10
+                  - input_boolean.fri_inc_garagedoor_10
+                  - input_datetime.fri_start_date_garagedoor_10
+                  - input_datetime.fri_end_date_garagedoor_10
+                  - type: divider
+                  - input_boolean.sat_garagedoor_10
+                  - input_boolean.sat_inc_garagedoor_10
+                  - input_datetime.sat_start_date_garagedoor_10
+                  - input_datetime.sat_end_date_garagedoor_10

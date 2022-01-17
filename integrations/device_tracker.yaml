@@ -1,6 +1,6 @@
----
-device_tracker:
-  - platform: ping
-    hosts:
-      s10e: !secret s10e_ip
-      note10: !secret note10_ip
+# ---
+# device_tracker:
+#   - platform: ping
+#     hosts:
+#       s10e: !secret s10e_ip
+#       note10: !secret note10_ip

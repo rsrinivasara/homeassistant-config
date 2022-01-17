@@ -5,22 +5,19 @@ icon: mdi:cctv
 cards:
   - type: 'custom:frigate-card'
     camera_entity: camera.driveway
-    frigate_url: http://192.168.1.132:5000
+    frigate_url: !secret frigate_url
     live_provider: webrtc
     webrtc:
-      url: 'rtsp://192.168.1.115:8554/unicast'
+      url: !secret driveway_cam_url
   - type: 'custom:frigate-card'
     camera_entity: camera.porch
-    frigate_url: http://192.168.1.132:5000
+    frigate_url: !secret frigate_url
     live_provider: webrtc
     webrtc:
-      url: 'rtsp://192.168.1.114:8554/unicast'
+      url: !secret porch_cam_url
   - type: 'custom:frigate-card'
-    camera_entity: camera.mudroom
-    frigate_url: http://192.168.1.132:5000
+    camera_entity: camera.garage
+    frigate_url: !secret frigate_url
     live_provider: webrtc
     webrtc:
-      url: 'rtsp://192.168.1.113:8554/unicast'
-
-  # - type: picture-entity
-  #   entity: camera.driveway
+      url: !secret garage_cam_url

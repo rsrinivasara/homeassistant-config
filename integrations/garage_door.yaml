@@ -6,9 +6,9 @@
 
 # https://www.home-assistant.io/integrations/myq/
 cover:
- - platform: myq
-   username: !secret myq_username
-   password: !secret myq_password
+#  - platform: myq
+#    username: !secret myq_username
+#    password: !secret myq_password
  - platform: mqtt
    name: "Garage Door - VW"
    command_topic: "cmnd/tasmota_garage1/POWER"
@@ -23,20 +23,20 @@ cover:
    state_open: "open"
    state_closed: "closed"
    device_class: garage
-#  - platform: mqtt
-#    name: "Garage Door - VW"
-#    command_topic: "cmnd/tasmota_garage2/POWER"
-#    state_topic: "stat/tasmota_garage2/STATUS"
-#    availability_topic: "tele/tasmota_garage2/LWT"
-#    qos: 1
-#    payload_available: "Online"
-#    payload_not_available: "Offline"
-#    payload_open: "ON"
-#    payload_close: "ON"
-#    payload_stop: "ON"
-#    state_open: "open"
-#    state_closed: "closed"
-#    device_class: garage
+ - platform: mqtt
+   name: "Garage Door - Volvo Tasmota"
+   command_topic: "cmnd/tasmota_garage2/POWER"
+   state_topic: "stat/tasmota_garage2/STATUS"
+   availability_topic: "tele/tasmota_garage2/LWT"
+   qos: 1
+   payload_available: "Online"
+   payload_not_available: "Offline"
+   payload_open: "ON"
+   payload_close: "ON"
+   payload_stop: "ON"
+   state_open: "open"
+   state_closed: "closed"
+   device_class: garage
   
 # This tracks the current state of the garage door. Current state is pushed
 # periodically by tasmota
@@ -53,27 +53,34 @@ binary_sensor:
     qos: 0
     device_class: opening
     value_template: '{{ value_json.Switch1 }}'
-  # - platform: mqtt
-  #   name: "Garage_VW_Sensor"
-  #   state_topic: "tele/tasmota_garage2/SENSOR"
-  #   payload_on: "ON"
-  #   availability:
-  #     - topic: "tele/tasmota_garage2/LWT"
-  #       payload_available: "Online"
-  #       payload_not_available: "Offline"
-  #   qos: 0
-  #   device_class: opening
-  #   value_template: '{{ value_json.Switch1 }}'
+  - platform: mqtt
+    name: "Garage_Volvo_Sensor"
+    state_topic: "tele/tasmota_garage2/SENSOR"
+    payload_on: "ON"
+    availability:
+      - topic: "tele/tasmota_garage2/LWT"
+        payload_available: "Online"
+        payload_not_available: "Offline"
+    qos: 0
+    device_class: opening
+    value_template: '{{ value_json.Switch1 }}'
 
 
 # TimeZone 99
 # TimeDST 0,2,3,1,2,-240
 # TimeSTD 0,1,11,1,2,-300
 # IPAddress1 <Static IP>
-# switchmode1 2
 # poweronstate 0
 # setoption0 0
 # pulsetime1 10
+# Relay closed when closed
+# switchmode1 2
 # Rule1 on switch1#state=0 do publish2 stat/%topic%/STATUS closed endon on switch1#state=1 do publish2 stat/%topic%/STATUS open endon
 # Rule1 1
 # setoption19 1 (to enable autodiscovery in homeassistant)
+
+# Relay closed when open
+# switchmode1 2
+# Rule1 on switch1#state=0 do publish2 stat/%topic%/STATUS open endon on switch1#state=1 do publish2 stat/%topic%/STATUS closed endon
+
+

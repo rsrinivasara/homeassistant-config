@@ -107,7 +107,22 @@ switch.plug4:
   friendly_name: 'Bedside Lamp 2'
 
 switch.plug5:
-  friendly_name: 'TV'
+  friendly_name: 'Floor Lamp'
+
+switch.plug2_switch2:
+  friendly_name: 'Space Heater'
 
 switch.porch_outdoor_outlet:
-  friendly_name: "Porch Outdoor Outlet"
+  friendly_name: 'Porch Outdoor Outlet'
+
+switch.s31_1:
+  friendly_name: 'Space Heater'
+
+lock.front_door_lock:
+  friendly_name: 'Front Door'
+
+lock.garage_door_lock:
+  friendly_name: 'Garage Door'
+
+lock.side_door_lock:
+  friendly_name: 'Side Door'

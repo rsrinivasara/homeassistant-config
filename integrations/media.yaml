@@ -1,0 +1,6 @@
+---
+# Example configuration.yaml entry
+media_player:
+  - platform: onkyo
+    host: !secret onkyo_ip
+    name: onkyo
