@@ -2,6 +2,7 @@
 .storage/
 OZW_Log.txt
 home-assistant.log
+home-assistant.log.1
 home-assistant_v2.db
 options.xml
 *.sqlite
@@ -16,3 +17,4 @@ home-assistant_v2.db-shm
 home-assistant_v2.db-wal
 integrations/router.yaml.bad
 *.gz
+*db*corrupt

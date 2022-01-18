@@ -24,7 +24,7 @@ cover:
    state_closed: "closed"
    device_class: garage
  - platform: mqtt
-   name: "Garage Door - Volvo Tasmota"
+   name: "Garage Door - Volvo"
    command_topic: "cmnd/tasmota_garage2/POWER"
    state_topic: "stat/tasmota_garage2/STATUS"
    availability_topic: "tele/tasmota_garage2/LWT"
