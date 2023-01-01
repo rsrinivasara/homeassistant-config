@@ -2,22 +2,34 @@
 path: ''
 title: Cameras
 icon: mdi:cctv
+
 cards:
-  - type: 'custom:frigate-card'
-    camera_entity: camera.driveway
-    frigate_url: !secret frigate_url
-    live_provider: webrtc
-    webrtc:
-      url: !secret driveway_cam_url
-  - type: 'custom:frigate-card'
-    camera_entity: camera.porch
-    frigate_url: !secret frigate_url
-    live_provider: webrtc
-    webrtc:
-      url: !secret porch_cam_url
-  - type: 'custom:frigate-card'
-    camera_entity: camera.garage
-    frigate_url: !secret frigate_url
-    live_provider: webrtc
-    webrtc:
-      url: !secret garage_cam_url
+  - type: custom:frigate-card
+    cameras:
+      - camera_entity: camera.driveway  
+  - type: custom:frigate-card
+    cameras:
+      - camera_entity: camera.porch  
+  - type: custom:frigate-card
+    cameras:
+      - camera_entity: camera.garage  
+
+# cards:
+#   - type: 'custom:frigate-card'
+#     camera_entity: camera.driveway
+#     frigate_url: !secret frigate_url
+#     live_provider: webrtc
+#     webrtc:
+#       url: !secret driveway_cam_url
+  # - type: 'custom:frigate-card'
+  #   camera_entity: camera.porch
+  #   frigate_url: !secret frigate_url
+  #   live_provider: webrtc
+  #   webrtc:
+  #     url: !secret porch_cam_url
+  # - type: 'custom:frigate-card'
+  #   camera_entity: camera.garage
+  #   frigate_url: !secret frigate_url
+  #   live_provider: webrtc
+  #   webrtc:
+  #     url: !secret garage_cam_url

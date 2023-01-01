@@ -39,7 +39,7 @@ cards:
   - entities:
       - entity: light.family_room_light
       - entity: light.family_room_track_light
-      - entity: switch.plug5
+      - entity: switch.s31_2
       - entity: light.patio_light
       - entity: binary_sensor.family_room_motion_sensor 
       - entity: binary_sensor.backyard_door
@@ -59,13 +59,11 @@ cards:
     title: Living Room
     type: entities
   - entities:
-      # - entity: switch.jasco_products_12722_on_off_relay_switch_switch
       - entity: switch.porch_light
-      # - entity: light.wled
       - entity: switch.porch_outdoor_outlet
+      - entity: switch.wyze_front_yard_plug
       - entity: light.foyer_light
       - entity: binary_sensor.front_door_sensor
-      # - entity: binary_sensor.lumi_lumi_sensor_magnet_20e21601_on_off
       - entity: binary_sensor.first_alert_smoke_alarm 
       - entity: binary_sensor.first_alert_co_alarm
     title: Foyer

@@ -14,14 +14,16 @@ from typing import Any, Callable, Final
 from awesomeversion import AwesomeVersion
 
 from custom_components.frigate.config_flow import get_config_entry_title
+from homeassistant.components.mqtt.models import ReceiveMessage
 from homeassistant.components.mqtt.subscription import (
+    async_prepare_subscribe_topics,
     async_subscribe_topics,
     async_unsubscribe_topics,
 )
 from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import ATTR_MODEL, CONF_HOST, CONF_URL
-from homeassistant.core import Config, HomeAssistant, callback
+from homeassistant.core import Config, HomeAssistant, callback, valid_entity_id
 from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers import device_registry as dr, entity_registry as er
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
@@ -29,16 +31,6 @@ from homeassistant.helpers.entity import Entity
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 from homeassistant.loader import async_get_integration
 from homeassistant.util import slugify
-
-# TODO(@dermotduffy): To be removed some safe distance from the official release of 2021.8.
-try:
-    from homeassistant.components.mqtt.models import (  # pylint: disable=no-name-in-module  # pragma: no cover
-        ReceiveMessage,
-    )
-except ImportError:  # pragma: no cover
-    from homeassistant.components.mqtt.models import (  # pylint: disable=no-name-in-module  # pragma: no cover
-        Message as ReceiveMessage,
-    )
 
 from .api import FrigateApiClient, FrigateApiClientError
 from .const import (
@@ -52,18 +44,24 @@ from .const import (
     NAME,
     PLATFORMS,
     STARTUP_MESSAGE,
+    STATUS_ERROR,
+    STATUS_RUNNING,
+    STATUS_STARTING,
 )
 from .views import (
     JSMPEGProxyView,
     NotificationsProxyView,
     SnapshotsProxyView,
+    ThumbnailsProxyView,
     VodProxyView,
     VodSegmentProxyView,
 )
+from .ws_api import async_setup as ws_api_async_setup
 
 SCAN_INTERVAL = timedelta(seconds=5)
 
 _LOGGER: logging.Logger = logging.getLogger(__name__)
+
 
 # Typing notes:
 # - The HomeAssistant library does not provide usable type hints for custom
@@ -95,12 +93,30 @@ def get_friendly_name(name: str) -> str:
     return name.replace("_", " ").title()
 
 
-def get_cameras_and_objects(config: dict[str, Any]) -> set[tuple[str, str]]:
+def get_cameras(config: dict[str, Any]) -> set[str]:
+    """Get cameras."""
+    cameras = set()
+
+    for cam_name, _ in config["cameras"].items():
+        cameras.add(cam_name)
+
+    return cameras
+
+
+def get_cameras_and_objects(
+    config: dict[str, Any], include_all: bool = True
+) -> set[tuple[str, str]]:
     """Get cameras and tracking object tuples."""
     camera_objects = set()
     for cam_name, cam_config in config["cameras"].items():
         for obj in cam_config["objects"]["track"]:
             camera_objects.add((cam_name, obj))
+
+        # add an artificial all label to track
+        # all objects for this camera
+        if include_all:
+            camera_objects.add((cam_name, "all"))
+
     return camera_objects
 
 
@@ -111,7 +127,15 @@ def get_cameras_zones_and_objects(config: dict[str, Any]) -> set[tuple[str, str]
     zone_objects = set()
     for cam_name, obj in camera_objects:
         for zone_name in config["cameras"][cam_name]["zones"]:
-            zone_objects.add((zone_name, obj))
+            zone_name_objects = config["cameras"][cam_name]["zones"][zone_name].get(
+                "objects"
+            )
+            if not zone_name_objects or obj in zone_name_objects:
+                zone_objects.add((zone_name, obj))
+
+            # add an artificial all label to track
+            # all objects for this zone
+            zone_objects.add((zone_name, "all"))
     return camera_objects.union(zone_objects)
 
 
@@ -120,6 +144,15 @@ def get_cameras_and_zones(config: dict[str, Any]) -> set[str]:
     cameras_zones = set()
     for camera in config.get("cameras", {}).keys():
         cameras_zones.add(camera)
+        for zone in config["cameras"][camera].get("zones", {}).keys():
+            cameras_zones.add(zone)
+    return cameras_zones
+
+
+def get_zones(config: dict[str, Any]) -> set[str]:
+    """Get zones."""
+    cameras_zones = set()
+    for camera in config.get("cameras", {}).keys():
         for zone in config["cameras"][camera].get("zones", {}).keys():
             cameras_zones.add(zone)
     return cameras_zones
@@ -137,10 +170,13 @@ async def async_setup(hass: HomeAssistant, config: Config) -> bool:
 
     hass.data.setdefault(DOMAIN, {})
 
+    ws_api_async_setup(hass)
+
     session = async_get_clientsession(hass)
     hass.http.register_view(JSMPEGProxyView(session))
     hass.http.register_view(NotificationsProxyView(session))
     hass.http.register_view(SnapshotsProxyView(session))
+    hass.http.register_view(ThumbnailsProxyView(session))
     hass.http.register_view(VodProxyView(session))
     hass.http.register_view(VodSegmentProxyView(session))
     return True
@@ -214,6 +250,42 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
         new_options.pop(CONF_CAMERA_STATIC_IMAGE_HEIGHT)
         hass.config_entries.async_update_entry(entry, options=new_options)
 
+    # Cleanup object_motion sensors (replaced with occupancy sensors).
+    for cam_name, obj_name in get_cameras_zones_and_objects(config):
+        unique_id = get_frigate_entity_unique_id(
+            entry.entry_id,
+            "motion_sensor",
+            f"{cam_name}_{obj_name}",
+        )
+        entity_id = entity_registry.async_get_entity_id(
+            "binary_sensor", DOMAIN, unique_id
+        )
+        if entity_id:
+            entity_registry.async_remove(entity_id)
+
+    # Rename / change ID of object count sensors.
+    for cam_name, obj_name in get_cameras_zones_and_objects(config):
+        unique_id = get_frigate_entity_unique_id(
+            entry.entry_id,
+            "sensor_object_count",
+            f"{cam_name}_{obj_name}",
+        )
+        entity_id = entity_registry.async_get_entity_id("sensor", DOMAIN, unique_id)
+        new_id = f"sensor.{slugify(cam_name)}_{slugify(obj_name)}_count"
+
+        if (
+            entity_id
+            and entity_id != new_id
+            and valid_entity_id(new_id)
+            and not entity_registry.async_get(new_id)
+        ):
+            new_name = f"{get_friendly_name(cam_name)} {obj_name} Count".title()
+            entity_registry.async_update_entity(
+                entity_id=entity_id,
+                new_entity_id=new_id,
+                name=new_name,
+            )
+
     hass.config_entries.async_setup_platforms(entry, PLATFORMS)
     entry.async_on_unload(entry.add_update_listener(_async_entry_updated))
 
@@ -226,13 +298,17 @@ class FrigateDataUpdateCoordinator(DataUpdateCoordinator):  # type: ignore[misc]
     def __init__(self, hass: HomeAssistant, client: FrigateApiClient):
         """Initialize."""
         self._api = client
+        self.server_status: str = STATUS_STARTING
         super().__init__(hass, _LOGGER, name=DOMAIN, update_interval=SCAN_INTERVAL)
 
     async def _async_update_data(self) -> dict[str, Any]:
         """Update data via library."""
         try:
-            return await self._api.async_get_stats()
+            stats = await self._api.async_get_stats()
+            self.server_status = STATUS_RUNNING
+            return stats
         except FrigateApiClientError as exc:
+            self.server_status = STATUS_ERROR
             raise UpdateFailed from exc
 
 
@@ -271,7 +347,7 @@ async def async_migrate_entry(hass: HomeAssistant, config_entry: ConfigEntry) ->
 
             converters: Final[dict[re.Pattern, Callable[[re.Match], list[str]]]] = {
                 re.compile(rf"^{DOMAIN}_(?P<cam_obj>\S+)_binary_sensor$"): lambda m: [
-                    "motion_sensor",
+                    "occupancy_sensor",
                     m.group("cam_obj"),
                 ],
                 re.compile(rf"^{DOMAIN}_(?P<cam>\S+)_camera$"): lambda m: [
@@ -322,6 +398,8 @@ async def async_migrate_entry(hass: HomeAssistant, config_entry: ConfigEntry) ->
 class FrigateEntity(Entity):  # type: ignore[misc]
     """Base class for Frigate entities."""
 
+    _attr_has_entity_name = True
+
     def __init__(self, config_entry: ConfigEntry):
         """Construct a FrigateEntity."""
         Entity.__init__(self)
@@ -346,43 +424,34 @@ class FrigateMQTTEntity(FrigateEntity):
         self,
         config_entry: ConfigEntry,
         frigate_config: dict[str, Any],
-        state_topic_config: dict[str, Any],
+        topic_map: dict[str, Any],
     ) -> None:
         """Construct a FrigateMQTTEntity."""
         super().__init__(config_entry)
         self._frigate_config = frigate_config
         self._sub_state = None
         self._available = False
-        self._state_topic_config = {
-            "msg_callback": self._state_message_received,
-            "qos": 0,
-            **state_topic_config,
-        }
+        self._topic_map = topic_map
 
     async def async_added_to_hass(self) -> None:
         """Subscribe mqtt events."""
-        self._sub_state = await async_subscribe_topics(
+        self._topic_map["availability_topic"] = {
+            "topic": f"{self._frigate_config['mqtt']['topic_prefix']}/available",
+            "msg_callback": self._availability_message_received,
+            "qos": 0,
+        }
+
+        state = async_prepare_subscribe_topics(
             self.hass,
             self._sub_state,
-            {
-                "state_topic": self._state_topic_config,
-                "availability_topic": {
-                    "topic": f"{self._frigate_config['mqtt']['topic_prefix']}/available",
-                    "msg_callback": self._availability_message_received,
-                    "qos": 0,
-                },
-            },
+            self._topic_map,
         )
+        self._sub_state = await async_subscribe_topics(self.hass, state)
 
     async def async_will_remove_from_hass(self) -> None:
         """Cleanup prior to hass removal."""
-        await async_unsubscribe_topics(self.hass, self._sub_state)
+        async_unsubscribe_topics(self.hass, self._sub_state)
         self._sub_state = None
-
-    @callback  # type: ignore[misc]
-    def _state_message_received(self, msg: ReceiveMessage) -> None:
-        """State message received."""
-        self.async_write_ha_state()
 
     @callback  # type: ignore[misc]
     def _availability_message_received(self, msg: ReceiveMessage) -> None:
