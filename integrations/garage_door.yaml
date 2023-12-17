@@ -5,65 +5,120 @@
 # mobile app.
 
 # https://www.home-assistant.io/integrations/myq/
-cover:
-#  - platform: myq
-#    username: !secret myq_username
-#    password: !secret myq_password
- - platform: mqtt
-   name: "Garage Door - VW"
-   command_topic: "cmnd/tasmota_garage1/POWER"
-   state_topic: "stat/tasmota_garage1/STATUS"
-   availability_topic: "tele/tasmota_garage1/LWT"
-   qos: 1
-   payload_available: "Online"
-   payload_not_available: "Offline"
-   payload_open: "ON"
-   payload_close: "ON"
-   payload_stop: "ON"
-   state_open: "open"
-   state_closed: "closed"
-   device_class: garage
- - platform: mqtt
-   name: "Garage Door - Volvo"
-   command_topic: "cmnd/tasmota_garage2/POWER"
-   state_topic: "stat/tasmota_garage2/STATUS"
-   availability_topic: "tele/tasmota_garage2/LWT"
-   qos: 1
-   payload_available: "Online"
-   payload_not_available: "Offline"
-   payload_open: "ON"
-   payload_close: "ON"
-   payload_stop: "ON"
-   state_open: "open"
-   state_closed: "closed"
-   device_class: garage
+
+mqtt:
+  cover:
+    - name: "Garage Door - VW"
+      command_topic: "cmnd/tasmota_garage1/POWER"
+      state_topic: "stat/tasmota_garage1/STATUS"
+      availability_topic: "tele/tasmota_garage1/LWT"
+      qos: 1
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      payload_open: "ON"
+      payload_close: "ON"
+      payload_stop: "ON"
+      state_open: "open"
+      state_closed: "closed"
+      device_class: garage
+    - name: "Garage Door - Volvo"
+      command_topic: "cmnd/tasmota_garage2/POWER"
+      state_topic: "stat/tasmota_garage2/STATUS"
+      availability_topic: "tele/tasmota_garage2/LWT"
+      qos: 1
+      payload_available: "Online"
+      payload_not_available: "Offline"
+      payload_open: "ON"
+      payload_close: "ON"
+      payload_stop: "ON"
+      state_open: "open"
+      state_closed: "closed"
+      device_class: garage
+
+# This tracks the current state of the garage door. Current state is pushed
+# periodically by tasmota
+# 22:44:36 MQT: tele/tasmota_garage1/SENSOR = {"Time":"2020-10-14T22:44:36","Switch1":"OFF"}
+  binary_sensor:
+    - name: "Garage_VW_Sensor"
+      state_topic: "tele/tasmota_garage1/SENSOR"
+      payload_on: "ON"
+      availability:
+        - topic: "tele/tasmota_garage1/LWT"
+          payload_available: "Online"
+          payload_not_available: "Offline"
+      qos: 0
+      device_class: opening
+      value_template: '{{ value_json.Switch1 }}'
+    - name: "Garage_Volvo_Sensor"
+      state_topic: "tele/tasmota_garage2/SENSOR"
+      payload_on: "ON"
+      availability:
+        - topic: "tele/tasmota_garage2/LWT"
+          payload_available: "Online"
+          payload_not_available: "Offline"
+      qos: 0
+      device_class: opening
+      value_template: '{{ value_json.Switch1 }}'
+
+# cover:
+# #  - platform: myq
+# #    username: !secret myq_username
+# #    password: !secret myq_password
+#  - platform: mqtt
+#    name: "Garage Door - VW"
+#    command_topic: "cmnd/tasmota_garage1/POWER"
+#    state_topic: "stat/tasmota_garage1/STATUS"
+#    availability_topic: "tele/tasmota_garage1/LWT"
+#    qos: 1
+#    payload_available: "Online"
+#    payload_not_available: "Offline"
+#    payload_open: "ON"
+#    payload_close: "ON"
+#    payload_stop: "ON"
+#    state_open: "open"
+#    state_closed: "closed"
+#    device_class: garage
+#  - platform: mqtt
+#    name: "Garage Door - Volvo"
+#    command_topic: "cmnd/tasmota_garage2/POWER"
+#    state_topic: "stat/tasmota_garage2/STATUS"
+#    availability_topic: "tele/tasmota_garage2/LWT"
+#    qos: 1
+#    payload_available: "Online"
+#    payload_not_available: "Offline"
+#    payload_open: "ON"
+#    payload_close: "ON"
+#    payload_stop: "ON"
+#    state_open: "open"
+#    state_closed: "closed"
+#    device_class: garage
   
 # This tracks the current state of the garage door. Current state is pushed
 # periodically by tasmota
 # 22:44:36 MQT: tele/tasmota_garage1/SENSOR = {"Time":"2020-10-14T22:44:36","Switch1":"OFF"}
-binary_sensor:
-  - platform: mqtt
-    name: "Garage_VW_Sensor"
-    state_topic: "tele/tasmota_garage1/SENSOR"
-    payload_on: "ON"
-    availability:
-      - topic: "tele/tasmota_garage1/LWT"
-        payload_available: "Online"
-        payload_not_available: "Offline"
-    qos: 0
-    device_class: opening
-    value_template: '{{ value_json.Switch1 }}'
-  - platform: mqtt
-    name: "Garage_Volvo_Sensor"
-    state_topic: "tele/tasmota_garage2/SENSOR"
-    payload_on: "ON"
-    availability:
-      - topic: "tele/tasmota_garage2/LWT"
-        payload_available: "Online"
-        payload_not_available: "Offline"
-    qos: 0
-    device_class: opening
-    value_template: '{{ value_json.Switch1 }}'
+# binary_sensor:
+#   - platform: mqtt
+#     name: "Garage_VW_Sensor"
+#     state_topic: "tele/tasmota_garage1/SENSOR"
+#     payload_on: "ON"
+#     availability:
+#       - topic: "tele/tasmota_garage1/LWT"
+#         payload_available: "Online"
+#         payload_not_available: "Offline"
+#     qos: 0
+#     device_class: opening
+#     value_template: '{{ value_json.Switch1 }}'
+#   - platform: mqtt
+#     name: "Garage_Volvo_Sensor"
+#     state_topic: "tele/tasmota_garage2/SENSOR"
+#     payload_on: "ON"
+#     availability:
+#       - topic: "tele/tasmota_garage2/LWT"
+#         payload_available: "Online"
+#         payload_not_available: "Offline"
+#     qos: 0
+#     device_class: opening
+#     value_template: '{{ value_json.Switch1 }}'
 
 
 # TimeZone 99

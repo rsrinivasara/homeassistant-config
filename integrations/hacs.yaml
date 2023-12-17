@@ -1,3 +1,3 @@
----
-hacs:
-  token: !secret github_token
+# ---
+# hacs:
+#   token: !secret github_token

@@ -15,6 +15,10 @@ known_devices.yaml
 zigbee.db*
 home-assistant_v2.db-shm
 home-assistant_v2.db-wal
+home-assistant*corrupt*
 integrations/router.yaml.bad
 *.gz
 *db*corrupt
+custom_components/hacs
+custom_components/webrtc
+custom_components/frigate

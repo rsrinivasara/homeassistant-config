@@ -68,3 +68,18 @@ climate.centralite_3157100_e_947e5b05_fan_thermostat:
 
 cover.garage_door_opener:
   friendly_name: 'Garage Door - Volvo'
+
+sensor.mudroom_temp_sensor_humidity:
+  friendly_name: 'Mudroom Humidity'
+sensor.mudroom_temp_sensor_temperature:
+  friendly_name: 'Mudroom Temperature'
+
+sensor.master_bedroom_temp_sensor_temperature:
+  friendly_name: 'Master Bedroom Temperature'
+sensor.master_bedroom_temp_sensor_humidity:
+  friendly_name: 'Master Bedroom Humidity'
+
+sensor.playroom_temp_sensor_temperature:
+  friendly_name: 'Playroom Temperature'
+sensor.playroom_temp_sensor_humidity:
+  friendly_name: 'Playroom Humidity'

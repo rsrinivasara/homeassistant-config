@@ -4,22 +4,22 @@
 #
 # https://www.home-assistant.io/integrations/weather.darksky/
 #
-weather:
-  - platform: darksky
-    api_key: !secret darksky_api_key
-    mode: daily
+# weather:
+#   - platform: darksky
+#     api_key: !secret darksky_api_key
+#     mode: daily
 
 sensor:
   - platform: template
     sensors:
-      outside_temperature:
-        friendly_name: "Outside Temperature"
-        unit_of_measurement: '°F'
-        value_template: "{{ state_attr('weather.dark_sky', 'temperature') }}"
-      outside_humidity:
-        friendly_name: "Outside Humidity"
-        unit_of_measurement: '%'
-        value_template: "{{ state_attr('weather.dark_sky', 'humidity') }}"
+      # outside_temperature:
+      #   friendly_name: "Outside Temperature"
+      #   unit_of_measurement: '°F'
+      #   value_template: "{{ state_attr('weather.dark_sky', 'temperature') }}"
+      # outside_humidity:
+      #   friendly_name: "Outside Humidity"
+      #   unit_of_measurement: '%'
+      #   value_template: "{{ state_attr('weather.dark_sky', 'humidity') }}"
       familyroom_temperature:
         friendly_name: "Familyroom Temperature"
         unit_of_measurement: '°F'

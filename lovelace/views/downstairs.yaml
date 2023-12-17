@@ -47,8 +47,6 @@ cards:
     title: Family Room
     type: entities
   - cards:
-    - entity: media_player.living_room
-      type: media-control
     - entity: media_player.onkyo
       type: media-control
     type: vertical-stack
@@ -56,12 +54,13 @@ cards:
       - entity: light.living_room_light_1
       - entity: light.living_room_light_2
       - entity: light.living_room_light_3
+      - entity: switch.s31_1
     title: Living Room
     type: entities
   - entities:
       - entity: switch.porch_light
-      - entity: switch.porch_outdoor_outlet
-      - entity: switch.wyze_front_yard_plug
+      - entity: switch.front_porch_outlet
+      - entity: switch.wyze_front_yard_plug_2
       - entity: light.foyer_light
       - entity: binary_sensor.front_door_sensor
       - entity: binary_sensor.first_alert_smoke_alarm 
@@ -73,9 +72,8 @@ cards:
       - entity: switch.side_yard_light
       - entity: binary_sensor.sideyard_door_sensor
       - entity: binary_sensor.garage_door_sensor 
-      - entity: sensor.mudroom_temperature
-      - entity: sensor.mudroom_humidity
-      - entity: sensor.mudroom_pressure
+      - entity: sensor.mudroom_temp_sensor_temperature
+      - entity: sensor.mudroom_temp_sensor_humidity
       - entity: binary_sensor.mudroom_motion_sensor_ias_zone
     title: Mudroom
     type: entities
@@ -86,6 +84,3 @@ cards:
       - entity: binary_sensor.powder_room_motion_sensor_occupancy
     title: Powder Room
     type: entities
-  - type: custom:weather-card
-    title: Weather
-    entity: weather.dark_sky

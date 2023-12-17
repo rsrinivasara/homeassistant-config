@@ -73,11 +73,14 @@ light.osram_lightify_rt_rgbw_0aeda800_level_light_color_on_off:
 light.the_home_depot_ecosmart_zbt_a19_cct_bulb_c1cbe1fe_level_light_color_on_off:
   friendly_name: 'Kitchen Pendant Light'
 
-switch.plug2_switch3:
+switch.saketh_room_star_light:
+  friendly_name: 'Star Light'
+
+switch.saketh_room_night_light:
   friendly_name: 'Table Fan'
 
-switch.plug2_switch1:
-  friendly_name: 'Star Light'
+switch.saketh_room_saketh_room_2:
+  friendly_name: 'Unassigned'
 
 switch.plug1_switch1:
   friendly_name: 'Table Fan'
@@ -113,14 +116,14 @@ switch.s31_2:
 switch.plug2_switch2:
   friendly_name: 'Space Heater'
 
-switch.wyze_front_yard_plug:
+switch.wyze_front_yard_plug_2:
   friendly_name: 'String Lights'
 
 switch.porch_outdoor_outlet:
   friendly_name: 'Porch Outdoor Outlet'
 
 switch.s31_1:
-  friendly_name: 'Space Heater'
+  friendly_name: 'Christmas Tree'
 
 lock.front_door_lock:
   friendly_name: 'Front Door'
