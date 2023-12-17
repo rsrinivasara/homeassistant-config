@@ -15,6 +15,8 @@ resources:
     type: module 
   - url: /hacsfiles/numberbox-card/numberbox-card.js
     type: module
+  - url: /local/balloob-battery-strategy.js
+    type: module
 views:
   - !include lovelace/views/downstairs.yaml
   - !include lovelace/views/upstairs.yaml
@@ -22,4 +24,5 @@ views:
   - !include lovelace/views/office.yaml
   - !include lovelace/views/front_door_lock.yaml
   - !include lovelace/views/garage_door_lock.yaml
+  - !include lovelace/views/battery.yaml
   # - !include lovelace/views/home_old.yaml
