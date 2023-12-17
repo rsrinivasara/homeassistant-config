@@ -22,3 +22,4 @@ integrations/router.yaml.bad
 custom_components/hacs
 custom_components/webrtc
 custom_components/frigate
+home-assistant.log*
