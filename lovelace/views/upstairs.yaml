@@ -18,6 +18,7 @@ cards:
       - entity: scene.bedroom_night_light
       - entity: scene.bedroom_sleeping
       - entity: binary_sensor.lumi_lumi_sensor_motion_915c5301_ias_zone
+      - entity: group.bedroom_blinds
     title: Master Bedroom
     type: entities
   - entities:

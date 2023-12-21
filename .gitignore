@@ -21,3 +21,4 @@ custom_components/hacs
 custom_components/webrtc
 custom_components/frigate
 home-assistant.log*
+home-assistant.log.fault
