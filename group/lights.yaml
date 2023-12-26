@@ -13,6 +13,7 @@ Under Cabinet Lights:
     - light.ikea_of_sweden_tradfri_transformer_30w_1edd16fe_level_on_off
     - light.ikea_of_sweden_tradfri_transformer_10w_fe9735fe_level_on_off
     - light.ikea_of_sweden_tradfri_driver_30w_89db6efe_level_on_off
+  icon: 'mdi:led-strip-variant'
 
 Kitchen Lights:
   entities:
@@ -23,10 +24,7 @@ Kitchen Lights:
     - light.osram_lightify_rt_rgbw_e7bea400_level_light_color_on_off
     - light.osram_lightify_rt_rgbw_15bfa400_level_light_color_on_off
     - light.osram_lightify_rt_rgbw_0aeda800_level_light_color_on_off
-
-Kitchen Pendant Light:
-  entities:
-    - light.the_home_depot_ecosmart_zbt_a19_cct_bulb_c1cbe1fe_level_light_color_on_off
+  icon: 'mdi:light-recessed'
 
 Bathroom Lights:
   entities:

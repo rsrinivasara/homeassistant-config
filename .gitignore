@@ -20,5 +20,9 @@ integrations/router.yaml.bad
 custom_components/hacs
 custom_components/webrtc
 custom_components/frigate
+custom_components/browser_mod
+custom_components/ui_lovelace_minimalist
 home-assistant.log*
 home-assistant.log.fault
+themes/*
+www/community/*

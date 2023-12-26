@@ -23,14 +23,24 @@ cards:
           - person.swathi_sudarshan 
         type: glance
     type: horizontal-stack
+
   - type: 'custom:simple-thermostat'
     entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
-    step_size: 1
-    step_layout: row
+    layout:
+      mode:
+        icons: true
+        names: true
+        headings: false
+    header:
+      name: Thermostat
+      icon: mdi:hvac
+    control:
+      hvac: true
+
   - entities:
       - entity: group.kitchen_lights
       - entity: group.under_cabinet_lights
-      - entity: group.kitchen_pendant_light
+      - entity: light.kitchen_pendant_light
       - entity: switch.dining_room_light
       - entity: scene.kitchen_warm_light
       - entity: scene.kitchen_daylight
@@ -80,7 +90,6 @@ cards:
   - entities:
       - entity: switch.powder_room_light
       - entity: switch.powder_room_fan
-        icon: mdi:fan
       - entity: binary_sensor.powder_room_motion_sensor_occupancy
     title: Powder Room
     type: entities

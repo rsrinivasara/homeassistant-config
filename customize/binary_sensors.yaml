@@ -83,3 +83,11 @@ sensor.playroom_temp_sensor_temperature:
   friendly_name: 'Playroom Temperature'
 sensor.playroom_temp_sensor_humidity:
   friendly_name: 'Playroom Humidity'
+
+binary_sensor.garage_door_sensor:
+  friendly_name: "Garage Door"
+  icon: "mdi:door"
+
+binary_sensor.sideyard_door_sensor:
+  friendly_name: "Sideyard Door"
+  icon: "mdi:door"

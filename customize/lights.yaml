@@ -30,18 +30,23 @@ light.nortek_dimmer:
 
 light.living_room_light_1:
   friendly_name: 'Living Room Light - 1'
+  icon: 'mdi:light-recessed'
 
 light.living_room_light_2:
   friendly_name: 'Living Room Light - 2'
+  icon: 'mdi:light-recessed'
 
 light.living_room_light_3:
   friendly_name: 'Living Room Light - 3'
+  icon: 'mdi:light-recessed'
 
 switch.porch_light:
   friendly_name: 'Porch Light'
+  icon: 'mdi:outdoor-lamp'
 
 switch.mudroom_light:
   friendly_name: 'Mudroom Light'
+  icon: 'mdi:dome-light'
 
 switch.master_bath_light:
   friendly_name: 'Master Bath Light'
@@ -70,8 +75,9 @@ light.osram_lightify_rt_rgbw_15bfa400_level_light_color_on_off:
 light.osram_lightify_rt_rgbw_0aeda800_level_light_color_on_off:
   friendly_name: 'Kitchen Light 7'
 
-light.the_home_depot_ecosmart_zbt_a19_cct_bulb_c1cbe1fe_level_light_color_on_off:
+light.kitchen_pendant_light:
   friendly_name: 'Kitchen Pendant Light'
+  icon: 'mdi:globe-light'
 
 switch.saketh_room_star_light:
   friendly_name: 'Star Light'
@@ -102,9 +108,11 @@ switch.bath_vanity_light:
 
 switch.powder_room_light:
   friendly_name: 'Powder Room Light'
+  icon: 'mdi:vanity-light'
 
 switch.powder_room_fan:
   friendly_name: 'Powder Room Fan'
+  icon: 'mdi:fan'
 
 switch.plug4:
   friendly_name: 'Bedside Lamp 2'
@@ -118,12 +126,11 @@ switch.plug2_switch2:
 
 switch.wyze_front_yard_plug_2:
   friendly_name: 'String Lights'
-
-switch.porch_outdoor_outlet:
-  friendly_name: 'Porch Outdoor Outlet'
+  icon: 'mdi:string-lights'
 
 switch.s31_1:
   friendly_name: 'Christmas Tree'
+  icon: 'mdi:tree'
 
 lock.front_door_lock:
   friendly_name: 'Front Door'
@@ -133,3 +140,15 @@ lock.garage_door_lock:
 
 lock.side_door_lock:
   friendly_name: 'Side Door'
+
+switch.front_porch_outlet:
+  friendly_name: 'Front Porch Outlet'
+  icon: 'mdi:power-socket-us'
+
+light.foyer_light:
+  friendly_name: "Foyer Light"
+  icon: 'mdi:chandelier'
+
+switch.side_yard_light:
+  friendly_name: "Side Yard Light"
+  icon: 'mdi:outdoor-lamp'
