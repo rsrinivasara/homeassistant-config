@@ -50,6 +50,7 @@ switch.mudroom_light:
 
 switch.master_bath_light:
   friendly_name: 'Master Bath Light'
+  icon: 'mdi:vanity-light'
 
 switch.master_bath_fan:
   friendly_name: 'Master Bath Fan'
@@ -79,13 +80,15 @@ light.kitchen_pendant_light:
   friendly_name: 'Kitchen Pendant Light'
   icon: 'mdi:globe-light'
 
-switch.saketh_room_star_light:
+switch.playroom_star_light:
   friendly_name: 'Star Light'
+  icon: 'mdi:star-outline'
 
-switch.saketh_room_night_light:
+switch.playroom_fan:
   friendly_name: 'Table Fan'
+  icon: 'mdi:fan'
 
-switch.saketh_room_saketh_room_2:
+switch.playroom_unassigned:
   friendly_name: 'Unassigned'
 
 switch.plug1_switch1:
@@ -152,3 +155,7 @@ light.foyer_light:
 switch.side_yard_light:
   friendly_name: "Side Yard Light"
   icon: 'mdi:outdoor-lamp'
+
+light.family_room_light:
+  friendly_name: 'Ceiling Light'
+  icon: 'mdi:dome-light'

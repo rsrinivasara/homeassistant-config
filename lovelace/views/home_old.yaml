@@ -78,7 +78,7 @@ cards:
   - entities:
       - entity: >-
           light.linear_nortek_security_control_llc_wd500z_1_wall_dimmer_switch_level
-      - entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
+      - entity: climate.centralite_thermostat
       - entity: binary_sensor.family_room_motion_sensor 
       - entity: binary_sensor.backyard_door
     title: Family Room

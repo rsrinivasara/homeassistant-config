@@ -43,11 +43,9 @@ cards:
     title: 'Upstairs Hallway '
     type: entities
   - entities:
-      - entity: switch.saketh_room_star_light
-        icon: mdi:lamp
-      - entity: switch.saketh_room_night_light
-        icon: mdi:fan
-      - entity: switch.saketh_room_saketh_room_2
+      - entity: switch.playroom_star_light
+      - entity: switch.playroom_fan
+      - entity: switch.playroom_unassigned
       - entity: sensor.playroom_temp_sensor_temperature
       - entity: sensor.playroom_temp_sensor_humidity
     title: Play Room

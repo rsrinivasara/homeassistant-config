@@ -13,6 +13,10 @@ cards:
         template: chip_icon_label
         label: '[[[ return states["sensor.openweathermap_wind_speed"].state + " mph" ]]]'
         icon: 'mdi:weather-dust'
+      - type: 'custom:button-card'
+        template: chip_alarm
+        entity: alarm_control_panel.ring_alarm
+
 
   - type: horizontal-stack
     cards:
@@ -31,250 +35,202 @@ cards:
           ulm_card_person_battery_entity: sensor.sm_s916u1_battery_level
           ulm_card_person_battery_state_entity: sensor.sm_s916u1_battery_state
 
+  - type: 'custom:button-card'
+    template: card_title
+    name: Downstairs
+
   - type: horizontal-stack
     cards:
       - type: 'custom:button-card'
         template:
-            - card_room
+            - card_esh_room
             - yellow_on
         name: Family Room
-        entity: input_boolean.minimalist_dropdown
         icon: mdi:television
+        entity: light.family_room_light
         label: '[[[ return states["sensor.familyroom_temperature"].state + " °F" ]]]'
         tap_action:
           action: navigate
           navigation_path: '/ui-lovelace-minimalist/begane_grond'
         variables:
-          entity_1:
-            entity_id: light.family_room_light
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_2:
-            entity_id: light.family_room_track_light
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_3:
-            entity_id: switch.s31_2
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_4:
-            entity_id: light.patio_light
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
+          ulm_custom_card_esh_room_light_entity: light.family_room_light
+          ulm_custom_card_esh_room_climate_entity: climate.centralite_thermostat
+
+
       - type: 'custom:button-card'
         template:
-            - card_room
+            - card_esh_room
             - yellow_on
         name: Kitchen
-        entity: input_boolean.minimalist_dropdown
         icon: mdi:countertop-outline
         label: ''
         tap_action:
           action: navigate
           navigation_path: '/ui-lovelace-minimalist/begane_grond'
         variables:
-          entity_1:
-            entity_id: group.kitchen_lights
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_2:
-            entity_id: light.kitchen_pendant_light
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_3:
-            entity_id: group.under_cabinet_lights
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
+          ulm_custom_card_esh_room_light_entity: group.kitchen_lights
+
 
   - type: horizontal-stack
     cards:
       - type: 'custom:button-card'
         template:
-            - card_room
+            - card_esh_room
             - yellow_on
         name: Foyer
-        entity: input_boolean.minimalist_dropdown
+        entity: light.foyer_light
         icon: mdi:door
         label: '[[[ return states["sensor.foyer_closet_door_temperature"].state + " °F" ]]]'
         tap_action:
           action: navigate
           navigation_path: '/ui-lovelace-minimalist/begane_grond'
         variables:
-          entity_1:
-            entity_id: switch.porch_light
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_2:
-            entity_id: switch.front_porch_outlet
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_3:
-            entity_id: switch.wyze_front_yard_plug_2
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_4:
-            entity_id: light.foyer_light
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
+          ulm_custom_card_esh_room_light_entity: light.foyer_light
+
       - type: 'custom:button-card'
         template:
-            - card_room
+            - card_esh_room
             - yellow_on
         name: Living Room
-        entity: input_boolean.minimalist_dropdown
+        entity: group.living_room_lights
         icon: mdi:sofa
         label: ''
         tap_action:
           action: navigate
           navigation_path: '/ui-lovelace-minimalist/begane_grond'
         variables:
-          entity_1:
-            entity_id: light.living_room_light_1
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_2:
-            entity_id: light.living_room_light_2
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_3:
-            entity_id: light.living_room_light_3
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_4:
-            entity_id: switch.s31_1
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
+          ulm_custom_card_esh_room_light_entity: group.living_room_lights
+
   - type: horizontal-stack
     cards:
       - type: 'custom:button-card'
         template:
-            - card_room
+            - card_esh_room
             - yellow_on
         name: Powder Room
-        entity: input_boolean.minimalist_dropdown
+        entity: switch.powder_room_light
         icon: 'mdi:faucet-variant'
         label: ''
         tap_action:
           action: navigate
           navigation_path: '/ui-lovelace-minimalist/begane_grond'
         variables:
-          entity_1:
-            entity_id: switch.powder_room_light
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_2:
-            entity_id: switch.powder_room_fan
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
+          ulm_custom_card_esh_room_light_entity: switch.powder_room_light
+
       - type: 'custom:button-card'
         template:
-            - card_room
+            - card_esh_room
             - yellow_on
         name: Mudroom
-        entity: input_boolean.minimalist_dropdown
+        entity: switch.mudroom_light
         icon: 'mdi:washing-machine'
         label: '[[[ return states["sensor.mudroom_temp_sensor_temperature"].state + " °F / " + states["sensor.mudroom_temp_sensor_humidity"].state + " %"]]]'
         tap_action:
           action: navigate
           navigation_path: '/ui-lovelace-minimalist/begane_grond'
         variables:
-          entity_1:
-            entity_id: switch.mudroom_light
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_2:
-            entity_id: switch.side_yard_light
-            templates:
-              - yellow_on
-            tap_action:
-              action: toggle
-            hold_action:
-              action: more-info
-          entity_3:
-            entity_id: binary_sensor.sideyard_door_sensor
-            templates:
-              - red_on
-            tap_action:
-              action: none
-            hold_action:
-              action: more-info
-          entity_4:
-            entity_id: binary_sensor.garage_door_sensor
-            templates:
-              - red_on
-            tap_action:
-              action: none
-            hold_action:
-              action: more-info
+          ulm_custom_card_esh_room_light_entity: switch.mudroom_light
+
+  - type: 'custom:button-card'
+    template: card_title
+    name: Upstairs
+
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:button-card'
+        template:
+            - card_esh_room
+            - yellow_on
+        name: Master Bedroom
+        entity: group.bedroom_lights
+        icon: mdi:bed-king-outline
+        label: '[[[ return states["sensor.master_bedroom_temp_sensor_temperature"].state + " °F" ]]]'
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/begane_grond'
+        variables:
+          ulm_custom_card_esh_room_light_entity: group.bedroom_lights
+
+      - type: 'custom:button-card'
+        template:
+            - card_esh_room
+            - yellow_on
+        name: Master Bathroom
+        entity: switch.master_bath_light
+        icon: mdi:shower-head
+        label: '[[[ return states["sensor.master_bath_temperature"].state + " °F / " + states["sensor.master_bath_humidity"].state + " %"]]]'
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/begane_grond'
+        variables:
+          ulm_custom_card_esh_room_light_entity: switch.master_bath_light
+
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:button-card'
+        template:
+            - card_esh_room
+            - yellow_on
+        name: Play Room
+        entity: group.bedroom_lights
+        icon: mdi:bunk-bed-outline
+        label: '[[[ return states["sensor.playroom_temp_sensor_temperature"].state + " °F / " + states["sensor.playroom_temp_sensor_humidity"].state + " %"]]]'
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/begane_grond'
+        variables:
+          ulm_custom_card_esh_room_light_entity: group.bedroom_lights
+
+      - type: 'custom:button-card'
+        template:
+            - card_esh_room
+            - yellow_on
+        name: Bathroom
+        entity: switch.bath_vanity_light
+        icon: mdi:bathtub-outline
+        label: '[[[ return states["sensor.bathroom_temperature"].state + " °F / " + states["sensor.bathroom_humidity"].state + " %"]]]'
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/begane_grond'
+        variables:
+          ulm_custom_card_esh_room_light_entity: switch.bath_vanity_light
+
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:button-card'
+        template:
+            - card_esh_room
+            - yellow_on
+        name: Hallway
+        entity: group.upstairs_hallway_lights
+        icon: mdi:door
+        label: ''
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/begane_grond'
+        variables:
+          ulm_custom_card_esh_room_light_entity: group.upstairs_hallway_lights
+
+      - type: 'custom:button-card'
+        template:
+            - card_esh_room
+            - yellow_on
+        name: Corner Bedroom
+        icon: mdi:bed-king-outline
+        label: '[[[ return states["sensor.corner_room_temperature"].state + " °F / " + states["sensor.corner_room_humidity"].state + " %"]]]'
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/begane_grond'
+
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:button-card'
+        template:
+            - card_esh_room
+            - yellow_on
+        name: Office Room
+        icon: mdi:desk
+        label: '[[[ return states["sensor.office_room_temperature"].state + " °F / " + states["sensor.office_room_humidity"].state + " %"]]]'
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/begane_grond'

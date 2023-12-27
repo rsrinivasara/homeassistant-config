@@ -63,7 +63,7 @@ sensor.bathroom_motion_sensor_power:
 sensor.visonic_mct_340_e_64323e0b_temperature:
   friendly_name: 'Bedroom Temperature'
 
-climate.centralite_3157100_e_947e5b05_fan_thermostat:
+climate.centralite_thermostat:
   friendly_name: 'Centralite Thermostat'
 
 cover.garage_door_opener:

@@ -25,7 +25,7 @@ cards:
     type: horizontal-stack
 
   - type: 'custom:simple-thermostat'
-    entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
+    entity: climate.centralite_thermostat
     layout:
       mode:
         icons: true
@@ -53,7 +53,7 @@ cards:
       - entity: light.patio_light
       - entity: binary_sensor.family_room_motion_sensor 
       - entity: binary_sensor.backyard_door
-      - entity: climate.centralite_3157100_e_947e5b05_fan_thermostat
+      - entity: climate.centralite_thermostat
     title: Family Room
     type: entities
   - cards:

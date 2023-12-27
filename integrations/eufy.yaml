@@ -1,9 +1,0 @@
----
-# eufy_security:
-#   username: !secret eufy_username
-#   password: !secret eufy_password
-
-switch:
-  - platform: wake_on_lan
-    name: desktop_pc
-    mac: !secret desktop_mac

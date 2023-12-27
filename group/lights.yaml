@@ -2,11 +2,13 @@ Upstairs Hallway Lights:
   entities:
     - light.sengled_z01_a19nae26_47230303_level_light_color_on_off
     - light.sengled_z01_a19nae26_461f0303_level_light_color_on_off
+  icon: 'mdi:ceiling-light'
 
 Bedroom Lights:
   entities:
     - light.the_home_depot_ecosmart_zbt_a19_cct_bulb_960debfe_level_light_color_on_off
     - light.the_home_depot_ecosmart_zbt_a19_cct_bulb_c832dffe_level_light_color_on_off
+  icon: 'mdi:wall-sconce-outline'
 
 Under Cabinet Lights:
   entities:
@@ -40,3 +42,10 @@ Powder Room Switches:
   entities:
     - switch.powder_room_light
     - switch.powder_room_fan
+
+Living Room Lights:
+  entities:
+    - light.living_room_light_1
+    - light.living_room_light_2
+    - light.living_room_light_3
+  icon: 'mdi:light-recessed'
