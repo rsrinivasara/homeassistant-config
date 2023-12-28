@@ -54,6 +54,7 @@ switch.master_bath_light:
 
 switch.master_bath_fan:
   friendly_name: 'Master Bath Fan'
+  icon: 'mdi:fan'
 
 light.osram_lightify_rt_rgbw_951da500_level_light_color_on_off:
   friendly_name: 'Kitchen Light 1'
@@ -93,6 +94,7 @@ switch.playroom_unassigned:
 
 switch.plug1_switch1:
   friendly_name: 'Table Fan'
+  icon: 'mdi:fan'
 
 switch.plug1_switch2:
   friendly_name: 'Phone Charger'

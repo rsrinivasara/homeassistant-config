@@ -1,0 +1,204 @@
+title: "Home"
+icon: mdi:home-floor-0
+path: "home"
+cards:
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:button-card'
+        template: chip_temperature
+        variables:
+          ulm_chip_temperature_inside: sensor.familyroom_temperature
+          ulm_chip_temperature_outside: sensor.openweathermap_temperature
+          ulm_chip_temperature_weather: weather.openweathermap
+      - type: 'custom:button-card'
+        template: chip_icon_label
+        label: '[[[ return states["sensor.openweathermap_wind_speed"].state + " mph" ]]]'
+        icon: 'mdi:weather-dust'
+      - type: 'custom:button-card'
+        template: chip_alarm
+        entity: alarm_control_panel.ring_alarm
+
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        template: card_person_info
+        variables:
+          ulm_card_person_entity: person.ramachandren
+          ulm_card_person_use_entity_picture: true
+          ulm_card_person_battery_entity: sensor.sm_s908u1_battery_level_2
+          ulm_card_person_battery_state_entity: sensor.sm_s908u1_battery_state_2
+      - type: "custom:button-card"
+        template: card_person_info
+        variables:
+          ulm_card_person_entity: person.swathi_sudarshan
+          ulm_card_person_use_entity_picture: true
+          ulm_card_person_battery_entity: sensor.sm_s916u1_battery_level
+          ulm_card_person_battery_state_entity: sensor.sm_s916u1_battery_state
+
+  - type: 'custom:button-card'
+    template: card_title
+    name: Downstairs
+
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:button-card'
+        template:
+            - custom_card_andyblac_room
+        name: Family Room
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/family_room'
+        icon: mdi:television
+        variables:
+          sensor_label_1: sensor.familyroom_temperature
+          sensor_1:
+            entity_id: climate.centralite_thermostat
+            tap_action:
+              action: more-info
+          sensor_2:
+            entity_id: binary_sensor.backyard_door
+            tap_action:
+              action: more-info
+            ulm_custom_card_andyblac_room_sensor_color_on: red
+          sensor_3:
+            entity_id: binary_sensor.family_room_motion_sensor
+            tap_action:
+              action: more-info
+            ulm_custom_card_andyblac_room_sensor_color_on: green
+          entity_1:
+            entity_id: light.family_room_light
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_2:
+            entity_id: light.family_room_track_light
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_3:
+            entity_id: switch.s31_2
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_4: 
+            entity_id: light.patio_light
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+
+      - type: 'custom:button-card'
+        template:
+            - custom_card_andyblac_room
+        name: Kitchen
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/kitchen'
+        icon: mdi:countertop
+        variables:
+          entity_1:
+            entity_id: group.kitchen_lights
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_2:
+            entity_id: group.under_cabinet_lights
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_3:
+            entity_id: light.kitchen_pendant_light
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_4: 
+            entity_id: switch.dining_room_light
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+
+  - type: horizontal-stack
+    cards:
+
+      - type: 'custom:button-card'
+        template:
+            - custom_card_andyblac_room
+        name: Foyer
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/foyer'
+        icon: mdi:door
+        variables:
+          sensor_label_1: sensor.foyer_closet_door_temperature
+          sensor_1:
+            entity_id: binary_sensor.front_door_sensor
+            tap_action:
+              action: more-info
+            ulm_custom_card_andyblac_room_sensor_color_on: red
+          entity_1:
+            entity_id: light.foyer_light
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_2:
+            entity_id: switch.porch_light
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_3:
+            entity_id: switch.wyze_front_yard_plug_2
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_4: 
+            entity_id: switch.front_porch_outlet
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+
+      - type: 'custom:button-card'
+        template:
+            - custom_card_andyblac_room
+        name: Living Room
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/living_room'
+        icon: mdi:sofa
+        variables:
+          entity_1:
+            entity_id: group.living_room_lights
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_2:
+            entity_id: switch.s31_1
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+
+  - type: horizontal-stack
+    cards:
+      - type: 'custom:button-card'
+        template:
+            - custom_card_andyblac_room
+        name: Powder Room
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/powder_room'
+        icon: 'mdi:faucet-variant'
+        variables:
+          sensor_1:
+            entity_id: binary_sensor.powder_room_motion_sensor_motion
+            tap_action:
+              action: more-info
+            ulm_custom_card_andyblac_room_sensor_color_on: green
+          entity_1:
+            entity_id: switch.powder_room_light
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_2:
+            entity_id: switch.powder_room_fan
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+
+      - type: 'custom:button-card'
+        template:
+            - custom_card_andyblac_room
+        name: Mud Room
+        tap_action:
+          action: navigate
+          navigation_path: '/ui-lovelace-minimalist/mud_room'
+        icon: 'mdi:washing-machine'
+        variables:
+          sensor_label_1: sensor.mudroom_temp_sensor_temperature
+          sensor_label_2: sensor.mudroom_temp_sensor_humidity
+          sensor_1:
+            entity_id: binary_sensor.garage_door_sensor
+            tap_action:
+              action: more-info
+            ulm_custom_card_andyblac_room_sensor_color_on: red
+          sensor_2:
+            entity_id: binary_sensor.sideyard_door_sensor
+            tap_action:
+              action: more-info
+            ulm_custom_card_andyblac_room_sensor_color_on: red
+          sensor_3:
+            entity_id: binary_sensor.mudroom_motion_sensor_ias_zone
+            tap_action:
+              action: more-info
+            ulm_custom_card_andyblac_room_sensor_color_on: green
+          entity_1:
+            entity_id: switch.mudroom_light
+            ulm_custom_card_andyblac_room_icon_color_on: yellow
+          entity_2:
+            entity_id: switch.side_yard_light
+            ulm_custom_card_andyblac_room_icon_color_on: yellow

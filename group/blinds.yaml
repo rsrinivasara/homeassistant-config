@@ -2,3 +2,4 @@ Bedroom Blinds:
   entities:
     - cover.bedroom_east_window_cover
     - cover.bedroom_west_window_cover
+  icon: 'mdi:blinds-horizontal'
