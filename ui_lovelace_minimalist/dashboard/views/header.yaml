@@ -83,23 +83,23 @@ cards:
                   padding-bottom: 0px !important;
                 }
 
-  - type: custom:grid-layout
-    layout:
-      #default
-      margin: 0
-      grid-template-columns: 1fr 1fr 1fr
-      grid-template-rows: auto
-
+  - type: horizontal-stack
     cards:
       - type: 'custom:button-card'
         template: chip_temperature
         variables:
           ulm_chip_temperature_outside: sensor.openweathermap_temperature
           ulm_chip_temperature_weather: weather.openweathermap
+        styles:
+          card:
+            - width: 100px
       - type: 'custom:button-card'
         template: chip_icon_label
         label: '[[[ return states["sensor.openweathermap_wind_speed"].state + " mph" ]]]'
         icon: 'mdi:weather-dust'
+        styles:
+          card:
+            - width: 100px
       - type: 'custom:button-card'
         template: chip_icon_label
         label: |
@@ -114,120 +114,59 @@ cards:
             return sunrise_time + ' - ' + sunset_time;
           ]]]
         icon: 'mdi:weather-sunset-up'
+        styles:
+          card:
+            - width: 145px
 
+  - type: horizontal-stack
+    cards:
       - type: 'custom:button-card'
         template: chip_icon_label
         label: 'Front Door'
         entity: lock.front_door_lock
         icon: 'mdi:lock-outline'
+        styles:
+          card:
+            - width: 100px
       - type: 'custom:button-card'
         template: chip_icon_label
         label: 'Garage Door'
         entity: lock.garage_door_lock
         icon: 'mdi:lock-outline'
+        styles:
+          card:
+            - width: 100px
       - type: 'custom:button-card'
         template: chip_icon_label
         label: 'Side Door'
         entity: lock.side_door_lock
         icon: 'mdi:lock-outline'
+        styles:
+          card:
+            - width: 100px
 
+  - type: horizontal-stack
+    cards:
       - type: 'custom:button-card'
         template: chip_alarm
         entity: alarm_control_panel.ring_alarm
+        styles:
+          card:
+            - width: 100px
       - type: 'custom:button-card'
         template: chip_icon_label
         entity: cover.garage_door_vw
         label: 'VW'
+        styles:
+          card:
+            - width: 100px
       - type: 'custom:button-card'
         template: chip_icon_label
         entity: cover.garage_door_volvo
         label: 'Volvo'
-
-
-
-
-
-  # - type: custom:grid-layout
-  #   layout:
-  #     #default
-  #     margin: 0
-  #     grid-template-columns: 1fr 1fr 1fr
-  #     grid-template-rows: auto
-  #     grid-template-areas: |
-  #       "status1  status2  status3 "
-  #       "status4  status5  status6 "
-  #       "status7  status8  status9 "
-
-  #   cards:
-  #     - type: 'custom:button-card'
-  #       view_layout:
-  #         grid-area: status1
-  #       template: chip_temperature
-  #       variables:
-  #         ulm_chip_temperature_outside: sensor.openweathermap_temperature
-  #         ulm_chip_temperature_weather: weather.openweathermap
-  #     - type: 'custom:button-card'
-  #       view_layout:
-  #         grid-area: status2
-  #       template: chip_icon_label
-  #       label: '[[[ return states["sensor.openweathermap_wind_speed"].state + " mph" ]]]'
-  #       icon: 'mdi:weather-dust'
-  #     - type: 'custom:button-card'
-  #       view_layout:
-  #         grid-area: status3
-  #       template: chip_icon_label
-  #       label: |
-  #         [[[ 
-  #           var sunrise =  states['sun.sun'].attributes.next_rising;
-  #           var sunrise_time = new Date(sunrise).toLocaleTimeString('en', 
-  #                       { timeStyle: 'short', timeZone: 'America/New_York'});
-
-  #           var sunset =  states['sun.sun'].attributes.next_setting;
-  #           var sunset_time = new Date(sunset).toLocaleTimeString('en', 
-  #                       { timeStyle: 'short', timeZone: 'America/New_York'});
-  #           return sunrise_time + ' - ' + sunset_time;
-  #         ]]]
-  #       icon: 'mdi:weather-sunset-up'
-
-  #     - type: 'custom:button-card'
-  #       view_layout:
-  #         grid-area: status4
-  #       template: chip_icon_label
-  #       label: 'Front Door'
-  #       entity: lock.front_door_lock
-  #       icon: 'mdi:lock-outline'
-  #     - type: 'custom:button-card'
-  #       view_layout:
-  #         grid-area: status5
-  #       template: chip_icon_label
-  #       label: 'Garage Door'
-  #       entity: lock.garage_door_lock
-  #       icon: 'mdi:lock-outline'
-  #     - type: 'custom:button-card'
-  #       view_layout:
-  #         grid-area: status6
-  #       template: chip_icon_label
-  #       label: 'Side Door'
-  #       entity: lock.side_door_lock
-  #       icon: 'mdi:lock-outline'
-
-  #     - type: 'custom:button-card'
-  #       view_layout:
-  #         grid-area: status7
-  #       template: chip_alarm
-  #       entity: alarm_control_panel.ring_alarm
-  #     - type: 'custom:button-card'
-  #       template: chip_icon_label
-  #       view_layout:
-  #         grid-area: status8
-  #       entity: cover.garage_door_vw
-  #       label: 'VW'
-  #     - type: 'custom:button-card'
-  #       view_layout:
-  #         grid-area: status9
-  #       template: chip_icon_label
-  #       entity: cover.garage_door_volvo
-  #       label: 'Volvo'
+        styles:
+          card:
+            - width: 100px
 
   - type: horizontal-stack
     cards:
