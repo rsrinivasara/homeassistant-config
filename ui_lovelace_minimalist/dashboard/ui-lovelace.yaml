@@ -4,5 +4,5 @@ button_card_templates: !include_dir_merge_named "../../custom_components/ui_love
 title: "Minimalist"
 background: "var(--background-image)"
 views:
-  - !include views/downstairs.yaml
-  - !include views/upstairs.yaml
+  - !include views/home.yaml
+  - !include views/chips.yaml

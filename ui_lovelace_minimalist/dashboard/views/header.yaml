@@ -1,32 +1,247 @@
-- type: horizontal-stack
-  cards:
-    - type: 'custom:button-card'
-      template: chip_temperature
-      variables:
-        ulm_chip_temperature_inside: sensor.familyroom_temperature
-        ulm_chip_temperature_outside: sensor.openweathermap_temperature
-        ulm_chip_temperature_weather: weather.openweathermap
-    - type: 'custom:button-card'
-      template: chip_icon_label
-      label: '[[[ return states["sensor.openweathermap_wind_speed"].state + " mph" ]]]'
-      icon: 'mdi:weather-dust'
-    - type: 'custom:button-card'
-      template: chip_alarm
-      entity: alarm_control_panel.ring_alarm
+type: vertical-stack
+view_layout:
+  grid-area: sidebar
 
-- type: horizontal-stack
-  cards:
-    - type: "custom:button-card"
-      template: card_person_info
-      variables:
-        ulm_card_person_entity: person.ramachandren
-        ulm_card_person_use_entity_picture: true
-        ulm_card_person_battery_entity: sensor.sm_s908u1_battery_level_2
-        ulm_card_person_battery_state_entity: sensor.sm_s908u1_battery_state_2
-    - type: "custom:button-card"
-      template: card_person_info
-      variables:
-        ulm_card_person_entity: person.swathi_sudarshan
-        ulm_card_person_use_entity_picture: true
-        ulm_card_person_battery_entity: sensor.sm_s916u1_battery_level
-        ulm_card_person_battery_state_entity: sensor.sm_s916u1_battery_state
+cards:
+  - type: custom:stack-in-card
+    mode: vertical
+    cards:
+      - type: custom:state-switch
+        entity: mediaquery
+        states:
+          "(max-width: 800px)":
+            # type: custom:clock-weather-card
+            # entity: weather.openweathermap
+            # locale: en-US
+            # animated_icon: true
+            # hide_forecast_section: true
+            # use_browser_time: true
+            # card_mod:
+            #   style: |
+            #     ha-card {
+            #       height: 108px !important;
+            #     }
+            #     .card-content {
+            #       padding-top: 0px !important;
+            #       padding-bottom: 0px !important;
+            #     }
+      - type: custom:state-switch
+        entity: mediaquery
+        states:
+          "(min-width: 800px)":
+            type: custom:clock-weather-card
+            entity: weather.openweathermap
+            locale: en-US
+            animated_icon: true
+            hide_forecast_section: true
+            use_browser_time: true
+            card_mod:
+              style: |
+                # ha-card {
+                #   height: 132px !important;
+                # }
+                .card-content {
+                  padding-top: 0px !important;
+                  padding-bottom: 0px !important;
+                }
+      - type: custom:state-switch
+        entity: mediaquery
+        states:
+          "(min-width: 800px)":
+            type: custom:hourly-weather
+            entity: weather.openweathermap
+            num_segments: 8 # optional, defaults to 12
+            label_spacing: 1
+            # offset: "{{ 24 - now().hour }}"
+            name: "" # optional, defaults to "Hourly Weather"
+            # show_wind: true
+            show_precipitation_amounts: true
+            show_precipitation_probability: true
+            card_mod:
+              style: |
+                # ha-card {
+                #   height: 140px !important;
+                # }
+                .card-content {
+                  padding-top: 0px !important;
+                  padding-bottom: 0px !important;
+                }
+      - type: custom:state-switch
+        entity: mediaquery
+        states:
+          "(min-width: 1200px)":
+            type: custom:clock-weather-card
+            entity: weather.openweathermap
+            sun_entity: sun.sun
+            forecast_days: 7
+            locale: en-US
+            hide_today_section: true
+            card_mod:
+              style: |
+                .card-content {
+                  padding-top: 0px !important;
+                  padding-bottom: 0px !important;
+                }
+
+  - type: custom:grid-layout
+    layout:
+      #default
+      margin: 0
+      grid-template-columns: 1fr 1fr 1fr
+      grid-template-rows: auto
+
+    cards:
+      - type: 'custom:button-card'
+        template: chip_temperature
+        variables:
+          ulm_chip_temperature_outside: sensor.openweathermap_temperature
+          ulm_chip_temperature_weather: weather.openweathermap
+      - type: 'custom:button-card'
+        template: chip_icon_label
+        label: '[[[ return states["sensor.openweathermap_wind_speed"].state + " mph" ]]]'
+        icon: 'mdi:weather-dust'
+      - type: 'custom:button-card'
+        template: chip_icon_label
+        label: |
+          [[[ 
+            var sunrise =  states['sun.sun'].attributes.next_rising;
+            var sunrise_time = new Date(sunrise).toLocaleTimeString('en', 
+                        { timeStyle: 'short', timeZone: 'America/New_York'});
+
+            var sunset =  states['sun.sun'].attributes.next_setting;
+            var sunset_time = new Date(sunset).toLocaleTimeString('en', 
+                        { timeStyle: 'short', timeZone: 'America/New_York'});
+            return sunrise_time + ' - ' + sunset_time;
+          ]]]
+        icon: 'mdi:weather-sunset-up'
+
+      - type: 'custom:button-card'
+        template: chip_icon_label
+        label: 'Front Door'
+        entity: lock.front_door_lock
+        icon: 'mdi:lock-outline'
+      - type: 'custom:button-card'
+        template: chip_icon_label
+        label: 'Garage Door'
+        entity: lock.garage_door_lock
+        icon: 'mdi:lock-outline'
+      - type: 'custom:button-card'
+        template: chip_icon_label
+        label: 'Side Door'
+        entity: lock.side_door_lock
+        icon: 'mdi:lock-outline'
+
+      - type: 'custom:button-card'
+        template: chip_alarm
+        entity: alarm_control_panel.ring_alarm
+      - type: 'custom:button-card'
+        template: chip_icon_label
+        entity: cover.garage_door_vw
+        label: 'VW'
+      - type: 'custom:button-card'
+        template: chip_icon_label
+        entity: cover.garage_door_volvo
+        label: 'Volvo'
+
+
+
+
+
+  # - type: custom:grid-layout
+  #   layout:
+  #     #default
+  #     margin: 0
+  #     grid-template-columns: 1fr 1fr 1fr
+  #     grid-template-rows: auto
+  #     grid-template-areas: |
+  #       "status1  status2  status3 "
+  #       "status4  status5  status6 "
+  #       "status7  status8  status9 "
+
+  #   cards:
+  #     - type: 'custom:button-card'
+  #       view_layout:
+  #         grid-area: status1
+  #       template: chip_temperature
+  #       variables:
+  #         ulm_chip_temperature_outside: sensor.openweathermap_temperature
+  #         ulm_chip_temperature_weather: weather.openweathermap
+  #     - type: 'custom:button-card'
+  #       view_layout:
+  #         grid-area: status2
+  #       template: chip_icon_label
+  #       label: '[[[ return states["sensor.openweathermap_wind_speed"].state + " mph" ]]]'
+  #       icon: 'mdi:weather-dust'
+  #     - type: 'custom:button-card'
+  #       view_layout:
+  #         grid-area: status3
+  #       template: chip_icon_label
+  #       label: |
+  #         [[[ 
+  #           var sunrise =  states['sun.sun'].attributes.next_rising;
+  #           var sunrise_time = new Date(sunrise).toLocaleTimeString('en', 
+  #                       { timeStyle: 'short', timeZone: 'America/New_York'});
+
+  #           var sunset =  states['sun.sun'].attributes.next_setting;
+  #           var sunset_time = new Date(sunset).toLocaleTimeString('en', 
+  #                       { timeStyle: 'short', timeZone: 'America/New_York'});
+  #           return sunrise_time + ' - ' + sunset_time;
+  #         ]]]
+  #       icon: 'mdi:weather-sunset-up'
+
+  #     - type: 'custom:button-card'
+  #       view_layout:
+  #         grid-area: status4
+  #       template: chip_icon_label
+  #       label: 'Front Door'
+  #       entity: lock.front_door_lock
+  #       icon: 'mdi:lock-outline'
+  #     - type: 'custom:button-card'
+  #       view_layout:
+  #         grid-area: status5
+  #       template: chip_icon_label
+  #       label: 'Garage Door'
+  #       entity: lock.garage_door_lock
+  #       icon: 'mdi:lock-outline'
+  #     - type: 'custom:button-card'
+  #       view_layout:
+  #         grid-area: status6
+  #       template: chip_icon_label
+  #       label: 'Side Door'
+  #       entity: lock.side_door_lock
+  #       icon: 'mdi:lock-outline'
+
+  #     - type: 'custom:button-card'
+  #       view_layout:
+  #         grid-area: status7
+  #       template: chip_alarm
+  #       entity: alarm_control_panel.ring_alarm
+  #     - type: 'custom:button-card'
+  #       template: chip_icon_label
+  #       view_layout:
+  #         grid-area: status8
+  #       entity: cover.garage_door_vw
+  #       label: 'VW'
+  #     - type: 'custom:button-card'
+  #       view_layout:
+  #         grid-area: status9
+  #       template: chip_icon_label
+  #       entity: cover.garage_door_volvo
+  #       label: 'Volvo'
+
+  - type: horizontal-stack
+    cards:
+      - type: "custom:button-card"
+        template: card_person_info
+        variables:
+          ulm_card_person_entity: person.ramachandren
+          ulm_card_person_use_entity_picture: true
+          ulm_card_person_battery_entity: sensor.sm_s908u1_battery_level_2
+          ulm_card_person_battery_state_entity: sensor.sm_s908u1_battery_state_2
+      - type: "custom:button-card"
+        template: card_person_info
+        variables:
+          ulm_card_person_entity: person.swathi_sudarshan
+          ulm_card_person_use_entity_picture: true
+          ulm_card_person_battery_entity: sensor.sm_s916u1_battery_level
+          ulm_card_person_battery_state_entity: sensor.sm_s916u1_battery_state
