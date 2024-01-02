@@ -12,7 +12,7 @@ layout:
     "sidebar  room1   room2   room3   room4  "
     "sidebar  room5   room6   room7   room8  "
     "sidebar  room9   room10  room11  room12 "
-    "sidebar  .       .       .       .      "
+    "sidebar  room13  .       .       .      "
     "sidebar  .       .       .       .      "
   mediaquery:
     #phone
@@ -28,6 +28,7 @@ layout:
         "room7    room8   "
         "room9    room10  "
         "room11   room12  "
+        "room13   .       "
     #Tablet
     "(max-width: 1200px)":
       margin: 0
@@ -39,6 +40,7 @@ layout:
         "sidebar  room4   room5   room6  "
         "sidebar  room7   room8   room9  "
         "sidebar  room10  room11  room12 "
+        "sidebar  room13  .       .      "
 
 cards:
   - !include header.yaml
@@ -289,6 +291,12 @@ cards:
         entity_id: switch.playroom_star_light
         ulm_custom_card_andyblac_room_icon_color_on: yellow
       entity_2:
+        entity_id: light.playroom_ceiling_light
+        ulm_custom_card_andyblac_room_icon_color_on: yellow
+      entity_3:
+        entity_id: switch.playroom_ceiling_fan
+        ulm_custom_card_andyblac_room_icon_color_on: yellow
+      entity_4:
         entity_id: switch.playroom_fan
         ulm_custom_card_andyblac_room_icon_color_on: yellow
 
@@ -325,6 +333,40 @@ cards:
       grid-area: room11
     template:
         - custom_card_andyblac_room
+    name: Office
+    tap_action:
+      action: navigate
+      navigation_path: '/ui-lovelace-minimalist/office_room'
+    icon: mdi:desk
+    variables:
+      sensor_label_1: sensor.office_room_temperature
+      sensor_label_2: sensor.office_room_humidity
+
+  - type: 'custom:button-card'
+    view_layout: 
+      grid-area: room12
+    template:
+        - custom_card_andyblac_room
+    name: Corner Room
+    tap_action:
+      action: navigate
+      navigation_path: '/ui-lovelace-minimalist/corner_room'
+    icon: mdi:bed-king-outline
+    variables:
+      sensor_label_1: sensor.corner_room_temperature
+      sensor_label_2: sensor.corner_room_humidity
+      entity_1:
+        entity_id: light.corner_room_ceiling_light
+        ulm_custom_card_andyblac_room_icon_color_on: yellow
+      entity_2:
+        entity_id: switch.corner_room_ceiling_fan
+        ulm_custom_card_andyblac_room_icon_color_on: yellow
+
+  - type: 'custom:button-card'
+    view_layout: 
+      grid-area: room13
+    template:
+        - custom_card_andyblac_room
     name: Hallway
     tap_action:
       action: navigate
@@ -344,17 +386,3 @@ cards:
       entity_1:
         entity_id: group.upstairs_hallway_lights
         ulm_custom_card_andyblac_room_icon_color_on: yellow
-
-  - type: 'custom:button-card'
-    view_layout: 
-      grid-area: room12
-    template:
-        - custom_card_andyblac_room
-    name: Corner Room
-    tap_action:
-      action: navigate
-      navigation_path: '/ui-lovelace-minimalist/corner_room'
-    icon: mdi:bed-king-outline
-    variables:
-      sensor_label_1: sensor.corner_room_temperature
-      sensor_label_2: sensor.corner_room_humidity

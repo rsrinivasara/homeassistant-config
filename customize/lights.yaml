@@ -161,3 +161,19 @@ switch.side_yard_light:
 light.family_room_light:
   friendly_name: 'Ceiling Light'
   icon: 'mdi:dome-light'
+
+light.playroom_ceiling_light:
+  friendly_name: 'Ceiling Light'
+  icon: 'mdi:ceiling-fan-light'
+
+switch.playroom_ceiling_fan:
+  friendly_name: 'Ceiling Fan'
+  icon: 'mdi:ceiling-fan'
+
+light.corner_room_ceiling_light:
+  friendly_name: 'Ceiling Light'
+  icon: 'mdi:ceiling-fan-light'
+
+switch.corner_room_ceiling_fan:
+  friendly_name: 'Ceiling Fan'
+  icon: 'mdi:ceiling-fan'
